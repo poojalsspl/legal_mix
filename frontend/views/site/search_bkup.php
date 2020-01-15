@@ -1,0 +1,808 @@
+<?php
+/* @var $this yii\web\View */
+
+use yii\helpers\Html;
+use yii\widgets\LinkPager;
+use yii\helpers\Url;
+use kartik\cmenu\ContextMenu;
+use maxeko\devbridge\Autocomplete;
+
+$this->title = 'Search';
+//$this->params['breadcrumbs'][] = $this->title;
+//print_r($facets);exit;
+?>
+
+<style type="text/css">
+
+    .tree, .tree ul {
+
+        margin:0;
+
+        padding:0;
+
+        list-style:none
+
+    }
+
+    .tree ul {
+
+        margin-left:1em;
+
+        position:relative
+
+    }
+
+    .tree ul ul {
+
+        margin-left:.5em
+
+    }
+
+    .tree ul:before {
+
+        content:"";
+
+        display:block;
+
+        width:0;
+
+        position:absolute;
+
+        top:0;
+
+        bottom:0;
+
+        left:0;
+
+        border-left:1px solid
+
+    }
+
+    .tree li {
+
+        margin:0;
+
+        padding:0 1em;
+
+        line-height:2em;
+
+        color:#e4353a ;
+
+        font-weight:700;
+
+        position:relative
+
+    }
+
+    .tree ul li:before {
+
+        content:"";
+
+        display:block;
+
+        width:10px;
+
+        height:0;
+
+        border-top:1px solid;
+
+        margin-top:-1px;
+
+        position:absolute;
+
+        top:1em;
+
+        left:0
+
+    }
+
+    .tree ul li:last-child:before {
+
+        background:#fff;
+
+        height:auto;
+
+        top:1em;
+
+        bottom:0
+
+    }
+
+    .indicator {
+
+        margin-right:5px;
+
+    }
+
+    .tree li a {
+
+        text-decoration: none;
+
+        color:#e4353a ;
+
+    }
+
+    .tree li button, .tree li button:active, .tree li button:focus {
+
+        text-decoration: none;
+
+        color:#e4353a ;
+
+        border:none;
+
+        background:transparent;
+
+        margin:0px 0px 0px 0px;
+
+        padding:0px 0px 0px 0px;
+
+        outline: 0;
+
+    }
+    @media (min-width: 768px){
+        .col-sm-9 {
+            width: 75% !important;
+        }
+    }
+    .margin-padding0{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+</style>
+<script>
+    function openInNewTab(url, index) {
+        var win = window.open(url, 'win_' + index);
+        //win.focus();
+    }
+</script>
+<link href="<?= Yii::$app->params['domainName'] ?>css/Main.css" rel="stylesheet" type="text/css" media="all" attribs="[]" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+
+    .laxyo-input
+
+    {
+
+        width:20px;
+
+
+
+    }
+
+    .laxyo1-select
+
+    {
+
+        width:100px;
+
+    }
+    .search-form-button{
+        float:left !important;
+    }
+
+
+
+</style>
+
+<link href="<?= Yii::$app->params['domainName'] ?>css/css-7c69b-92082.css" rel="stylesheet" type="text/css" media="all" attribs="[]" />
+
+<link href="<?= Yii::$app->params['domainName'] ?>css/css-a1381-92078.css" rel="stylesheet" type="text/css" media="all" attribs="[]" />
+
+<link href="http://fonts.googleapis.com/css?family=Playfair+Display|Poppins:400,600,700" rel="stylesheet" type="text/css" />
+
+<link href="<?= Yii::$app->params['domainName'] ?>css/css-42c1d-92080.css" rel="stylesheet" type="text/css" media="all" attribs="[]" />
+
+<script src="<?= Yii::$app->params['domainName'] ?>js/js-9a8dd-92082.js" type="text/javascript"></script>
+
+<script src="<?= Yii::$app->params['domainName'] ?>js/cored691.js?v=1513092074" type="text/javascript"></script>
+
+<script src="<?= Yii::$app->params['domainName'] ?>js/acymailing_moduled756.js?v=580" type="text/javascript"></script>
+
+<script src="<?= Yii::$app->params['domainName'] ?>js/js-ca15c-92080.js" type="text/javascript"></script>
+
+<script src="http://allyoucan.cloud/cdn/jquery/core/3.3.1/jquery.js" integrity="sha384-tCxhoyRWDdt53xP+AAKzIVwvee+PjO1JfnV06WrDzG2B3cyeewQGjZNaxGbgJwlT" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="http://allyoucan.cloud/cdn/jquery/ui/1.12.1/jquery-ui.theme.css" integrity="sha384-pRi5Zt/xoe6Jv8MBdTZpU7MixYccsC+XAg41fVs8+wHUPrwsEVrKrzSLDwR2EX29" crossorigin="anonymous">
+
+<style>
+
+    /* Set black background color, white text and some padding */
+
+    footer {
+
+        background-color: #555;
+
+        color: white;
+
+        padding: 15px;
+
+    }
+
+</style>
+
+<script src="<?= Yii::$app->params['domainName'] ?>js/js-ca15c-92080.js" type="text/javascript"></script>
+
+
+
+
+
+<div class="container "> 
+
+    <div class="row">
+
+        <div class="container"  style="margin-left:340px;"> 
+
+            <div class="col-sm-12">
+
+                <div >
+
+                    <div >
+                        <form method="get" action="/site/search">
+                            <div class="row"> 
+                                <div class="search-form">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">                     
+                                            <button type="submit" calss="search-form-button" style="float: left;margin-top: 5px;">Search</button> 
+                                            <input type="search" calss="search-form-input" name="q" id="search-input" style="width: 90%"  value="<?php echo \yii\helpers\Html::encode($term); ?>">
+                                            <input type="hidden" calss="search-form-input" name="p" style="display: none;"  value="<?php echo \yii\helpers\Html::encode($term); ?>">
+                                            <input type="hidden" name="advance_search" value="<?php echo $advance_search; ?>">
+                                            <?php
+                                            if ($term_again == 1):
+                                                $searchagain = null;
+                                                $searchawith = "checked=\"checked\"";
+                                            else:
+                                                $searchagain = "checked=\"checked\"";
+                                                $searchawith = null;
+                                            endif;
+                                            ?>
+                                            <input type="radio" name="again" value="0" <?php echo $searchagain; ?> >Search Again
+                                            <input type="radio" name="again" value="1" <?php echo $searchawith; ?>>Search Within These Results
+
+                                            <?php
+                                            //check if we got suggested key word
+                                            if (isset($suggest)):
+                                                ?>
+                                                <h4> Did you mean <a href="<?php echo Url::current(['q' => $suggest]); ?>"><?php echo $suggest; ?></a></h4>
+                                                <?php
+                                            endif;
+                                            ?>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select class="form-control"> 
+                                                <option>Sort Search Results</option> 
+                                                <option>B-Judtment Title</option> 
+                                                <option>C- Judgment Date</option> 
+                                                <option>D- Court Name</option> 
+                                            </select>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    SEARCH RESULT COUNT : <font color="#e4353a"><?php echo $total; ?> </font>results found (Query took <?php echo $querytime; ?>)
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> 
+
+
+    <div class="row margin-padding0">
+
+        <div class="col-sm-3 well">
+
+            <div class="well">
+
+
+
+                <div class="container" style="margin-top:10px;">
+
+
+                    <div class="row">
+
+                        <?php
+                        //print_r($facets["court"]);exit;
+                        if (isset($facets["court"]) && count(($facets["court"])) > 0):
+                            ?>
+                            <div class="col-md-3">
+                                <ul id="tree1">
+                                    <?php
+                                    foreach ($facets["court"] as $name):
+                                        ?>
+                                        <li>
+                                            <?php echo $name["name"]; ?> (<?php echo $name["count"]; ?>)
+                                            <ul>
+                                            <!--<li> <a href="#"> Court (<?php /* echo array_sum(array_column($facets["court"], 'count')); */ ?>)</a>
+                                                <ul>-->
+                                                <!--     <li>SC (5000)</li> -->
+                                                <!--  <li>HC (3000) -->
+                                                <!--  <ul> -->
+                                                <?php
+                                                foreach ($name["items"] as $courtdata):
+                                                    ?>
+                                                    <li><a href="<?php echo Url::current(['court_code' => $courtdata["code"]]); ?>"><?php echo $courtdata["name"] . " (" . $courtdata["count"] . ")"; ?></a></li>
+
+                                                <?php endforeach; ?>
+                                                <!-- </ul> -->
+                                                <!-- </li> -->
+                                                <!--</ul>
+                                            </li>-->
+                                            </ul>
+                                        </li>
+                                    <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+
+
+
+                <hr>
+                <?php if (isset($facets["yearsdata"]) && count($facets["yearsdata"]) > 0): ?>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul id="tree2">
+                                    <li><a href="#">Year</a>
+                                        <ul>
+                                            <?php
+//                                        print_r($facets["yearsCount"][]);die;
+                                            foreach ($facets["yearsdata"]["years"] as $year => $values):
+                                                /*          echo $year;exit;
+                                                  print_r($values);exit; */
+                                                ?>
+                                                <li><a href="<?php echo Url::current(['j_year' => $year['value']]); ?>"><?php echo $year; ?></a><br>
+                                                    <ul>
+                                                        <?php
+                                                        foreach ($values as $key => $month):
+//                                                     print_r($month);die;
+                                                            ?>
+                                                            <li><a href="<?php echo Url::current(['j_year_month' => $year . $key]); ?>"><?php echo $month["month"] . " (" . $month["count"] . ")"; ?></a></li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </li>
+                                            <?php endforeach; ?>
+
+
+
+
+
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                    <?php endif; ?>
+                                    <?php
+                                    if (!empty($facets["categories"])):
+                                        ?>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <ul id="tree3"> 
+                                                        <?php
+                                                        foreach ($facets["categories"]as $country):
+                                                            ?>  
+                                                            <li><a href="#"><?php echo $country["name"]; ?> (<?php echo $country["count"]; ?>)</a>
+                                                                <ul>
+                                                                    <?php
+                                                                    foreach ($country["items"]as $group):
+                                                                        ?>
+                                                                        <li><a href="#"><?php echo $group["name"]; ?> (<?php echo $group["count"]; ?>)</a>
+                                                                            <?php
+                                                                            if (!empty($group["items"]) && count($group["items"]) > 0):
+                                                                                ?>
+                                                                                <ul>
+                                                                                    <?php
+                                                                                    foreach ($group["items"] as $key => $category):
+                                                                                        ?>
+                                                                                        <li><a href="<?php echo Url::current(['act_category' => $key]); ?>"><?php echo $category["name"]; ?> (<?php echo $category["count"]; ?>)
+                                                                                                <?php
+                                                                                                if (!empty($category["items"])):
+                                                                                                    ?>
+                                                                                                    <ul>
+                                                                                                        <?php
+                                                                                                        foreach ($category["items"] as $key => $subcategory):
+                                                                                                            ?>
+
+                                                                                                            <li><a href="<?php echo Url::current(['act_sub_category' => $key]); ?>"><?php echo $subcategory["name"]; ?> (<?php echo $subcategory["count"]; ?>)</a></li>
+                                                                                                        <?php endforeach; ?>
+                                                                                                    </ul>
+                                                                                                <?php endif; ?>
+                                                                                            </a></li>
+                                                                                    <?php endforeach; ?>
+                                                                                </ul>
+                                                                            <?php endif; ?>
+                                                                        <?php endforeach; ?>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        <?php endforeach; ?>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                    <?php endif; ?>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <?php
+                                            if (isset($facets["dispostion"]) && count(($facets["dispostion"])) > 0):
+                                                ?>
+                                                <div class="col-md-3">
+                                                    <ul id="tree4">
+                                                        <li><a href="#">Disposition</a>
+                                                            <ul>
+
+                                                                <?php
+                                                                foreach ($facets["dispostion"] as $dispostiondata):
+                                                                    ?>
+                                                                    <li><a href="<?php echo Url::current(['disposition_id' => $dispostiondata["id"]]); ?>"><?php echo $dispostiondata["text"] . "(" . $dispostiondata["count"] . ")"; ?></a></li>
+
+                                                                <?php endforeach; ?>    
+                                                        </li>
+                                                    </ul>
+
+
+                                                    </ul>
+
+
+
+                                                </div>
+                                            <?php endif; ?>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+
+                                    <table>
+
+                                        <thead>
+
+                                            <tr>
+
+
+
+                                                <th  style="color:#e4353a;"> Searches related to </th>
+
+                                                <th><select class="laxyo1-select">
+
+                                                        <option>law</option>
+
+                                                        <option>None</option>
+
+                                                        <option>Appellate </option>
+
+                                                        <option>Criminal </option>
+
+                                                        <option>Probate </option>
+
+                                                        <option>Special </option>
+
+                                                        <option>Appellate</option>
+
+                                                        <option>Criminal </option>
+
+                                                        <option>Probate </option>
+
+                                                        <option>Special </option>
+
+                                                    </select></th>
+
+
+
+                                            </tr>
+
+                                        </thead>
+
+                                    </table>
+
+
+
+                                <li><a href="#">characteristics of law</a></li>
+
+                                <li><a href="#"> list of laws</a></li>
+
+                                <li><a href="#">example of law</a></li>
+
+                                <li><a href="#">legal definition of law</a></li>
+
+                                <li><a href="#">kinds of law</a></li>
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <a href="<?php echo Url::to(['site/search']); ?>" class="btn btn-danger" style="
+                           float: left !important;
+                           border: none !important;
+                           ">Reset</a>
+
+                    </div>
+
+                    <script type="text/javascript">
+
+    $.fn.extend({
+
+        treed: function (o) {
+
+
+
+            var openedClass = 'glyphicon-minus-sign';
+
+            var closedClass = 'glyphicon-plus-sign';
+
+
+
+            if (typeof o != 'undefined') {
+
+                if (typeof o.openedClass != 'undefined') {
+
+                    openedClass = o.openedClass;
+
+                }
+
+                if (typeof o.closedClass != 'undefined') {
+
+                    closedClass = o.closedClass;
+
+                }
+
+            }
+            ;
+
+
+
+            //initialize each of the top levels
+
+            var tree = $(this);
+
+            tree.addClass("tree");
+
+            tree.find('li').has("ul").each(function () {
+
+                var branch = $(this); //li with children ul
+
+                branch.prepend("<i class='indicator glyphicon " + closedClass + "'></i>");
+
+                branch.addClass('branch');
+
+                branch.on('click', function (e) {
+
+                    if (this == e.target) {
+
+                        var icon = $(this).children('i:first');
+
+                        icon.toggleClass(openedClass + " " + closedClass);
+
+                        $(this).children().children().toggle();
+
+                    }
+
+                })
+
+                branch.children().children().toggle();
+
+            });
+
+            //fire event from the dynamically added icon
+
+            tree.find('.branch .indicator').each(function () {
+
+                $(this).on('click', function () {
+
+                    $(this).closest('li').click();
+
+                });
+
+            });
+
+            //fire event to open branch if the li contains an anchor instead of text
+
+            tree.find('.branch>a').each(function () {
+
+                $(this).on('click', function (e) {
+
+                    $(this).closest('li').click();
+
+                    e.preventDefault();
+
+                });
+
+            });
+
+            //fire event to open branch if the li contains a button instead of text
+
+            tree.find('.branch>button').each(function () {
+
+                $(this).on('click', function (e) {
+
+                    $(this).closest('li').click();
+
+                    e.preventDefault();
+
+                });
+
+            });
+
+        }
+
+    });
+
+
+
+    //Initialization of treeviews
+
+
+
+    $('#tree1').treed();
+
+
+
+    $('#tree2').treed({openedClass: 'glyphicon-folder-open', closedClass: 'glyphicon-folder-close'});
+
+    $('#tree3').treed({openedClass: 'glyphicon-chevron-right', closedClass: 'glyphicon-chevron-down'});
+
+    $('#tree4').treed({openedClass: 'glyphicon-chevron-right', closedClass: 'glyphicon-chevron-down'});
+                    </script>    
+                    <div class="col-sm-9">
+                        <div class="row" style="margin: 0;">
+
+                            <?php
+                            $linkopen = 0;
+                            foreach ($data as $key => $row) {
+                                if ($linkopen == 6):
+                                    $linkopen = 0;
+                                endif;
+                                $linkopen++;
+                                ?>
+
+                                <!-- <div class="col-sm-9"> -->
+                                <div class="well">
+                                    <table class="table">
+                                        <tr>
+                                            <td width = "30%"><font size="2" name ="verdana"color="#ff4000"><a href="<?php echo Url::current(['appeal_numb' => $row["appeal_numb"]]); ?>" style="color:#ff4000;"><?php echo $row["appeal_numb"]; ?></a></font></td>
+                                            <td width = "50%" onclick="openInNewTab('<?php echo Url::to(['site/judgment/' . $row["judgment_code"]], true); ?>', '<?php echo $linkopen; ?>')">
+                                                <font size="2" name ="verdana"color="#ff4000"><a href="javascript:;" target="_blank" style="color:#ff4000;">
+                                                    <?php echo $row["judgment_title"]; ?></a></font></td>
+                                                    <?php
+                                            $showdate = 0;
+                                            if (checkdate(date("m", strtotime($row["judgment_date"])), date("d", strtotime($row["judgment_date"])), date("Y", strtotime($row["judgment_date"])))) {
+                                                $showdate = 1;
+                                            }
+                                            ?>
+                                            <td width = "20%"><font size="2" name ="verdana"color="#ff4000">
+                                            <?php if ($showdate == 1) { ?><a href="<?php echo Url::current(['judgment_date' => date("Ymd", strtotime($row["judgment_date"]))]); ?>" style="color:#ff4000;"><?php echo date("Y-m-d", strtotime($row["judgment_date"]));
+                                    } ?></a></font></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3"> <p><b><font color="#e4353a" size ="2"><?php echo $row['sno']; ?> (SNO) </font></b><?php echo $row['snippet']; ?></p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table width ="100%">
+                                        <tr>
+                                            <td width = "45%"><a href="<?php echo Url::current(['court_code' => $row["court_code"]]); ?>" style="color:#ff4000;"><?php echo $row["court_name"]; ?></a></td>
+                                            <td width = "25%">Acts/Section: <b><a href="<?php echo Url::to(['site/actlist/' . $row["doc_id"]], true); ?>" style="color:#ff4000;"><?php echo $row["act_count"]; ?></a></b> </td>
+                                            <td width = "20%">Cited By: <b><a href="<?php echo Url::to(['site/citedby/' . $row["doc_id"]], true); ?>" style="color:#ff4000;"><?php echo $row["cited_count"]; ?></a></b> </td>
+                                            <td width = "15%">Cited : <b><a href="<?php echo Url::to(['site/citedin/' . $row["doc_id"]], true); ?>" style="color:#ff4000;"><?php echo $row["ref_count"]; ?></a></b> </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                                <!--  </div> -->
+<?php } ?>
+                            <?php
+                            echo LinkPager::widget([
+                                'pagination' => $pagination,
+                            ]);
+                            ?>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+<?php
+$items = [
+    ['label' => 'Site Help', 'url' => '#'],
+    ['label' => 'Subscription Help', 'url' => '#'],
+    ['label' => 'FAQ', 'url' => '#'],
+    ['label' => 'About Us', 'url' => '#'],
+    ['label' => 'Our services', 'url' => '#'],
+];
+
+
+// Context menu usage on a body container
+ContextMenu::begin(['items' => $items, 'options' => ['tag' => 'body']]);
+ContextMenu::end();
+
+// Activate context menu within a div but not for `spans` within the div
+$script = <<< 'JS'
+function (e, element, target) {
+    e.preventDefault();
+    if (e.target.tagName == 'footer') {
+        e.preventDefault();
+        this.closemenu();
+        return false;
+    }
+    return true;
+}
+JS;
+?>
+            <?php
+            echo Autocomplete::widget([
+                'input' => '#search-input',
+                'options' => [
+                    'serviceUrl' => "'searchsuggestion/'",
+                    'paramName' => "'q'",
+                    'dataType' => "'json'",
+                    'minLength' => "3",
+                    'onSelect' => "function (suggestion) { 
+            console.log('Value: ' + suggestion.value);
+            console.log('Data: ' + suggestion.data);
+        }",
+                    'transformResult' => "function(response) {
+            return {
+                suggestions: $.map(response, function(item) {
+                    return { value: item, data: item };
+                })
+            };
+        }"
+                // and any other options form https://www.devbridge.com/sourcery/components/jquery-autocomplete/
+                // enclose string-value parameters by additional quotes "'paramValue'"
+                ]
+            ])
+            ?>
+            <script>
+                $('#search-input').autocomplete('setOptions', {
+                    serviceUrl: 'searchsuggestion/?contextParameterName=' + contextParameter,
+                });
+            </script>
+            <style>
+                .autocomplete-suggestions { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+                .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+                .autocomplete-no-suggestion { padding: 2px 5px;}
+                .autocomplete-selected { background: #F0F0F0; }
+                .autocomplete-suggestions strong { font-weight: bold; color: #000; }
+                .autocomplete-group { padding: 2px 5px; font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+            </style>
+

@@ -1,0 +1,38 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model backend\models\BareactCatg */
+
+$this->title = $model->bareact_catgid;
+$this->params['breadcrumbs'][] = ['label' => 'Bareact Catgs', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="bareact-catg-view">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Update', ['update', 'id' => $model->bareact_catgid], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->bareact_catgid], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?>
+    </p>
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'bareact_catgid',
+            'bareact_catg_name',
+            'country_code',
+            'country_name',
+        ],
+    ]) ?>
+
+</div>

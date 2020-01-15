@@ -1,0 +1,92 @@
+<?php
+
+namespace backend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "bareact_mast".
+ *
+ * @property integer $bareact_id
+ * @property integer $old_bareact_id
+ * @property integer $source_act_id
+ * @property string $act_name
+ * @property integer $bareact_catgid
+ * @property string $bareact_catg_name
+ * @property integer $tot_section
+ * @property integer $tot_chap
+ * @property string $Enactment_date
+ * @property string $bareact_text
+ *
+ * @property BareactDetail[] $bareactDetails
+ * @property BareactCatg $bareactCatg
+ * @property JudgmentAct[] $judgmentActs
+ */
+class BareactMast extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'bareact_mast';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['bareact_id', 'act_name'], 'required'],
+            [['bareact_id', 'old_bareact_id', 'source_act_id', 'bareact_catgid', 'tot_section', 'tot_chap'], 'integer'],
+            [['Enactment_date'], 'safe'],
+            [['bareact_text'], 'string'],
+            [['act_name', 'bareact_catg_name'], 'string', 'max' => 255],
+            [['bareact_catgid'], 'exist', 'skipOnError' => true, 'targetClass' => BareactCatg::className(), 'targetAttribute' => ['bareact_catgid' => 'bareact_catgid']],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'bareact_id' => 'Bareact ID',
+            'old_bareact_id' => 'Old Bareact ID',
+            'source_act_id' => 'Source Act ID',
+            'act_name' => 'Act Name',
+            'bareact_catgid' => 'Bareact Catgid',
+            'bareact_catg_name' => 'Bareact Catg Name',
+            'tot_section' => 'Tot Section',
+            'tot_chap' => 'Tot Chap',
+            'Enactment_date' => 'Enactment Date',
+            'bareact_text' => 'Bareact Text',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBareactDetails()
+    {
+        return $this->hasMany(BareactDetail::className(), ['bareact_id' => 'bareact_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBareactCatg()
+    {
+        return $this->hasOne(BareactCatg::className(), ['bareact_catgid' => 'bareact_catgid']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getJudgmentActs()
+    {
+        return $this->hasMany(JudgmentAct::className(), ['bareact_id' => 'bareact_id']);
+    }
+}

@@ -1,0 +1,36 @@
+1= Tree view data has to be dynamic and populate from judge_court_count
+2= Error page for unauthorized access
+3= Pass the court name instead of court code from tree view
+4= Need to fix the pagination
+5= Validation need to be fixed Sign up, customer , step2 ...etc
+6= Need to create the edit mode of plan subscription
+7= Validation on plan master
+8= Upload the code on CJ server
+
+Route SMS payment
+
+Yii2 PDF Rnd
+Right click disable
+
+27-11-2018
+1= Login session should expire and if user is already logged in than redirect user to dashboard
+2= On plan master , select all check box = Assigned to Pooja
+3= Need to show the success message , when user update the plan = Assigned to Pooja
+4= When user take the corporate access or full access , need to implement
+the functionality
+5= Need to check the judgement / order type
+6= Need to check the user status in user plan 
+7= Need to fix the customer id error on case diary
+8= Need to check the customers for logged in user
+9= Need to 12 months in the tenure dropdown in plan form = Assigned to Pooja
+10 = List all the tables which we have changed = Assigned to Pooja
+
+1 (User/Profile) - When we click on update profile- Image get hide. DONE 
+2 (CRM/Case Diary) - Created new case, but submission error occurred. 
+3 In CaseMaster page, Cant open tab (Add Hearing Details).
+4 In CaseMaster page, When we click (Case Documents) then click (Case Hearings), Again Case Master page opened.
+5 (CRM/Customer) When we click on (Invoice) Shows error {Getting unknown property}. 
+6 (CRM/Customer) When we click on (Receipt) Shows error {PHP Fatal Error}. 
+7 In Step2 page- We didn't get which point is compulsory to fill.
+
+

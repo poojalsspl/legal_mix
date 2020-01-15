@@ -1,0 +1,2388 @@
+[17-Sep-2018 06:35:20 America/Chicago] PHP Fatal error:  Class 'frontend\assets\CJAsset' not found in /home/laxyo/public_html/legal/frontend/views/layouts/cjLayout.php on line 9
+[17-Sep-2018 06:36:36 America/Chicago] PHP Fatal error:  Class 'frontend\assets\CJAsset' not found in /home/laxyo/public_html/legal/frontend/views/layouts/cjLayout.php on line 9
+[17-Sep-2018 06:37:50 America/Chicago] PHP Fatal error:  Class 'frontend\assets\CjAsset' not found in /home/laxyo/public_html/legal/frontend/views/layouts/cjLayout.php on line 17
+[17-Sep-2018 06:39:35 America/Chicago] PHP Fatal error:  Class 'frontend\assets\CjAsset' not found in /home/laxyo/public_html/legal/frontend/views/layouts/cjLayout.php on line 17
+[17-Sep-2018 07:53:12 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 75.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 75.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=80c0132a968ac39f6359086b8f171ad4; _csrf-frontend=5f2f2cb2b0ef9642558bd9ecd112c593972f1450f46b82e28bf0df6e77fca5fda%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gw4IYWW2z32fj1swHazvbqz9FCTFZtdt%22%3B%7D; _identity-frontend=50a43f46d006ae89beb30a45e57635256feefcb888881e3ff51dace6f8abd81ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B16%2C%22P1wpEvW-XZu51Vx8hbD5enmUZU_JlrFb%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => 'YwcpEpLkNdW1erAUFTZoDDZBz5K-Wjcl1fZmuRGcWtMEcB1by7Ni589JgnJ_Bxt7fiC15NwrTRyTtTL_S-g-pw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '122.175.227.32',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '122.175.227.32',
+    'REMOTE_PORT' => '27532',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W5@juMC5U2wACARBHn0AAAAo',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537188792.3943080902099609375,
+    'REQUEST_TIME' => 1537188792,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[17-Sep-2018 07:54:01 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 75.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 75.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=80c0132a968ac39f6359086b8f171ad4; _csrf-frontend=5f2f2cb2b0ef9642558bd9ecd112c593972f1450f46b82e28bf0df6e77fca5fda%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gw4IYWW2z32fj1swHazvbqz9FCTFZtdt%22%3B%7D; _identity-frontend=50a43f46d006ae89beb30a45e57635256feefcb888881e3ff51dace6f8abd81ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B16%2C%22P1wpEvW-XZu51Vx8hbD5enmUZU_JlrFb%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => 'niUdcH2hyMnZsVqWTdozLpkSh2b8WnfdQPMCAwlo51L5Uik5JPaf-6OCaPAn60BZ0XP9EJ4rDeQGsFZFUxyDJg==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '122.175.227.32',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '122.175.227.32',
+    'REMOTE_PORT' => '28342',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W5@j6cC5U2wACASKJ8UAAAEH',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537188841.7107861042022705078125,
+    'REQUEST_TIME' => 1537188841,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 01:22:06 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 726.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 726.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '920',
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=---------------------------722202712902',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=492770a13d986b55ef34ccdba63d6fd3; _csrf-frontend=172c8cdc331bcb309132318ce70eaa967b59adb0668193414d074882ec4a0a74a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22EP_NXNWoMUeGz7uzn4_SUTVLmufBEnUO%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/signup',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/signup',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '29241',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site/signup',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6CZjcC5U2wABPVYIV0AAAIf',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537251725.3743169307708740234375,
+    'REQUEST_TIME' => 1537251725,
+    'argv' => [
+        'r=site/signup',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 01:28:54 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 726.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 726.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '942',
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=---------------------------66832849618836',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=492770a13d986b55ef34ccdba63d6fd3; _csrf-frontend=172c8cdc331bcb309132318ce70eaa967b59adb0668193414d074882ec4a0a74a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22EP_NXNWoMUeGz7uzn4_SUTVLmufBEnUO%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/signup',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/signup',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '33797',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site/signup',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6CbJMC5U2wABPVXHx4AAAGa',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537252132.7418079376220703125,
+    'REQUEST_TIME' => 1537252132,
+    'argv' => [
+        'r=site/signup',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 03:26:14 America/Chicago] PHP Fatal error:  Call to a member function isAttributeRequired() on null in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/widgets/ActiveField.php on line 915
+[18-Sep-2018 03:26:14 America/Chicago] PHP Fatal error:  Uncaught exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 684.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(262): yii\web\ErrorHandler->renderException(Object(yii\base\ErrorException))
+#3 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#4 {main}
+  thrown in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php on line 366
+[18-Sep-2018 03:27:32 America/Chicago] PHP Fatal error:  Call to a member function isAttributeRequired() on null in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/widgets/ActiveField.php on line 915
+[18-Sep-2018 03:27:32 America/Chicago] PHP Fatal error:  Uncaught exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 684.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(262): yii\web\ErrorHandler->renderException(Object(yii\base\ErrorException))
+#3 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#4 {main}
+  thrown in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php on line 366
+[18-Sep-2018 03:50:31 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 686.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 686.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-frontend=65abad1926c77c39fddaf90ba834fe81; _csrf-frontend=da84843da66f8f8fbba7c242576ff60f2e252fc8fd29a8ba03f96d0775135cf5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RdQa45xJRCQ-gp4JlsgSSCsR5Q0o_sM5%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '22416',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6C8V8C5U2wABrxcr5gAAAD@',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537260631.472980022430419921875,
+    'REQUEST_TIME' => 1537260631,
+    'argv' => [
+        'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 04:24:40 America/Chicago] PHP Fatal error:  Call to a member function createCommand() on null in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 689
+[18-Sep-2018 04:32:17 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 691.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#4 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '$user_email' in 'where clause'' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '$user_email' in 'where clause'
+The SQL being executed was: UPDATE user_mast SET status=1 WHERE email=$user_email' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'UPDATE user_mas...')
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '$user_email' in 'where clause'
+)
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_COOKIE' => 'advanced-frontend=65abad1926c77c39fddaf90ba834fe81; _csrf-frontend=da84843da66f8f8fbba7c242576ff60f2e252fc8fd29a8ba03f96d0775135cf5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RdQa45xJRCQ-gp4JlsgSSCsR5Q0o_sM5%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '58298',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DGIMC5U2wAByTXQuYAAACO',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537263136.98143100738525390625,
+    'REQUEST_TIME' => 1537263136,
+    'argv' => [
+        'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 04:32:45 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 691.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#4 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1
+The SQL being executed was: UPDATE user_mast SET status=1 WHERE email=manoj@apnagps.com' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'UPDATE user_mas...')
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1
+)
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_COOKIE' => 'advanced-frontend=65abad1926c77c39fddaf90ba834fe81; _csrf-frontend=da84843da66f8f8fbba7c242576ff60f2e252fc8fd29a8ba03f96d0775135cf5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RdQa45xJRCQ-gp4JlsgSSCsR5Q0o_sM5%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '58714',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DGPcC5U2wAByR0PjkAAAAX',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537263165.431397914886474609375,
+    'REQUEST_TIME' => 1537263165,
+    'argv' => [
+        'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 04:34:43 America/Chicago] PHP Parse error:  syntax error, unexpected ''.$user_email.'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 691
+[18-Sep-2018 04:35:09 America/Chicago] PHP Parse error:  syntax error, unexpected ''.$user_email.'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 691
+[18-Sep-2018 04:36:44 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 691.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#4 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1
+The SQL being executed was: UPDATE user_mast SET status=1 WHERE email= manoj@apnagps.com' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'UPDATE user_mas...')
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/db/Command.php(1075): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/laxyo/public_html/legal/frontend/controllers/SiteController.php(693): yii\db\Command->execute()
+#3 [internal function]: frontend\controllers\SiteController->actionVerify()
+#4 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#5 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@apnagps.com' at line 1
+)
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_COOKIE' => 'advanced-frontend=65abad1926c77c39fddaf90ba834fe81; _csrf-frontend=da84843da66f8f8fbba7c242576ff60f2e252fc8fd29a8ba03f96d0775135cf5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RdQa45xJRCQ-gp4JlsgSSCsR5Q0o_sM5%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '10623',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DHLMC5U2wAByTXRXQAAACc',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537263404.7323539257049560546875,
+    'REQUEST_TIME' => 1537263404,
+    'argv' => [
+        'r=site/verify&user_email=bWFub2pAYXBuYWdwcy5jb20=',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 04:59:03 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 290.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 290.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '271',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_COOKIE' => '_csrf-frontend=8711bfaafc7939ac4bd5273fc37930583328ba477829dd8518121610e36c0af3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%227SWVV3jm7Bw1JA2lnszIDbRDh65r9it5%22%3B%7D; advanced-frontend=cb4b877611811deb2ad28bbeef04af52',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site/login',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '27383',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site/login',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DMZsC5U2wAB2wPy7IAAAEF',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537264742.59778690338134765625,
+    'REQUEST_TIME' => 1537264742,
+    'argv' => [
+        'r=site/login',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 06:41:17 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=6a27750ee4e01e9239944b2bd91c5273; _csrf-frontend=d26f2a21d3d3435d30d2bf1109cb1a22df28eff8cfbf5b9f28c53337512c817ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22p1TYseiyP2hnplsChEGKBUVwfTD-hvxi%22%3B%7D; _identity-frontend=a6bfb0f879b9066cd2b67ae8b4771045989cba35b71d49224f5f99125f527743a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B32%2C%22FH8DfDxJwmCnDvToO7zuIy0MY9eG3A1k%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => '42Y4rDqqMGEZqZ7CL9qPIrJnIXpsy62mBtYHfz3bpaaTV2z1Sc9ZGEmb9qxftvxh2iJmMS6e-9FggkNSVa3dzw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '15573',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DkXMC5U2wACHnRM5kAAAGC',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537270876.958197116851806640625,
+    'REQUEST_TIME' => 1537270876,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 06:41:25 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=6a27750ee4e01e9239944b2bd91c5273; _csrf-frontend=d26f2a21d3d3435d30d2bf1109cb1a22df28eff8cfbf5b9f28c53337512c817ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22p1TYseiyP2hnplsChEGKBUVwfTD-hvxi%22%3B%7D; _identity-frontend=a6bfb0f879b9066cd2b67ae8b4771045989cba35b71d49224f5f99125f527743a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B32%2C%22FH8DfDxJwmCnDvToO7zuIy0MY9eG3A1k%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => '42Y4rDqqMGEZqZ7CL9qPIrJnIXpsy62mBtYHfz3bpaaTV2z1Sc9ZGEmb9qxftvxh2iJmMS6e-9FggkNSVa3dzw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '15757',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DkZcC5U2wACHnRM7cAAAGl',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537270885.1844329833984375,
+    'REQUEST_TIME' => 1537270885,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 06:41:27 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=6a27750ee4e01e9239944b2bd91c5273; _csrf-frontend=d26f2a21d3d3435d30d2bf1109cb1a22df28eff8cfbf5b9f28c53337512c817ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22p1TYseiyP2hnplsChEGKBUVwfTD-hvxi%22%3B%7D; _identity-frontend=a6bfb0f879b9066cd2b67ae8b4771045989cba35b71d49224f5f99125f527743a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B32%2C%22FH8DfDxJwmCnDvToO7zuIy0MY9eG3A1k%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => '42Y4rDqqMGEZqZ7CL9qPIrJnIXpsy62mBtYHfz3bpaaTV2z1Sc9ZGEmb9qxftvxh2iJmMS6e-9FggkNSVa3dzw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '15777',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6DkZ8C5U2wACHooOr0AAAJ9',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537270887.39702701568603515625,
+    'REQUEST_TIME' => 1537270887,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 06:43:18 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=6a27750ee4e01e9239944b2bd91c5273; _csrf-frontend=d26f2a21d3d3435d30d2bf1109cb1a22df28eff8cfbf5b9f28c53337512c817ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22p1TYseiyP2hnplsChEGKBUVwfTD-hvxi%22%3B%7D; _identity-frontend=a6bfb0f879b9066cd2b67ae8b4771045989cba35b71d49224f5f99125f527743a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B32%2C%22FH8DfDxJwmCnDvToO7zuIy0MY9eG3A1k%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => '42Y4rDqqMGEZqZ7CL9qPIrJnIXpsy62mBtYHfz3bpaaTV2z1Sc9ZGEmb9qxftvxh2iJmMS6e-9FggkNSVa3dzw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '17297',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Dk1sC5U2wACHnRNKEAAAGU',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537270998.7445380687713623046875,
+    'REQUEST_TIME' => 1537270998,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[18-Sep-2018 06:43:23 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_COOKIE' => 'advanced-frontend=6a27750ee4e01e9239944b2bd91c5273; _csrf-frontend=d26f2a21d3d3435d30d2bf1109cb1a22df28eff8cfbf5b9f28c53337512c817ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22p1TYseiyP2hnplsChEGKBUVwfTD-hvxi%22%3B%7D; _identity-frontend=a6bfb0f879b9066cd2b67ae8b4771045989cba35b71d49224f5f99125f527743a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B32%2C%22FH8DfDxJwmCnDvToO7zuIy0MY9eG3A1k%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/login',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_CSRF_TOKEN' => '42Y4rDqqMGEZqZ7CL9qPIrJnIXpsy62mBtYHfz3bpaaTV2z1Sc9ZGEmb9qxftvxh2iJmMS6e-9FggkNSVa3dzw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.234.250',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.234.250',
+    'REMOTE_PORT' => '17399',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Dk2sC5U2wACHonNtUAAAIE',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537271002.9303929805755615234375,
+    'REQUEST_TIME' => 1537271002,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[20-Sep-2018 08:13:39 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-frontend=b17c2f754d8f3a51a4859af1490e3b1f; _identity-frontend=5b201f4ca9394da7a735f400fd475c300c7b35edcb7b838f4bd1e186bf1c0d23a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B34%2C%224J4YR6-oeD2Q4M-L_5wMxi_Br3ox3b3U%22%2C2592000%5D%22%3B%7D; _csrf-frontend=584ec6ec62ca6684e18fbeabb1d15f686040f3a3464fe2b667bd75f52bcfc810a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Q7xioP9Jbkl4sCRmtcAH-LGsnMS_6NiI%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'KROXv6_wZaLHm1M16Zcz4Zohs_K2QXCSevaTR4Z8eCN4JO_WwKBc6KXwPwGa1GGM7kLyupsNN-EUu8AYsDIRag==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.186.21',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.186.21',
+    'REMOTE_PORT' => '26859',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6OdA8C5U2wACN8EmwkAAACF',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537449219.19826602935791015625,
+    'REQUEST_TIME' => 1537449219,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[20-Sep-2018 08:13:48 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-frontend=b17c2f754d8f3a51a4859af1490e3b1f; _identity-frontend=5b201f4ca9394da7a735f400fd475c300c7b35edcb7b838f4bd1e186bf1c0d23a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B34%2C%224J4YR6-oeD2Q4M-L_5wMxi_Br3ox3b3U%22%2C2592000%5D%22%3B%7D; _csrf-frontend=584ec6ec62ca6684e18fbeabb1d15f686040f3a3464fe2b667bd75f52bcfc810a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Q7xioP9Jbkl4sCRmtcAH-LGsnMS_6NiI%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'KROXv6_wZaLHm1M16Zcz4Zohs_K2QXCSevaTR4Z8eCN4JO_WwKBc6KXwPwGa1GGM7kLyupsNN-EUu8AYsDIRag==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.186.21',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.186.21',
+    'REMOTE_PORT' => '26929',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6OdDMC5U2wACN8EmxgAAACa',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537449228.4914219379425048828125,
+    'REQUEST_TIME' => 1537449228,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[20-Sep-2018 08:13:50 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-frontend=b17c2f754d8f3a51a4859af1490e3b1f; _identity-frontend=5b201f4ca9394da7a735f400fd475c300c7b35edcb7b838f4bd1e186bf1c0d23a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B34%2C%224J4YR6-oeD2Q4M-L_5wMxi_Br3ox3b3U%22%2C2592000%5D%22%3B%7D; _csrf-frontend=584ec6ec62ca6684e18fbeabb1d15f686040f3a3464fe2b667bd75f52bcfc810a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Q7xioP9Jbkl4sCRmtcAH-LGsnMS_6NiI%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'KROXv6_wZaLHm1M16Zcz4Zohs_K2QXCSevaTR4Z8eCN4JO_WwKBc6KXwPwGa1GGM7kLyupsNN-EUu8AYsDIRag==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '182.70.186.21',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '182.70.186.21',
+    'REMOTE_PORT' => '26983',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6OdDsC5U2wACN8EmyUAAACZ',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537449230.673615932464599609375,
+    'REQUEST_TIME' => 1537449230,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:25:12 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'jPkzgyMu2jXcBCIDRdHjDB_4R1OiQasabKdVJvDtVkP5kFDsTlaoc7NpEnABlM5JUZAjCeQi8l4GxTt-qKllLA==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '23822',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Sq6MC5U2wABPyqV7QAAAAp',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537518312.7603991031646728515625,
+    'REQUEST_TIME' => 1537518312,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:26:17 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site%2Flogin',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'QnJsdMSiXJSJHybEBIyDRSaqcs36bmOC9LToOae41zo3Gw8bqdou0uZyFrdAya4AaMIWl7wNOsae1oZh__zkVQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '25370',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6SrKcC5U2wABPyqWOQAAAA3',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537518377.6672899723052978515625,
+    'REQUEST_TIME' => 1537518377,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:35:45 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'uNSxwJwIQCwVuuPO-u4hsWuopGL9XnscywjVJ_tut4zNvdKv8XAyanrX072-qwz0JcDAOLs9Ilihart_oyqE4w==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '40766',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6StYcC5U2wABTHDylAAAAB9',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537518945.5919649600982666015625,
+    'REQUEST_TIME' => 1537518945,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:36:13 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'bPSiPZzrgQa5WkIZO1j2CK7sJVdgbn6f36CsQk9GaXUZncFS8ZPzQNY3cmp_HdtN4IRBDSYNJ9u1wsIaFwJaGg==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '41696',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6StfcC5U2wABQx89TIAAAEM',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537518973.256575107574462890625,
+    'REQUEST_TIME' => 1537518973,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:36:58 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'l3D5q7AsVui06bjSzF-N1NjV6OMpKBSmV3XurbPfUF3iGZrE3VQkrtuEiKGIGqCRlr2MuW9LTeI9F4D165tjMg==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '42884',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6StqsC5U2wABQx89g0AAAEa',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537519018.3883268833160400390625,
+    'REQUEST_TIME' => 1537519018,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:37:42 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web//index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'FOolU-ddBa5PGV2V7BqcOFqrRdpYtvp5hbzy0GtwcbRhg0Y8iiV36CB0beaoX7F9FMMhgB7Voz3v3pyIMzRC2w==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '44198',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web//index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web//index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6St1cC5U2wABQx89u8AAADy',
+    'PHP_SELF' => '/legal/frontend/web//index.php',
+    'REQUEST_TIME_FLOAT' => 1537519062.0971710681915283203125,
+    'REQUEST_TIME' => 1537519062,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:46:48 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'NTa4WDK1AbddY634Vnez5bhL_XtSelFHalN8-tTspFlAX9s3X81z8TIOnYsSMp6g9iOZIRQZCAMAMRKijKiXNg==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '56132',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Sv@MC5U2wABURqWrYAAAAA',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537519608.5075409412384033203125,
+    'REQUEST_TIME' => 1537519608,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 03:46:52 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'NTa4WDK1AbddY634Vnez5bhL_XtSelFHalN8-tTspFlAX9s3X81z8TIOnYsSMp6g9iOZIRQZCAMAMRKijKiXNg==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '56142',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Sv@8C5U2wABURqWrkAAAA4',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537519612.070991039276123046875,
+    'REQUEST_TIME' => 1537519612,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:00:34 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '-rRveayE-mzDesVU9JpDw_YL7o5XbSxXOHbq9mjorNKP3QwWwfyIKqwX9Sew326GuGOK1BEOdRNSFISuMKyfvQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '14963',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6SzMcC5U2wABW7kf7MAAACB',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537520434.207130908966064453125,
+    'REQUEST_TIME' => 1537520434,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:01:32 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'liJwscFDIHFVDzevM6j_iofVhf3t9JiG8I6JO7oxKCPjSxPerDtSNzpiB9x37dLPyb3hp6uXwcKa7Odj4nUbTA==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '16055',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6Sza8C5U2wABURqYxwAAAAY',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537520492.0886929035186767578125,
+    'REQUEST_TIME' => 1537520492,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:18 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '26897',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S24sC5U2wABW@EmcgAAAEP',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521378.4404699802398681640625,
+    'REQUEST_TIME' => 1537521378,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:30 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27001',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S27cC5U2wABW@EmeAAAAD3',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521390.0154449939727783203125,
+    'REQUEST_TIME' => 1537521390,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:33 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27059',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S28cC5U2wABW7kiEcAAACD',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521393.210258007049560546875,
+    'REQUEST_TIME' => 1537521393,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:42 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27145',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S2@cC5U2wABW7kiFoAAACx',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521402.1237080097198486328125,
+    'REQUEST_TIME' => 1537521402,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:45 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27183',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S2-cC5U2wABW@EmgoAAAEM',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521405.426227092742919921875,
+    'REQUEST_TIME' => 1537521405,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:16:55 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27339',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S3B8C5U2wABW@Emi8AAAEe',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521415.4475040435791015625,
+    'REQUEST_TIME' => 1537521415,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:17:00 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => 'fv_NVJTmXKFIm9MXdbXfoH0zf6gjW_azLHx7qABShk4Llq47-Z4u5yf242Qx8PLlM1sb8mU4r_dGHhXwWBa1IQ==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '27359',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S3C8C5U2wABW7kiIwAAACv',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537521420.082951068878173828125,
+    'REQUEST_TIME' => 1537521420,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:31:39 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '2GIAayADBPT_GIRmiCkuFVijGSQpE87ECEx0DvfniPCtC2METXt2spB1tBXMbANQFst9fm9wl4BiLhpWr6O7nw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '39053',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S6esC5U2wABbbtEFcAAAAU',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537522299.0957469940185546875,
+    'REQUEST_TIME' => 1537522299,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:31:52 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '2GIAayADBPT_GIRmiCkuFVijGSQpE87ECEx0DvfniPCtC2METXt2spB1tBXMbANQFst9fm9wl4BiLhpWr6O7nw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '39285',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S6iMC5U2wABbevHGkAAAB8',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537522312.6917018890380859375,
+    'REQUEST_TIME' => 1537522312,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:31:57 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 47.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '2GIAayADBPT_GIRmiCkuFVijGSQpE87ECEx0DvfniPCtC2METXt2spB1tBXMbANQFst9fm9wl4BiLhpWr6O7nw==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fsubcat',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '39389',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fsubcat',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S6jcC5U2wABbevHIIAAACm',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537522317.3188021183013916015625,
+    'REQUEST_TIME' => 1537522317,
+    'argv' => [
+        'r=site%2Fsubcat',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:35:58 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 72.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 72.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '59',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '_xud32YnMZZwYQV4Wcv8Meq0nj1nwFbADJO_qXUu-qyKcv6wC19D0B8MNQsdjtF0pNz6ZyGjD4Rm8dHxLWrJww==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fgetcity',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '42421',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fgetcity',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S7fsC5U2wABbbtE34AAAAt',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537522558.32868289947509765625,
+    'REQUEST_TIME' => 1537522558,
+    'argv' => [
+        'r=site%2Fgetcity',
+    ],
+    'argc' => 1,
+]
+[21-Sep-2018 04:36:09 America/Chicago] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 72.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/laxyo/public_html/legal/frontend/controllers/SiteController.php on line 72.' in /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/laxyo/public_html/legal/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/laxyo/public_html/legal/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'CONTENT_LENGTH' => '63',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DOCUMENT_ROOT' => '/home/laxyo/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_COOKIE' => 'advanced-frontend=68c9d09f4abae7d32b0f95327aa5744c; _identity-frontend=bf5e793331ce016b3785797089065947f59522346c977e5a9e329eff4e455b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A47%3A%22%5B35%2C%22fVeT3ijzQgnROjvT4Raz26JO9GuewQIM%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0cccaa06d52841a1384d34ccc749ff52e597d0b1253469629a848fbebdda602ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22uicomxrFom0sDE-ENhdZFcYDjbnXXD3o%22%3B%7D',
+    'HTTP_HOST' => 'laxyo.org',
+    'HTTP_ORIGIN' => 'http://laxyo.org',
+    'HTTP_REFERER' => 'http://laxyo.org/legal/frontend/web/index.php?r=site/step2',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+    'HTTP_X_CSRF_TOKEN' => '_xud32YnMZZwYQV4Wcv8Meq0nj1nwFbADJO_qXUu-qyKcv6wC19D0B8MNQsdjtF0pNz6ZyGjD4Rm8dHxLWrJww==',
+    'HTTP_X_HTTP_PROTO' => 'HTTP/1.1',
+    'HTTP_X_REAL_IP' => '171.61.10.8',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'PATH' => '/bin:/usr/bin',
+    'PHPRC' => '/opt/phpstable/lib',
+    'QUERY_STRING' => 'r=site%2Fgetcity',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '171.61.10.8',
+    'REMOTE_PORT' => '42489',
+    'REQUEST_METHOD' => 'POST',
+    'REQUEST_URI' => '/legal/frontend/web/index.php?r=site%2Fgetcity',
+    'SCRIPT_FILENAME' => '/home/laxyo/public_html/legal/frontend/web/index.php',
+    'SCRIPT_NAME' => '/legal/frontend/web/index.php',
+    'SERVER_ADDR' => '192.185.148.176',
+    'SERVER_ADMIN' => 'webmaster@laxyo.org',
+    'SERVER_NAME' => 'laxyo.org',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '<address>Apache Server at laxyo.org Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'W6S7iMC5U2wABbbtE5oAAAAG',
+    'PHP_SELF' => '/legal/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1537522568.9973299503326416015625,
+    'REQUEST_TIME' => 1537522568,
+    'argv' => [
+        'r=site%2Fgetcity',
+    ],
+    'argc' => 1,
+]
