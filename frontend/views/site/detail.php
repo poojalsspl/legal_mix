@@ -255,6 +255,7 @@ $this->title = 'Search';
                             }
                             ?>
                             <?php //print_r($data);?>
+                            <?php //echo "doc_id = ".$data["doc_id"];?>
                               <div class="box-body">                                
                                 <div class="judgement-detail">
                                     <div class=" col-md-12 judgment-detail-item">
@@ -337,6 +338,8 @@ $this->title = 'Search';
                             <?php endif; ?>
                             <?php
                             if(!empty($data["judgment_abstract"])):
+                                $jcode  = $data["judgment_code"];
+                                $doc_id = $data["doc_id"];
                             ?>
                             <div class=" col-md-12 judgment-detail-item">
                                 <div class="col-md-3">
@@ -344,7 +347,9 @@ $this->title = 'Search';
                                 </div>
                                 <div class="col-md-8">
                                     <span class="judgement-detail-item-description judgement-abstract"><?php echo $data["judgment_abstract"];?></span>
-                                </div>  
+                                    <?php echo "<a class='btn theme-blue-button btn-primary' target='_blank' href='judgment-abstract?jcode=$jcode&doc_id=$doc_id'>Suggestion</a>"; ?>
+                                </div> 
+
                             </div>      
                             <?php endif; ?>
                             <?php
