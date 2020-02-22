@@ -61,7 +61,7 @@
          <div class="row">
              <div class="col-md-8 col-md-offset-2 text-center copyright-text">
 
-                 &copy; 2000 Courts Judgments | Designed & Developed By <a href="http://www.laxyosolutionsoft.com/">  &nbsp;Liber Solutions Pvt. Ltd.</a> | Hosting Server <a href="http://www.sipl.net/">  &nbsp;Scorpio Informatics Pvt. Ltd.</a> 
+                 &copy; 2020 Courts Judgments | Designed & Developed By <a href="http://libersolution.com/">  &nbsp;Liber Solutions Pvt.  Ltd.  &nbsp;&nbsp;</a>  |&nbsp;&nbsp;  Server by <a href="http://www.sipl.net/">  &nbsp;Scorpio Informatics Pvt.  Ltd.</a> 
              </div>
          </div>
      </section>

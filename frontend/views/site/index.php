@@ -106,7 +106,7 @@ $this->title = 'Courts Judgments';
           </div>
         </div>
         <div class="item">
-            <?=Html::img('@web/images/landing/Slider 2.jpg', ['class' => 'slider-image'])?>
+            <?=Html::img('@web/images/landing/hitntry/medicine-law-justice.jpg', ['class' => 'slider-image'])?>
           <div class="carousel-caption slider-caption">
             <div class="row">
                        <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">                          
@@ -218,7 +218,7 @@ $records[0]['tr_judgment'];
     </div>
     
     <!-- feature area start -->
-    <section class="feature-area ptb--100" id="feature">
+<!--     <section class="feature-area ptb--100" id="feature">
         <div class="container">
             <div class="section-title">
                 <p>The Unique Story</p>
@@ -261,7 +261,7 @@ $records[0]['tr_judgment'];
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- feature area end -->
    
    <!-- call-action area start -->
@@ -329,7 +329,7 @@ $records[0]['tr_judgment'];
                                             'content' => '<span class="register-form-icon"><i class="fa fa-key"></i></span>'
                                         ],
                                     ]
-                                    ])->textInput([
+                                    ])->passwordInput([
                                         'disabled' => false,
                                         'placeholder' => 'Password'
                                 ])->label(false)?>                                    
@@ -345,7 +345,7 @@ $records[0]['tr_judgment'];
                                             'content' => '<span class="register-form-icon"><i class="fa fa-key"></i></span>'
                                         ],
                                     ]
-                                    ])->textInput([
+                                    ])->passwordInput([
                                         'disabled' => false,
                                         'placeholder' => 'Repeat Password'
                                 ])->label(false)?>                                    
@@ -359,6 +359,17 @@ $records[0]['tr_judgment'];
                                     'template' => '<div class="col-md-12"><div class="col-md-6">{image}</div><div class="col-md-6">{input}</div></div>',
                                 ])->label(false) ?>
                             </div>                            
+                        </div>
+                        <div>
+                          <div class="col-sm-6">
+                            <label>
+                              <?= "I agree to the "?>
+                              <a href="/legal_mix/articles/view?id=2">Terms of Use</a>
+                            </label>
+                          </div>
+                          <div class="col-sm-6">
+                            <?= $form->field($model, 'iagree_tc')->checkBox(['style'=>'width:50px'])->label(false); ?>
+                          </div>
                         </div>
 
                         <div class="form-group row">

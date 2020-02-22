@@ -40,16 +40,17 @@ use kartik\popover\PopoverX;
                                 'linkOptions' => [],
                                 
                             ],
-                           [
+                          /* [
                                 'label' => 'Contact Us',
                                 'url' => ['site/contact'],
                                 'linkOptions' => [],
-                            ],
+                            ],*/
                             
                           ];
                         if (Yii::$app->user->isGuest) {
-                            $menuItems[] = ['label' => 'Login', 'url' => ['site/login']];
                             $menuItems[] = ['label' => 'Sign Up', 'url' => ['site/signup']];
+                            $menuItems[] = ['label' => 'Login', 'url' => ['site/login']];
+                            
                         } else {
                            $menuItems[] = ['label' => 'Logout', 'url' => ['site/logout'], 'data-method' => 'post'];
                            $menuItems[] = 
@@ -91,6 +92,8 @@ use kartik\popover\PopoverX;
                                 ]
                               ];  
                         }
+
+                         $menuItems[] = ['label' => 'Contact Us', 'url' => ['site/contact']];
                         $menuItems[] = '<li>'
                                 . Html::button('<span class="search-icon"><i class="fa fa-search"></i></span> Search', [
                                     'value' => yii\helpers\Url::to(['site/search-form']),

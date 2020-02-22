@@ -678,7 +678,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .footer-column {
     background-color: #0f3652;
     color: #bcdef5;
-    padding-top: 20px;
+   /* padding-top: 20px;*/
+   padding-top: 0px;/*pooja........ date:20-02 */
 }
 .main-footer-alt {
     /*padding-top: 50px;*//*original...*/
@@ -755,9 +756,11 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 .footer-bottom {
     color: #fff;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
+    margin-top: 10px;/*Pooja date:20-02*/
     border-top: 1px solid #fff;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
+    padding-top: 10px;/*Pooja date:20-02*/
 }
 .footer-custom {
     left: 0;

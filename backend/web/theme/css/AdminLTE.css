@@ -2182,7 +2182,7 @@ a:focus {
   border-radius: 4px;
 }
 .timeline-inverse > li > .timeline-item {
-  background: #f0f0f0;
+  background: #fff;
   border: 1px solid #ddd;
   -webkit-box-shadow: none;
   box-shadow: none;
