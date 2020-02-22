@@ -103,6 +103,14 @@ $this->title = 'SIGN UP';
                                 ])->label(false) ?>
                             </div>                            
                         </div>
+                          <div class="row">
+                            <div class="col-sm-4"><label><?= "I agree to the "?><a href="/legal_mix/articles/view?id=2">Terms of Use</a></label></div>
+                            <div class="col-sm-8">
+                                <?= $form->field($model, 'iagree_tc')->checkBox(['style'=>'width:50px'])->label(false); ?>
+                            </div>
+                            
+                                                        
+                        </div>
 
                             <div class="form-group row">
                             <div class="col-md-4 col-md-offset-4">
