@@ -10,7 +10,7 @@ use common\models\User;
 class SignupForm extends Model
 {
     //public $username;
-    public $iagree_tc;
+    public $tnc;
     public $email;
     public $password;
     public $mobile_number;
@@ -26,7 +26,7 @@ class SignupForm extends Model
     {
         return [
 
-           ['iagree_tc', 'compare', 'compareValue' => true,'message' => 'You must agree to the terms and conditions'],
+           ['tnc', 'compare', 'compareValue' => true,'message' => 'You must agree to the terms and conditions'],
            ['mobile_number', 'required'],
 
            ['verifyCode', 'captcha', 'captchaAction' => 'site/captcha'],
@@ -63,7 +63,7 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->email;
         $user->email = $this->email;
-        $user->iagree_tc = $this->iagree_tc;
+        $user->tnc = $this->tnc;
         $user->mobile_number = $this->mobile_number;
         $user->setPassword($this->password);
         $user->generateAuthKey();

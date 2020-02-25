@@ -106,7 +106,7 @@ $this->title = 'Courts Judgments';
           </div>
         </div>
         <div class="item">
-            <?=Html::img('@web/images/landing/hitntry/medicine-law-justice.jpg', ['class' => 'slider-image'])?>
+            <?=Html::img('@web/images/landing/slider-3_medicine_law.jpg', ['class' => 'slider-image'])?>
           <div class="carousel-caption slider-caption">
             <div class="row">
                        <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">                          
@@ -368,7 +368,7 @@ $records[0]['tr_judgment'];
                             </label>
                           </div>
                           <div class="col-sm-6">
-                            <?= $form->field($model, 'iagree_tc')->checkBox(['style'=>'width:50px'])->label(false); ?>
+                            <?= $form->field($model, 'tnc')->checkBox(['style'=>'width:50px'])->label(false); ?>
                           </div>
                         </div>
 
