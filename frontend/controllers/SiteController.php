@@ -17,7 +17,7 @@ use common\models\JudgmentMastSphinxSearch;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ChangePasswordForm;
 use frontend\models\ResetPasswordForm;
-use frontend\models\JudgmentAbstractSuggest;
+use frontend\models\JudgmentComments;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\PlanMaster;
@@ -1152,15 +1152,14 @@ class SiteController extends Controller
     public function actionJudgmentAbstract($jcode="",$doc_id="")
     {
       $username = \Yii::$app->user->identity->username;
-      $model = new JudgmentAbstractSuggest();
+      $model = new JudgmentComments();
       if ($model->load(Yii::$app->request->post())) {
-        $date = date('Y-m-d');
         $model->judgment_code = $jcode;
         $model->doc_id = $doc_id;
         $model->username = $username;
-        $model->created_date = $date;
         $model->save();
         Yii::$app->session->setFlash('success', "Your suggestion for abstract is submitted successfully. Thank you for valuable suggestion.");
+        return $this->refresh();
         
       }
        return $this->render('judgment_abstract', [
