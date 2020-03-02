@@ -67,4 +67,12 @@ class Faq extends \yii\db\ActiveRecord
     {
         return $this->hasOne(FaqCatgMast::className(), ['faq_catg_id' => 'faq_catg_id']);
     }
+
+    public function getTruncatedFaqs()
+    {
+    if (strlen($this->faq_desc) <= 30)
+        return $this->faq_desc;
+    else
+        return substr($this->faq_desc, 0, 30) . '...';
+    }
 }

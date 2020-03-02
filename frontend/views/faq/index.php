@@ -26,11 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'faq_id',
-            'faq_catg_id',
+            //'faq_id',
+           // 'faq_catg_id',
             'faq_title',
             'faq_date',
-            'faq_desc:ntext',
+           // 'faq_desc:ntext',
+            [
+             'attribute'=>'faq_desc',
+             'value'=>'truncatedFaqs',//show limited characters
+            ],
             //'status',
             //'posted_by',
 
