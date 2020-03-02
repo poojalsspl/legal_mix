@@ -18,6 +18,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ChangePasswordForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\JudgmentComments;
+use frontend\models\JudgmentCommentsSearch;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\PlanMaster;
@@ -41,6 +42,19 @@ use yii\data\Pagination;
 use yii\helpers\Json;
 
 
+/***** Comments Category
+Old judgment page redirected from old sidebar
+Plan Subscription start
+Old sidebar start
+Dynamic Dependent Dropdown code start
+Predefined/inbuilt features start
+Manticore function start (2)
+Abstract Suggestion start
+Submenus in header start
+Start of Bareact Sidebar
+
+*****/
+
 
 /**
  * Site controller
@@ -51,12 +65,12 @@ class SiteController extends Controller
      * @inheritdoc
      */
   
+     /*====== Old judgment page redirected from old sidebar =====*/
      public function actionJudgmentdetail()
      {
 
         $judgment_code = $_GET['judgment_code'];  
         //$this->layout = 'InnerPage';
-        
         $model = JudgmentMast::findOne($judgment_code);
         $username = \Yii::$app->user->identity->username;
             $user_log = new BrowsingLog();
@@ -66,13 +80,14 @@ class SiteController extends Controller
             $user_log->username = $username;
             $user_log->browse_url = $url;
             $user_log->save();
-        //print_r($model);die;
-         return $this->render('judgmentdetail', [
+        return $this->render('judgmentdetail', [
         'model' => $model,
       ]);
    
     }
+    /*====== end of old judgment page redirected from old sidebar =======*/
 
+    /*======= Plan Subscription start =======*/
     public function actionPlanform()
     {
         //$this->layout = 'InnerPage';
@@ -82,8 +97,7 @@ class SiteController extends Controller
         $command = $connection->createCommand("SELECT plan,expiry_date from user_plan where username= :username and expiry_date >= NOW()", [':username' => $username ]);
 
         $sel_plan = $command->queryAll();
-       //  echo "<pre>";print_r($sel_plan) ; exit;       
-        if($sel_plan){
+       if($sel_plan){
         return $this->render('planview', [
             'model' => $sel_plan,
             ]);
@@ -386,9 +400,9 @@ class SiteController extends Controller
         ]);
     }
 
-
+     /*===== Plan Subscription end =======*/
     
-
+       /*===== Old sidebar start ======*/
     // To get the Year wise judgement list
      public function actionJlist()
      {
@@ -491,7 +505,9 @@ class SiteController extends Controller
       ]);
    
     }
+    /*====== Old sidebar end =======*/
 
+    /*======= Dynamic Dependent Dropdown code start =======*/
     public function actionSubcat() {
     $out = [];
     $statemodel = new StateMast();
@@ -530,6 +546,8 @@ class SiteController extends Controller
     echo \yii\helpers\Json::encode(['output'=>'', 'selected'=>'']);
 
 }
+
+/*===== Dynamic Dependent Dropdown code end =======*/
     public function behaviors()
     {
         return [
@@ -567,7 +585,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionDynamiccities()
+    /*public function actionDynamiccities()
     {
         $data=Location::model()->findAll('parent_id=:parent_id', 
         array(':parent_id'=>(int) $_POST['country_id']));
@@ -578,7 +596,9 @@ class SiteController extends Controller
                 array('value'=>$value),CHtml::encode($name),true);
         }
     }
+*//*no use*/
 
+    /*====== Predefined/inbuilt features start =======*/
 
    public function actionIndex()
     {
@@ -621,8 +641,6 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        //$this->layout = 'InnerPage';
-
         if (!Yii::$app->user->isGuest) {
             return $this->redirect(['site/dashboard']);
         }
@@ -656,7 +674,7 @@ class SiteController extends Controller
         }
     }
 
-  /*  //pooja
+  /*  //session
 
     public function actionUserSessionUpdate() {
     $session = Yii::$app->session;
@@ -740,20 +758,118 @@ class SiteController extends Controller
        return $this->render('about');
     }
 
-    public function actionBareactsList()
+    public function actionSignup()
     {
-       $models = new BareactCatgMast();
-       $catg_list = $models->getCatglist();
-       return $this->render('bareactslist',[
-       'models' => $catg_list,
-       ]);
+        //$this->layout = 'InnerPageLayout';
+        $model = new SignupForm();
+        $usermodel = new UserMast();
+        if ($model->load(Yii::$app->request->post())) {
+                //$username      = $_POST['SignupForm']['first_name'];
+                $email         = $_POST['SignupForm']['email'];
+                $mobile_number = $_POST['SignupForm']['mobile_number'];
+            if ($user = $model->signup()) {
+                    $id                   = $user->id;
+                    $usermodel->id    = $id;
+                    //$usermodel->username  = $username;
+                    $usermodel->email     = $email;
+                    $usermodel->mobile_1  = $mobile_number;
+                    $usermodel->sign_date = date('Y-m-d h:i:s');
+                    $usermodel->status    = 0;
+                    $usermodel->save(false);
+                    //$username = 'User';
+                    //$this->sendEmail($email);
+                     
+                   
+                    return $this->render('signupsuccess'); 
+            }
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
+
+    /**
+     * Requests password reset.
+     *
+
+     * @return mixed
+     */
+    public function actionRequestPasswordReset()
+    {
+        $model = new PasswordResetRequestForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail()) {
+                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                return $this->goHome();
+            } else {
+                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
+            }
+        }
+
+        return $this->render('requestPasswordResetToken', [
+            'model' => $model,
+        ]);
+    }
+    /**
+     * Resets password.
+     *
+
+     * @param string $token
+
+     * @return mixed
+
+     * @throws BadRequestHttpException
+     */
+    public function actionVerify()
+    {
+        $connection = \Yii::$app->db;
+        $email = $_GET['user_email'];
+        $user_email = base64_decode($email);
+        $model = UserMast::find()->where(['email' => $user_email])->one();
+       
+        
+        $sql = "UPDATE user_mast SET status=1 WHERE id = $model->id";
+        $command = $connection->createCommand($sql);
+       
+        if ($command->execute()==1){
+              Yii::$app->session->setFlash('success', "Thanks for email verification"); 
+          } else {
+                  Yii::$app->session->setFlash('error', "User not saved.");
+              }
+
+         return $this->redirect(['login']);
+
+
+    }
+
+    public function actionResetPassword($token)
+    {
+        try {
+            $model = new ResetPasswordForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+     }
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+
+            Yii::$app->session->setFlash('success', 'New password saved.');
+            return $this->goHome();
+        }
+        return $this->render('resetPassword', [
+            'model' => $model,
+        ]);
+    }
+
+    /*===== Predefined/inbuilt features end ========*/
+
+    
     /**
      * Displays search page.
      *
 
      * @return mixed
      */
+
+     /*====Manticore function start=======*/
     /* for testing purpose 19/06*/
     public function actionSearchnew()
     {
@@ -822,6 +938,7 @@ class SiteController extends Controller
     }
     }
 
+
     public function actionSearch1()
     {   
         if (!Yii::$app->user->isGuest){ 
@@ -852,7 +969,7 @@ class SiteController extends Controller
     }
     }
 
-    /*====Manticore function start=======*/
+   
 
     public function actionSearch()
     {
@@ -1149,8 +1266,13 @@ class SiteController extends Controller
 
     /*=============Manticore function end============*/
 
+    /*=============Abstract Suggestion start============*/
+
     public function actionJudgmentAbstract($jcode="",$doc_id="")
     {
+      $searchModel = new JudgmentCommentsSearch();
+      $dataProvider = $searchModel->searchabstract(Yii::$app->request->queryParams, $jcode);
+
       $username = \Yii::$app->user->identity->username;
       $model = new JudgmentComments();
       if ($model->load(Yii::$app->request->post())) {
@@ -1164,9 +1286,32 @@ class SiteController extends Controller
       }
        return $this->render('judgment_abstract', [
             'model' => $model,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
+       
     }
 
+    public function actionAbstractView(){
+     $id = $_GET['id']; 
+     $model = JudgmentComments::find()->where(['id'=> $id])->one();
+
+     return $this->render('abstract_view',[
+       'model' => $model,
+      ]);
+    }
+
+    public function actionJudgmentsComments(){
+     $searchModel = new JudgmentCommentsSearch();
+     $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+     return $this->render('judgments_comments',[
+       'searchModel' => $searchModel,
+       'dataProvider' => $dataProvider,
+      ]);
+    }
+
+
+   /*=============Abstract Suggestion end============*/
 
     /**
      * Signs user up.
@@ -1174,39 +1319,11 @@ class SiteController extends Controller
 
      * @return mixed
      */
-    public function actionSignup()
-    {
-        //$this->layout = 'InnerPageLayout';
-        $model = new SignupForm();
-        $usermodel = new UserMast();
-        if ($model->load(Yii::$app->request->post())) {
-                //$username      = $_POST['SignupForm']['first_name'];
-                $email         = $_POST['SignupForm']['email'];
-                $mobile_number = $_POST['SignupForm']['mobile_number'];
-            if ($user = $model->signup()) {
-                    $id                   = $user->id;
-                    $usermodel->id    = $id;
-                    //$usermodel->username  = $username;
-                    $usermodel->email     = $email;
-                    $usermodel->mobile_1  = $mobile_number;
-                    $usermodel->sign_date = date('Y-m-d h:i:s');
-                    $usermodel->status    = 0;
-                    $usermodel->save(false);
-                    //$username = 'User';
-                    //$this->sendEmail($email);
-                     
-                   
-                    return $this->render('signupsuccess'); 
-            }
-        }
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
-    }
+    
+
+    /*====== Submenus in header start =========*/
      public function actionDashboard()
      {
-         //$this->layout = 'InnerPage';
-
          $id = Yii::$app->user->identity->id;
          $model = UserMast::findOne($id);
          $username = \Yii::$app->user->identity->username;
@@ -1229,7 +1346,55 @@ class SiteController extends Controller
     
       }
 
-      //Start of Bareact
+
+          public function actionHistory()
+     {
+         $username = Yii::$app->user->identity->username;
+         $model = new \frontend\models\BrowsingLog;
+         $data = $model->find()->where(['username' => $username])->all();
+         return $this->render('history', [
+            'data' => $data,
+            ]); 
+     }
+
+
+         public function actionDashboardnew()
+     {
+        $id = Yii::$app->user->identity->id;
+         $model = UserMast::findOne($id);
+         if($model->status == '0'){
+           Yii::$app->session->setFlash('error', "Please verify your email!");
+             return $this->redirect(['login']);
+             die();
+        } else {
+            return $this->render('dashboardnew', [
+            'model' => $model,
+            ]); 
+        }
+    
+      }
+
+
+      public function actionChangePassword()
+    {
+     $id = \Yii::$app->user->id;
+   try {
+        $model = new ChangePasswordForm($id);
+      
+    } catch (InvalidParamException $e) {
+        throw new BadRequestHttpException($e->getMessage());
+    }
+ 
+    if ($model->load(\Yii::$app->request->post()) && $model->validate() && $model->changePassword()) {
+       Yii::$app->session->setFlash('success', 'Password Changed!');
+    } 
+        return $this->render('changePassword', [
+            'model' => $model,
+        ]);
+     }
+      /*====== Submenus in header end ========*/
+
+      /*====== Start of Bareact Sidebar ========*/
       public function actionBareactSubcatg()
      {
            $act_code = urldecode($_GET['act_code']); 
@@ -1301,35 +1466,9 @@ class SiteController extends Controller
     }
 
 
-    //end of Bareact 
+    /*======== end of Bareact Sidebar ========*/
 
-         public function actionHistory()
-     {
-         $username = Yii::$app->user->identity->username;
-         $model = new \frontend\models\BrowsingLog;
-         $data = $model->find()->where(['username' => $username])->all();
-         return $this->render('history', [
-            'data' => $data,
-            ]); 
-     }
-
-         public function actionDashboardnew()
-     {
-         //$this->layout = 'InnerPage';
-
-         $id = Yii::$app->user->identity->id;
-         $model = UserMast::findOne($id);
-         if($model->status == '0'){
-           Yii::$app->session->setFlash('error', "Please verify your email!");
-             return $this->redirect(['login']);
-             die();
-        } else {
-            return $this->render('dashboardnew', [
-            'model' => $model,
-            ]); 
-        }
-    
-}
+     
 
 
      /*===========Manticore function start============*/
@@ -1615,76 +1754,7 @@ public function actionStep2update()
  }
 
 
-    /**
-     * Requests password reset.
-     *
-
-     * @return mixed
-     */
-    public function actionRequestPasswordReset()
-    {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
-            }
-        }
-
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
-    }
-    /**
-     * Resets password.
-     *
-
-     * @param string $token
-
-     * @return mixed
-
-     * @throws BadRequestHttpException
-     */
-    public function actionVerify()
-    {
-        $connection = \Yii::$app->db;
-        $email = $_GET['user_email'];
-        $user_email = base64_decode($email);
-        $model = UserMast::find()->where(['email' => $user_email])->one();
-       
-        
-        $sql = "UPDATE user_mast SET status=1 WHERE id = $model->id";
-        $command = $connection->createCommand($sql);
-       
-        if ($command->execute()==1){
-              Yii::$app->session->setFlash('success', "Thanks for email verification"); 
-          } else {
-                  Yii::$app->session->setFlash('error', "User not saved.");
-              }
-
-         return $this->redirect(['login']);
-
-
-    }
-
-    public function actionResetPassword($token)
-    {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidParamException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-     }
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-
-            Yii::$app->session->setFlash('success', 'New password saved.');
-            return $this->goHome();
-        }
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
-    }
+    
 
      public function sendEmail($user_email="")
     {
@@ -1745,27 +1815,8 @@ public function actionStep2update()
          else {
             return $this->render('index');
         }
-    }    
-    public function actionChangePassword()
-    {
+    }  
 
-    //$this->layout = 'InnerPage';
-    $id = \Yii::$app->user->id;
 
-    try {
-        $model = new ChangePasswordForm($id);
-      
-    } catch (InvalidParamException $e) {
-        throw new BadRequestHttpException($e->getMessage());
-    }
- 
-    if ($model->load(\Yii::$app->request->post()) && $model->validate() && $model->changePassword()) {
-       Yii::$app->session->setFlash('success', 'Password Changed!');
-    } 
-        return $this->render('changePassword', [
-            'model' => $model,
-        ]);
-    
-}
 }
 

@@ -1,6 +1,8 @@
 <?php
 
 namespace frontend\models;
+use app\models\UserMast;
+use frontend\models\JudgmentMast;
 
 use Yii;
 
@@ -54,5 +56,23 @@ class JudgmentComments extends \yii\db\ActiveRecord
             'username' => 'Username',
             'crdt' => 'Crdt',
         ];
+    }
+
+    public function getTruncatedAbstract()
+    {
+    if (strlen($this->judgment_user_comment) <= 60)
+        return $this->judgment_user_comment;
+    else
+        return substr($this->judgment_user_comment, 0, 60) . '.....';
+    }
+
+    public function getFullname() //used for site/judgment-abstract
+    {
+        return $this->hasOne(UserMast::className(), ['email' => 'username']);
+    }
+
+    public function getJTitle() //used for site/judgments-comments
+    {
+        return $this->hasOne(JudgmentMast::className(), ['judgment_code' => 'judgment_code']);
     }
 }

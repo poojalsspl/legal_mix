@@ -2,14 +2,26 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use frontend\models\JudgmentComments;
+use frontend\models\JudgmentMast;
 use yii\helpers\ArrayHelper;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
 $jcode = $_GET['jcode'];
 $doc_id = $_GET['doc_id'];
 
 $status = ['1'=>'Public','2'=>'Private'];
 
+$judgment = ArrayHelper::map(JudgmentMast::find()
+  ->where(['judgment_code'=>$jcode])
+  ->all(),
+    'judgment_code','judgment_title');
+foreach ($judgment as $judgment_value) {
+
+}
+
 ?>
 
+<h2><?= $judgment_value; ?></h2>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 
@@ -22,7 +34,7 @@ $status = ['1'=>'Public','2'=>'Private'];
           <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Add Suggestion</h3>
+              <h3 class="box-title">Add Comments</h3>
              
               <div class="box-tools">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -48,7 +60,7 @@ $status = ['1'=>'Public','2'=>'Private'];
         <div class="col-md-8">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Comments Setion</h3>
+              <h3 class="box-title">Comments Section</h3>
 
               <div class="box-tools pull-right">
                 <div class="has-feedback">
@@ -63,49 +75,48 @@ $status = ['1'=>'Public','2'=>'Private'];
                
                
               </div>
-              <div class="table-responsive mailbox-messages">
-                <table class="table table-hover table-striped">
-                  <tbody>
-                  	<?php
-                  	$model_judg = new JudgmentComments();
-                    $model_comm = $model_judg->find()->where(['status' => '1'])->andWhere(['judgment_code'=>$jcode])->all();
-                    foreach ($model_comm as $valuecom) {
-                    	$username = $valuecom['username'];
-                    	$comment = $valuecom['judgment_user_comment'];
-                    	$crdt = $valuecom['crdt'];
-                    	$created_date = substr($crdt, 0,10); 
-                    	
-                   
-                     ?>
-                  <tr>
-                   <td class="mailbox-name"><a href="read-mail.html"><?php echo $valuecom['username'] ?></a></td>
-                    <td class="mailbox-subject"><?php if (strlen($comment) > 70) echo $comment = substr($comment, 0, 70) . "..."; ?>
-                    </td>
-                    <td class="mailbox-date"><?php echo $created_date; ?></td>
-                  </tr>
-              <?php } ?>
-                  
-                 </tbody>
-                </table>
-                <!-- /.table -->
-              </div>
-              <!-- /.mail-box-messages -->
+              <?php Pjax::begin(); ?>    
+           <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'crdt:date',//diaplay only date from datetime
+            [
+             'attribute'=>'username',
+             'label'=>'Name',
+             'value'=>'fullname.first_name',//show name in place of email 
+            ],
+            [
+             'attribute'=>'judgment_user_comment',
+             'value'=>'truncatedAbstract',//show limited characters
+            ],
+            
+            
+
+           ['class' => 'yii\grid\ActionColumn',
+            'header'=>'Actions',
+            'template' => '{View}', 
+            'buttons' => [
+                
+               'View' => function ($url, $model, $key) {
+                return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['abstract-view', 'id'=>$model->id]);
+            },
+             
+                'format' => 'raw',
+
+              ],
+                 'contentOptions' => [ "class"=>'action-btns', 'width'=>''],
+        ],
+
+
+        ],
+    ]); ?>
+<?php Pjax::end(); ?>
+                <!-- /.mail-box-messages -->
             </div>
             <!-- /.box-body -->
-            <div class="box-footer no-padding">
-              <div class="mailbox-controls">
-               
-                <div class="pull-right">
-                  1-50/200
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                  </div>
-                  <!-- /.btn-group -->
-                </div>
-                <!-- /.pull-right -->
-              </div>
-            </div>
+  
           </div>
           <!-- /. box -->
         </div>
