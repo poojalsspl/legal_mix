@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use kartik\form\ActiveForm;
 use yii\captcha\Captcha;
 
+
 $this->title = 'SIGN UP';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>

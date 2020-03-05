@@ -73,3 +73,9 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
+<?php 
+echo LinkPager::widget([
+    'pagination' => $pages,
+
+]);
+?>

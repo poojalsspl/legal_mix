@@ -870,6 +870,22 @@ class SiteController extends Controller
      */
 
      /*====Manticore function start=======*/
+         public function actionHighCourt()
+    {
+      $models = JudgmentCourtCount::find()->select(['judgment_count','court_name'])->where(['court_type' => '2'])->orderBy('court_name')->all();
+       return $this->render('high_court_list',[
+         'models' => $models,
+       ]);
+    }
+
+    public function actionTribunalCourt()
+    {
+      $models = JudgmentCourtCount::find()->select(['judgment_count','court_name'])->where(['court_type' => '3'])->orderBy('court_name')->all();
+       return $this->render('tribunal_court_list',[
+         'models' => $models,
+       ]);
+    }
+
     /* for testing purpose 19/06*/
     public function actionSearchnew()
     {
@@ -979,8 +995,12 @@ class SiteController extends Controller
         $model = new JudgmentMastSphinxSearch();
         //$suggest=$model->keyWordSuggestion("");
         $data = $model->searchJudgements($params);
+        $data['startDate'] = isset($params['startDate']) ? $params['startDate'] : '';
+        $data['endDate'] = isset($params['endDate']) ? $params['endDate'] : '';
+        $data['order'] = isset($params['o']) ? $params['o'] : '';
         $data['term'] = isset($params['q']) ? $params['q'] : '';
         $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
+        $data['court_code'] = isset($params['court_code']) ? $params['court_code'] : '';
         $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
         $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
         if($data['term_again']==0):
@@ -1350,11 +1370,24 @@ class SiteController extends Controller
           public function actionHistory()
      {
          $username = Yii::$app->user->identity->username;
-         $model = new \frontend\models\BrowsingLog;
+         $query = BrowsingLog::find()->where(['username' => $username]);
+          $countQuery = clone $query;
+          $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize'=>'20']);
+          $data = $query->offset($pages->offset)
+          ->limit($pages->limit)
+          ->all();
+
+           return $this->render('history', [
+              'data' => $data,
+              'pages' => $pages,
+           ]);
+
+
+        /* $model = new \frontend\models\BrowsingLog;
          $data = $model->find()->where(['username' => $username])->all();
          return $this->render('history', [
             'data' => $data,
-            ]); 
+            ]); */
      }
 
 
@@ -1412,7 +1445,7 @@ class SiteController extends Controller
            //$barDesc = $barMast->getbareactDesc($act_sub);
           $query = BareactMast::find()->where(['act_sub_catg_code' => $act_sub])->orderBy('bareact_desc');
           $countQuery = clone $query;
-          $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize'=>'10']);
+          $pages = new Pagination(['totalCount' => $countQuery->count()]);
           $barDesc = $query->offset($pages->offset)
           ->limit($pages->limit)
           ->all();
