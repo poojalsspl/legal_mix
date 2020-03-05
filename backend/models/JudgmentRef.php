@@ -60,7 +60,7 @@ class JudgmentRef extends \yii\db\ActiveRecord
 
     /*==========Manticore Function Start=========================*/
     public static function getJudgmentCitiedBY($RIdBy){
-        $data=array('records'=>null,'total'=>0);
+       /* $data=array('records'=>null,'total'=>0);
         $record=JudgmentRef::find()
             ->asArray()
             ->select(array("judgment_title_ref","judgment_code"))
@@ -78,6 +78,19 @@ class JudgmentRef extends \yii\db\ActiveRecord
 
             }
             return $data=array("records"=>$result,'total'=>$totalRecords);
+        }
+        return $data;*/
+        $data = array('records' => null, 'total' => 0);
+        $record = JudgmentMast::getCitedBy($RIdBy);
+        if(!empty($record)){
+            foreach ($record as $value) {
+                    if($value['judgment_title'] || $value['court_name']){
+                    $result[] = $value['judgment_title'];
+                }
+            }
+            if(!empty($result)){
+            return $data = array("records" => $result, 'total' => count($result));
+            }
         }
         return $data;
     }

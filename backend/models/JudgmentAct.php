@@ -144,23 +144,17 @@ class JudgmentAct extends \yii\db\ActiveRecord
 
 
     public static function getJudgmentCitied($RId){
-        $data=array('records'=>null,'total'=>0);
-        $record=JudgmentAct::find()
-            ->asArray()
-            ->select(array("judgment_title","doc_id","judgment_code"))
-            ->where(['j_doc_id' =>$RId])
-            ->groupBy("judgment_title")
-            ->all();
-        $totalRecords= JudgmentAct::find()
-            ->asArray()
-            ->where(['j_doc_id' =>$RId])
-            ->groupBy("judgment_title")
-            ->count();
-        if(!empty($record) && isset($record["0"])) {
+         $data = array('records' => null, 'total' => 0);
+        $record = JudgmentMast::getCitedIn($RId);
+        if(!empty($record)){
             foreach ($record as $value) {
-                $result[] = $value["judgment_title"];
+                if($value['judgment_title_ref'] && $value['court_name']){
+                    $result[] = $value['judgment_title_ref'];
+                }
             }
-            return $data=array("records"=>$result,'total'=>$totalRecords);
+            if(!empty($result)){
+                return $data = array("records" => $result, 'total' => count($result));
+            }
         }
         return $data;
     }

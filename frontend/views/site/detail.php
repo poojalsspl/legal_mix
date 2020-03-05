@@ -17,6 +17,9 @@ $this->title = 'Search';
 //print_r($adovcate_respondnat);exit;
 //foreach($act_title as $values){?>
 <?php //print_r($act_title);die;?>
+<style type="text/css" media="print">
+BODY {display:none;visibility:hidden;}
+</style>
 
 <?php //} ?>
 <div class="template">
@@ -29,6 +32,11 @@ $this->title = 'Search';
                     <div class="row side-menu-content">
                         <div class="box box-v2">   
                             <div class="box-body">
+                                <?php
+        
+        if (!empty($act_count) || !empty($ref_count)  || !empty($ref_by_count) || !empty($judge_name) || !empty($advocate_name) || !empty($advocate_respond_name) || 1==1 ) {
+       
+        ?>
                                 <?php
 
                                    if (!empty($act_title) && $act_count > 0){
@@ -46,11 +54,11 @@ $this->title = 'Search';
                                         ];
                                     }
                                 }
-                                if(empty($act_title)){
+                               if(empty($act_title)){
                                      $acts_label = [];
                                   $acts_label[] = '';
                                 }
-                                if (!empty($judgment_citied) && $judgment_citied_count > 0){ 
+                               if (!empty($judgment_citied) && $judgment_citied_count > 0){ 
                                 $cited_label = [];
                                 foreach ($judgment_citied as $citied_value)
                                 {
@@ -66,12 +74,12 @@ $this->title = 'Search';
 
                                 }
                             }
-                            if(empty($judgment_citied)){
+                           if(empty($judgment_citied)){
                                 $cited_label = [];
                                   $cited_label[] = '';
                                   
                                 }
-                                if (!empty($judgment_citied_by) && $judgment_citied_by_count > 0 ) {
+                               if (!empty($judgment_citied_by) && $judgment_citied_by_count > 0 ) {
                                 $citedBy_label = [];
                                 foreach ($judgment_citied_by as $citiedby_value)
                                 {
@@ -93,8 +101,64 @@ $this->title = 'Search';
                                   $citedBy_label[] = '';
                                  
                                 }
+                                 if (!empty($judges) && $judges_count > 0){
+                                $judges_label = [];
+                                foreach ($judges as $judge){
+                                    $judges_label[] = [
+                                            'label' => $judge,
+                                            'items' => [
+                                                [
+                                                    
+                                                   
+                                                ]
+                                            ]
+                                        ];
 
+                                }
+
+                            }
+                            if(empty($judges)){
+                                $judges_label = [];
+                                  $judges_label[] = '';
+                                 
+                                }
+                                if (!empty($adovcate_respondnat) ||  !empty($advocate_appellant))  {
+                                           $respondant_label = [];
+                                            foreach ($adovcate_respondnat as $respondant) {
+                                               $respondant_label[] = [
+                                                            'label' => $respondant,
+                                                            'items' => [
+                                                            [
+                                                    
+                                                            ]
+                                                        ]
+                                                          ];
+                                            }
+                                        }
+                                        if(empty($adovcate_respondnat)){
+                                     $respondant_label = [];
+                                     $respondant_label[] = '';
+                                    }     
+                                  if (!empty($advocate_appellant)){      
+                                            $appellant_label = [];
+                                            foreach ($advocate_appellant as $appellant){
+                                            
+                                               $appellant_label[] = [
+                                                            'label' => $appellant,
+                                                            'items' => [
+                                                            [
+                                                    
+                                                            ]
+                                                        ]
+                                                          ];
+                                                    }
+                                                }
+                             if(empty($advocate_appellant)){
+                                  $appellant_label = [];
+                                  $appellant_label[] = '';
+                                }         
 /*
+
                                   if (!empty($judges) && $judges_count > 0){
                                 $judges_label = [];
                                 foreach ($judges as $judge){
@@ -169,6 +233,7 @@ $this->title = 'Search';
                                             'label' => 'Judgements Cited By('.$judgment_citied_by_count.')', 
                                             'icon' => 'plus',
                                             'items' => $citedBy_label
+
                                         ],
                                        /* [
                                             'label' => 'Judges('.$judges_count.')', 
@@ -186,15 +251,32 @@ $this->title = 'Search';
                                             'icon' => 'plus',
                                             'items' => $respondant_label
                                         ],*/
-                                        ]; 
+                                        [
+                                            'label' => 'Judges('.$judges_count.')', 
+                                            'icon' => 'plus',
+                                            'items' => $judges_label
+                                        ],
+
+                                        [
+                                            'label' => 'Advocate', 
+                                            'icon' => 'plus',
+                                            'items' => $appellant_label
+                                        ],
+                                        [
+                                            'label' => 'Responded', 
+                                            'icon' => 'plus',
+                                            'items' => $respondant_label
+                                        ],
+                                        
+                                    ]; 
                                                   
                                        
                                         
                                   
 
                                 ?>
-                                 <?=$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
-
+                                 <?php //$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
+                       <?php } ?>
 
         
                  </div>

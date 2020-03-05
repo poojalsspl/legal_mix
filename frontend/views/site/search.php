@@ -40,11 +40,11 @@ $this->title = 'Search';
                             </div> 
                              <div class="col-md-4 col-sm-8 col-xs-12">
                                 <div class="form-group">
-                                    <select class="form-control select2" style="width: 100%;">
-                                      <option selected="selected">SORT SEARCH RESULT</option>
-                                      <option>B Judgement Title</option>
-                                      <option>C Judgement Date</option>
-                                      <option>D Judgement Name</option>
+                                    <select class="form-control select2" style="width: 100%;" name="o">
+                                        <option selected="selected" value="0">SORT SEARCH RESULT</option>
+                                      <option value="judgment_title" <?php echo ($order == 'judgment_title')?"selected":""; ?>>Judgement Title</option>
+                                      <option value="court_name" <?php echo ($order == 'court_name')?"selected":""; ?>>Court Name</option>
+                                      <option value="judgment_date" <?php echo ($order == 'judgment_date')?"selected":""; ?>>Judgement Date</option>
                                     </select>
                                   </div>
                             </div>

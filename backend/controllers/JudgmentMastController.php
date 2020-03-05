@@ -252,7 +252,7 @@ class JudgmentMastController extends Controller
      * @return mixed
      */
     
-     public function actionMemcacheOverruled()
+    /* public function actionMemcacheOverruled()
     {
       $cache = Yii::$app->cache;
      $courtMast = ArrayHelper::map(CourtMast::find()->all(), 'court_code', 'court_name');
@@ -260,7 +260,7 @@ class JudgmentMastController extends Controller
      $jsub_catg_description = ArrayHelper::map(JsubCatgMast::find()->all(), 'jsub_catg_id', 'jsub_catg_description');
          $cache->set('courtMast', $courtMast);
          $cache->set('jcatg_description', $jsub_catg_description);
-         $cache->set('jsub_catg_description', $jsub_catg_description);
+         $cache->set('jsub_catg_description', $jsub_catg_description);*/
 
       //$judgmentOverruled = ArrayHelper::map(JudgmentMast::find()->select('judgment_code,judgment_title')->all(), 'judgment_code', 'judgment_title');
 /*    function($result) {
@@ -281,7 +281,7 @@ class JudgmentMastController extends Controller
     else{
         echo "Error";
     }*/
-    }
+   /* }*/
     public function actionUpdate($code)
     {
     	ini_set('memory_limit', '-1');
