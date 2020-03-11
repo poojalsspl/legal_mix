@@ -652,26 +652,34 @@ class SiteController extends Controller
              $userdata = UserMast::find()->where(['id'=>Yii::$app->user->id])->one();
              if($userdata->status == '1')
              {
-               
-
                return $this->redirect(['site/step2']);
 
              } else if($userdata->status == '2'){
-               
+             $user_email = $userdata->email;
+             $user_exp = UserPlanNew::find()->where(['username'=>$user_email])->one();
+             $user_expiry = $user_exp->expiry_date; 
+             $current_date = date('Y-m-d');
+             if($current_date == $user_expiry || $current_date > $user_expiry){
+              Yii::$app->user->logout();
+              return $this->redirect(['site/account-expiry']);
+             }else {  
+
                return $this->redirect(['site/dashboard']);
+             }
              } else if($userdata->status == '0'){
 
                      Yii::$app->user->logout();
-                    // Yii::$app->session->clear();
-                
-                
-                 return $this->render('signuperror'); 
+                   return $this->render('signuperror'); 
              }
         } else {
             return $this->render('login', [
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionAccountExpiry(){
+      return $this->render('account_expiry'); 
     }
 
   /*  //session
@@ -1423,7 +1431,7 @@ class SiteController extends Controller
         Yii::$app->user->logout();
         Yii::$app->session->setFlash('success', 'Password Changed!');
         return $this->goHome();
-        
+
     } 
         return $this->render('changePassword', [
             'model' => $model,
