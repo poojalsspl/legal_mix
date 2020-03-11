@@ -25,11 +25,7 @@ $this->title = $model->title;
                                 </div>        
                             </div>
                            
-                            <div class="box-body">
-                                <div id="wrapper">
-                                   <?=Html::img('@web/images/advertise/5 Post.png')?>
-                                </div>        
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
