@@ -27,6 +27,15 @@ use kartik\popover\PopoverX;
                             ]
                         ]);
                        $menuItems = [
+
+                            '<li>'
+                                . Html::button('<span class="search-icon"><i class="fa fa-search"></i></span> Search', [
+                                    'value' => yii\helpers\Url::to(['site/search-form']),
+                                    'class' => 'btn-link showModalButton search-button',
+                                    'title' => 'Search',
+                                ])
+                                . '</li>',
+                               
                             [
                                 'label' => 'Home',
                                 'url' => ['site/index'],
@@ -83,6 +92,11 @@ use kartik\popover\PopoverX;
                                         'url' => ['site/search-advancednew']
                                     ],
 
+                                    [ 
+                                        'label' => 'My Judgment Comments',
+                                        'url' => ['site/judgments-comments']
+                                    ],
+
                                     [
                                         'label' => 'History',
                                         'url' => ['site/history']
@@ -94,13 +108,7 @@ use kartik\popover\PopoverX;
                         }
 
                          $menuItems[] = ['label' => 'Contact Us', 'url' => ['site/contact']];
-                        $menuItems[] = '<li>'
-                                . Html::button('<span class="search-icon"><i class="fa fa-search"></i></span> Search', [
-                                    'value' => yii\helpers\Url::to(['site/search-form']),
-                                    'class' => 'btn-link showModalButton search-button',
-                                    'title' => 'Search',
-                                ])
-                                . '</li>';
+                       
                         echo Nav::widget([
                             'options' => ['class' => 'navbar-nav navbar-right theme-color-main nav-alt custom-navbar pdl-50 toggle-menu'],
                             'items' => $menuItems,
