@@ -1419,7 +1419,11 @@ class SiteController extends Controller
     }
  
     if ($model->load(\Yii::$app->request->post()) && $model->validate() && $model->changePassword()) {
-       Yii::$app->session->setFlash('success', 'Password Changed!');
+       
+        Yii::$app->user->logout();
+        Yii::$app->session->setFlash('success', 'Password Changed!');
+        return $this->goHome();
+        
     } 
         return $this->render('changePassword', [
             'model' => $model,
