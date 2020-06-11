@@ -23,6 +23,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\PlanMaster;
 use frontend\models\PlanMasterNew;
+use frontend\models\PlanMast;
 use frontend\models\BrowsingLog;
 use frontend\models\JudgmentActCount;
 use backend\models\CountryMast;
@@ -253,6 +254,17 @@ class SiteController extends Controller
         ]);
     }
    
+
+   public function actionPlanformms()
+    {
+      $model = PlanMast::find()->all();
+
+      return $this->render('planformms_test',[
+       'model' => $model,
+      ]);
+
+    }
+    
 
     public function actionEditplan()
     {
@@ -1577,7 +1589,7 @@ class SiteController extends Controller
 
      public function actionSearchAdvance1()
     {
-        //$this->layout = 'InnerPage';
+        $this->layout = 'InnerPage';
         $params = \Yii::$app->request->get();
         $search = new AdvSearch();
         $courtsData = $search->getTreeForCourts();

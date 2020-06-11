@@ -459,8 +459,10 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         $query->limit($params['size'])->offset($offset);
 
         $rs = $query->search();
+       // echo $query->createCommand()->getRawSql();die;
         //print_r($rs);exit;
-        //print_r($rs["facets"]);die;
+
+        //print_r(json_encode($rs["facets"]));die;
         //proceed facets
         $facetsdata = $this->processFacets($rs["facets"]);
         //print_r($facetsdata);exit;
