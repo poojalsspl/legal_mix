@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
 
-'homeUrl' => '/cjadmin',
+//'homeUrl' => '/legal_mix/cjadmin',
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
@@ -21,9 +21,9 @@ return [
 		
         'request' => [
             'csrfParam' => '_csrf-backend',
-	'baseUrl' => '/cjadmin',
+	//'baseUrl' => '/legal_mix/cjadmin',
         ],
-        'cache' => [
+       /* 'cache' => [
             'useMemcached' => true,
             'class' => 'yii\caching\MemCache',
             'servers' => [
@@ -35,7 +35,7 @@ return [
                 
             ],
         ],
-    
+    */
         'user' => [
 			//'class' => 'mdm\admin\models\User',
             'identityClass' => 'common\models\User',
@@ -58,12 +58,12 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'urlManager' => [
+       /* 'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
-        ],
+        ],*/
     ],
 	  
     'params' => $params,

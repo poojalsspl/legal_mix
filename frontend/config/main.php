@@ -1,30 +1,31 @@
 <?php
-use \kartik\tree\Module;
-use yii\helpers\Url;
+//use \kartik\tree\Module;
+//use yii\helpers\Url;
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+    require __DIR__ . '/../../common/config/params.php',
+    require __DIR__ . '/../../common/config/params-local.php',
+    require __DIR__ . '/params.php',
+    require __DIR__ . '/params-local.php'
 );
 
 return [
-'homeUrl' => 'http://localhost/legal_mix/',
+//'homeUrl' => 'http://localhost/legal_mix/',
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'homeUrl' => '/legal_mix/',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'mailer' => [
+        /*'mailer' => [
         'class' => 'yii\swiftmailer\Mailer',
         'viewPath' => '@common/mail',
         'transport' => [
         'class' => 'Swift_SmtpTransport',
         'host' =>  'smtp.gmail.com',
-        'username' => 'testforpracticedemodata@gmail.com',
-        'password' => 'testtestdemo',
+        'username' => '',
+        'password' => '',
         'port' => '587',
-        'encryption' => 'tls',
+        'encryption' => 'tls',*/
         /*'streamOptions' => [ 
             'ssl' => [ 
                 'allow_self_signed' => true,
@@ -32,16 +33,16 @@ return [
                 'verify_peer_name' => false,
             ],
         ]*/
-         ],
+         /*],
          'useFileTransport' => false,
-         ],
+         ],*/
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'baseUrl' => '/legal_mix/',
+            'baseUrl' => '/legal_mix',
         ],
-        'urlManager'=>[
+       /* 'urlManager'=>[
             'scriptUrl'=>'/legal_mix/',
-        ],
+        ],*/
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -63,16 +64,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'urlManager' => [
+         'urlManager' => [
+            'baseUrl' => '/legal_mix',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-//	    '<action:(.*)>' => 'site/<action>',
-          //'<controller:(site)>/<action:(detail)>/<id:\w+>' => '<controller>/<action>',
-           '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>'   
-          //'<controller:(site)\w+>/<action:(detail)\w+>/<id:\d+>'=>'<controller>/<action>'      
             ],
         ],
+       /* 'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [*/
+//	    '<action:(.*)>' => 'site/<action>',
+          //'<controller:(site)>/<action:(detail)>/<id:\w+>' => '<controller>/<action>',
+          // '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>'   
+          //'<controller:(site)\w+>/<action:(detail)\w+>/<id:\d+>'=>'<controller>/<action>'      
+       /*     ],
+        ],*/
     ],
     'params' => $params,
 ];
