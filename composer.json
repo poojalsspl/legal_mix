@@ -80,15 +80,15 @@
   ],
 
 
-    "extra": {
+   /* "extra": {
         "asset-installer-paths": {
         "npm-asset-library": "vendor/npm",
         "bower-asset-library": "vendor/bower"
         }
-    },
-    "scripts": {
+    },*/
+    /*"scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
-    },
+    },*/
     "autoload": {
 
          "psr-4": {
