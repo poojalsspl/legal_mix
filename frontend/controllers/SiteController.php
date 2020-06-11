@@ -41,6 +41,8 @@ use app\models\UserPlanNew;
 use app\models\UserMast;
 use yii\data\Pagination;
 use yii\helpers\Json;
+use kartik\mpdf\Pdf;
+use mPDF;
 
 
 /***** Comments Category
@@ -413,6 +415,58 @@ class SiteController extends Controller
     }
 
      /*===== Plan Subscription end =======*/
+
+          public function actionJudgmentpdf($id)
+    { 
+        
+        $sql = (new \yii\db\Query());
+        $sql->select(['court_name','judgment_date','judgment_title','appellant_name','respondant_name','judges_name','judgment_abstract','judgment_text']) 
+           ->from('judgment_mast')
+           ->where('judgment_code=:judgment_code', [':judgment_code' => $id]);
+        $command = $sql->createCommand();
+        $data = $command->queryAll(); 
+        
+         $content = $this->renderPartial('_reportView', [
+            'model' => $data,
+            
+        ]);
+         // setup kartik\mpdf\Pdf component
+    $pdf = new Pdf([
+        // set to use core fonts only
+        'mode' => Pdf::MODE_CORE, 
+        // A4 paper format
+        'format' => Pdf::FORMAT_A4, 
+        // portrait orientation
+        'orientation' => Pdf::ORIENT_PORTRAIT, 
+        // stream to browser inline
+        'destination' => Pdf::DEST_BROWSER, 
+        // your html content input
+        'content' => $content,  
+        // format content from your own css file if needed or use the
+        // enhanced bootstrap css built by Krajee for mPDF formatting 
+        'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+        // any css to be embedded if required
+        'cssInline' => '.kv-heading-1{font-size:15px}', 
+         // set mPDF properties on the fly
+        'options' => [
+            'title' => 'Court Judgement',
+             'showWatermarkText' => true, 
+        ],
+         // call mPDF methods on the fly
+        'methods' => [ 
+            'SetWatermarkText' => 'courtsjudgments.com',
+            'SetHeader'=>['Courts Judgments'], 
+            'SetFooter'=>['{PAGENO}'],
+        ]
+    ]);
+    
+    // return the pdf output as per the destination setting
+    return $pdf->render(); 
+
+
+    }
+  
+
     
        /*===== Old sidebar start ======*/
     // To get the Year wise judgement list

@@ -288,9 +288,11 @@ BODY {display:none;visibility:hidden;}
         
                 
       
-
+     
 
                 <!--Content Section-->
+                <?php $jcode = $data["judgment_code"]; ?>
+                <a href="/legal_mix/site/judgmentpdf?id=<?php echo $jcode;?>" class="btn btn-primary">Generate PDF</a>
                 <div class="col-md-9 border-green">
                     <div class="row">
                     	
