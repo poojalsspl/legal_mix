@@ -105,6 +105,7 @@ use kartik\popover\PopoverX;
                                     '<li class="divider"></li>',                                      
                                 ]
                               ];  
+                               $menuItems[] = ['label' => 'Dictionary', 'url' => ['/dictionary/search']]; 
                         }
 
                          $menuItems[] = ['label' => 'Contact Us', 'url' => ['site/contact']];

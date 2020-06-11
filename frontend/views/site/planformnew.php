@@ -52,7 +52,7 @@ use frontend\models\JudgmentMast;
                                     ];          */
                                 ?>
 
-                                <?php//$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
+                                <?php //echo $this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
                             </div>
                         </div>
                     </div>

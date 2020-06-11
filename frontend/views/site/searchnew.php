@@ -104,115 +104,129 @@ $this->title = 'Search';
             <div class="row">
 
                 <!--sidebar code here-->
-                         <!--SideBar Menu-->
-               <div class="col-md-3 border-green side-menu">
-                    <div class="row side-menu-content">
-                        <div class="box box-v2">   
-                            <div class="box-body">
-                                 <?php 
-                                    $items = [];
-                                    
-                                    //Generate Court Items <li> codes/
-                                    if (!empty(( $court_data = $facets['court']))) {
-                                        foreach ($facets['court'] as $i=> $court_type) {
-                                            $items[($i.'courts')] = [
-                                            'label' => ArrayHelper::getValue($court_type, 'name', 'not-set'),
-                                            'icon' => 'plus',
-                                            'items' => []
-                                        ];
-                                            if (is_array( ($courts = $court_type['items']))) {
-                                                foreach ($courts as $court) {
-                                                    //print_r($items[($i.'courts')]['items']);
-                                                    $items[($i.'courts')]['items'][] = [
-                                                        'label' => ArrayHelper::getValue($court, 'name', 'not-set') . ' (' . ArrayHelper::getValue($court, 'count', '#') . ' )',
-                                                        'url' => Url::current(['court_code' => $court['code']]),
-                                                         $court["name"] . " (" . $court["count"] . ")",
+     <!--SideBar Menu-->
+<div class="col-md-3 border-green side-menu">
+<div class="row side-menu-content">
+    <div class="box box-v2">   
+        <div class="box-body">
+             <?php 
+                $items = [];
+                print_r($facets);
+                echo "<hr>";
+                $dispostion = $facets['dispostion'];
+                foreach($dispostion as $dispostion_data){
+                   echo $dispostion_data['text']." (".$dispostion_data['count'].")<br>"; 
+                }die;
+                //Generate Court Items <li> codes/
+                if (!empty(( $court_data = $facets['court']))) {
+                    foreach ($facets['court'] as $i=> $court_type) {
+                        $items[($i.'courts')] = [
+                        'label' => ArrayHelper::getValue($court_type, 'name', 'not-set'),
+                        'icon' => 'plus',
+                        'items' => []
+                    ];
+                        if (is_array( ($courts = $court_type['items']))) {
+                            foreach ($courts as $court) {
+                                //print_r($items[($i.'courts')]['items']);
+                                $items[($i.'courts')]['items'][] = [
+                                    'label' => ArrayHelper::getValue($court, 'name', 'not-set') . ' (' . ArrayHelper::getValue($court, 'count', '#') . ' )',
+                                    'url' => Url::current(['court_code' => $court['code']]),
+                                     $court["name"] . " (" . $court["count"] . ")",
+                                ];
+                            }
+                        }
+                    
+                    }
+                    
+                }
+                //Disposition
+                   if (!empty(($disposition_data = $facets['disposition']))) {
+
+
+                   }
+                //Disposition
+
+                //Generate Year Items <li> codess.
+                if (!empty(( $years_data = $facets['yearsdata']))) {
+                    if (is_array(($years = $years_data['years'])))
+                    {
+                        $items['years'] = [
+                                'label' => 'Years',
+                                'icon' => 'plus',
+                                'items' => [],
+                            ];
+                        foreach ($years as $key => $year) {
+                            $items['years']['items'][$key] = [
+                                'label' => $key,
+                                'url' => Url::current(['j_year' => $key['value']]),$key,
+                                'icon' => 'plus',
+                                'items' => [],
+                            ];
+                            if (is_array($year)) {
+                                foreach ($year as $code => $month) {
+                                    $items['years']['items'][$key]['items'][] = [
+                                        'label' => ArrayHelper::getValue($month, 'month', 'not-set') . ' (' . ArrayHelper::getValue($month, 'count', '#') . ' )',
+                                        'url' => Url::current(['j_year_month' => $key.$code]),
+                                        $month["month"] . " (" . $month["count"] . ")",
+
+                                        
+                                    ];
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+                if (!empty(( $categories = $facets['categories']))) {
+                    if (is_array($categories)) {
+                        foreach ($categories as $i => $category) {
+                            $items['categories'] = [
+                                'label' => 'Categories',
+                                'icon' => 'plus',
+                                'items' => []
+                            ];
+                            
+                            if (is_array(($cat_items = ArrayHelper::getValue($category, 'items', 'not-set')))) {
+                                foreach ($cat_items as $i => $cat_item) {
+                                    $items['categories']['items'][$i] = [
+                                        'label' => ArrayHelper::getValue($cat_item, 'name', 'not-set') . ' (' . ArrayHelper::getValue($cat_item, 'count', '#') . ' )',
+                                        'icon' => 'plus',
+                                        'items' => []
+                                    ];
+                                    if (is_array(($acts = ArrayHelper::getValue($cat_item, 'items', 'not-set')))) {
+                                        foreach ($acts as $act_id => $act) {
+                                            $items['categories']['items'][$i]['items'][$act_id] = [
+                                                'label' => ArrayHelper::getValue($act, 'name', 'not-set') . ' (' . ArrayHelper::getValue($act, 'count', '#') . ' )',
+                                                'icon' => 'plus',
+                                                'url' => Url::current(['act_category' => $act_id]),
+                                                 $act["name"] . " (" . $act["count"] . ")",
+                                                'items' => []
+                                            ];
+                                            if (is_array(($act_items = ArrayHelper::getValue($act, 'items', 'not-set')))) {
+                                                foreach ($act_items as $act_item_id => $act_item) {
+                                                    $items['categories']['items'][$i]['items'][$act_id]['items'][] = [
+                                                        'label' => ArrayHelper::getValue($act_item, 'name', 'not-set') . ' (' . ArrayHelper::getValue($act_item, 'count', '#') . ' )',
+                                                        'url' => Url::current(['act_sub_category' => $act_item_id]),
+                                                        $act_item["name"] . " (" . $act_item["count"] . ")",
                                                     ];
                                                 }
                                             }
-                                        
-                                        }
-                                        
+                                        }   
                                     }
-                                    //Generate Year Items <li> codess.
-                                    if (!empty(( $years_data = $facets['yearsdata']))) {
-                                        if (is_array(($years = $years_data['years'])))
-                                        {
-                                            $items['years'] = [
-                                                    'label' => 'Years',
-                                                    'icon' => 'plus',
-                                                    'items' => [],
-                                                ];
-                                            foreach ($years as $key => $year) {
-                                                $items['years']['items'][$key] = [
-                                                    'label' => $key,
-                                                    'url' => Url::current(['j_year' => $key['value']]),$key,
-                                                    'icon' => 'plus',
-                                                    'items' => [],
-                                                ];
-                                                if (is_array($year)) {
-                                                    foreach ($year as $code => $month) {
-                                                        $items['years']['items'][$key]['items'][] = [
-                                                            'label' => ArrayHelper::getValue($month, 'month', 'not-set') . ' (' . ArrayHelper::getValue($month, 'count', '#') . ' )',
-                                                            'url' => Url::current(['j_year_month' => $key.$code]),
-                                                            $month["month"] . " (" . $month["count"] . ")",
+                                }
+                            }
+                        }
+                    }
+                }
 
-                                                            
-                                                        ];
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        
-                                    }
-                                    
-                                    if (!empty(( $categories = $facets['categories']))) {
-                                        if (is_array($categories)) {
-                                            foreach ($categories as $i => $category) {
-                                                $items['categories'] = [
-                                                    'label' => 'Categories',
-                                                    'icon' => 'plus',
-                                                    'items' => []
-                                                ];
-                                                
-                                                if (is_array(($cat_items = ArrayHelper::getValue($category, 'items', 'not-set')))) {
-                                                    foreach ($cat_items as $i => $cat_item) {
-                                                        $items['categories']['items'][$i] = [
-                                                            'label' => ArrayHelper::getValue($cat_item, 'name', 'not-set') . ' (' . ArrayHelper::getValue($cat_item, 'count', '#') . ' )',
-                                                            'icon' => 'plus',
-                                                            'items' => []
-                                                        ];
-                                                        if (is_array(($acts = ArrayHelper::getValue($cat_item, 'items', 'not-set')))) {
-                                                            foreach ($acts as $act_id => $act) {
-                                                                $items['categories']['items'][$i]['items'][$act_id] = [
-                                                                    'label' => ArrayHelper::getValue($act, 'name', 'not-set') . ' (' . ArrayHelper::getValue($act, 'count', '#') . ' )',
-                                                                    'icon' => 'plus',
-                                                                    'url' => Url::current(['act_category' => $act_id]),
-                                                                     $act["name"] . " (" . $act["count"] . ")",
-                                                                    'items' => []
-                                                                ];
-                                                                if (is_array(($act_items = ArrayHelper::getValue($act, 'items', 'not-set')))) {
-                                                                    foreach ($act_items as $act_item_id => $act_item) {
-                                                                        $items['categories']['items'][$i]['items'][$act_id]['items'][] = [
-                                                                            'label' => ArrayHelper::getValue($act_item, 'name', 'not-set') . ' (' . ArrayHelper::getValue($act_item, 'count', '#') . ' )',
-                                                                            'url' => Url::current(['act_sub_category' => $act_item_id]),
-                                                                            $act_item["name"] . " (" . $act_item["count"] . ")",
-                                                                        ];
-                                                                    }
-                                                                }
-                                                            }   
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                    ?>
-                                <?=$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                ?>
+            <?=$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
+        </div>
+    </div>
+</div>
+</div>
                 <div class="col-md-9 border-green">
                     <div class="row">
                         <!-- Search Results-->
