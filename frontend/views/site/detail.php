@@ -9,6 +9,7 @@ use backend\models\JudgmentMast;
 use frontend\controllers\SiteController;
 use backend\models\JudgmentAct;
 use yii\helpers\ArrayHelper;
+
 $this->title = 'Search';
 //$this->params['breadcrumbs'][] = $this->title;
 //var_dump($act_count);exit;
@@ -291,8 +292,11 @@ BODY {display:none;visibility:hidden;}
      
 
                 <!--Content Section-->
-                <?php $jcode = $data["judgment_code"]; ?>
+                <?php $jcode = $data["judgment_code"]; 
+                      $uri = $_SERVER["REQUEST_URI"];
+                ?>
                 <a href="/legal_mix/site/judgmentpdf?id=<?php echo $jcode;?>" class="btn btn-primary">Generate PDF</a>
+                <button class="btn btn-success" onclick="myMethod('<?php echo $jcode ?>','<?php echo $uri ?>');">Add to my account</button>
                 <div class="col-md-9 border-green">
                     <div class="row">
                     	
@@ -497,4 +501,24 @@ BODY {display:none;visibility:hidden;}
         </div>
     </div>
 </div>
+<script>
+function myMethod(jcode,uri) {
+
+$.ajax({
+    //type: "POST",
+    url:    '/legal_mix/site/addtomyaccount?jcode='+jcode+'&uri='+uri,
+    dataType   : 'json',
+    //data:  {val: jcode},
+    success: function(msg){
+
+        alert("Successfully added in your account: ")
+    },
+    error: function(xhr){
+        alert("can not add in your account, plz try again")
+    }
+});
+}
+
+
+</script>
                        

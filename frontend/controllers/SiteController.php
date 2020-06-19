@@ -26,6 +26,7 @@ use frontend\models\PlanMasterNew;
 use frontend\models\PlanMast;
 use frontend\models\BrowsingLog;
 use frontend\models\JudgmentActCount;
+use frontend\models\UserLog;
 use backend\models\CountryMast;
 use backend\models\StateMast;
 use backend\models\CityMast;
@@ -464,6 +465,55 @@ class SiteController extends Controller
     return $pdf->render(); 
 
 
+    }
+
+    //this function is created for adding judgment in user account from ajax request
+    public function actionAddtomyaccount($jcode,$uri)
+    {
+
+        $username = \Yii::$app->user->identity->username; 
+        $jmast = JudgmentMast::find()->select(['judgment_title','doc_id','court_code'])->where(['judgment_code'=>$jcode])->all();
+        $jtitle = $jmast[0]['judgment_title'];
+        $jdocid = $jmast[0]['doc_id'];
+        $jcourt = $jmast[0]['court_code'];
+        $jdate = date('Y-m-d');
+        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+         $url = $protocol . $_SERVER['HTTP_HOST'] . $uri;
+        
+        $model = new UserLog();
+        $model->username = $username;
+        $model->doc_id = $jdocid;
+        $model->judgment_code = $jcode;
+        $model->judgment_title = $jtitle;
+        $model->court_code = $jcourt;
+        $model->save_date = $jdate;
+        $model->link = $url;
+        $model->save();
+        
+        $result = Json::encode($jmast);
+        return $result;
+    }
+
+
+    public function actionMyAccount()
+    {
+         $username = \Yii::$app->user->identity->username;
+         //$model = UserLog::find()->where(['username'=>$username])->all();
+         $models = (new \yii\db\Query())
+            ->select('judgment_code,judgment_title,court_code,save_date,link')
+            ->from('user_log')
+            ->where(['username'=>$username])
+            ->orderBy(['save_date'=> SORT_DESC]);
+            
+        $countQuery = clone $models;
+             $pages = new Pagination(['totalCount' => $countQuery->count()]);
+            $models = $models->offset($pages->offset)
+                ->limit($pages->limit)
+                ->all();
+        return $this->render('myaccount', [
+            'models' => $models,
+            'pages' => $pages,
+         ]);
     }
   
 

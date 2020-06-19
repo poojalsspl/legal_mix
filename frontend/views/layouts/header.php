@@ -101,6 +101,10 @@ use kartik\popover\PopoverX;
                                         'label' => 'History',
                                         'url' => ['site/history']
                                     ],
+                                    [ 
+                                        'label' => 'My Account',
+                                        'url' => ['site/my-account']
+                                    ],
                                   
                                     '<li class="divider"></li>',                                      
                                 ]
