@@ -64,7 +64,7 @@ class JudgmentAdvocate extends \yii\db\ActiveRecord
     }
 
     /*==========Manticore Function Start=========================*/
-    public static function getAppellant($docId){
+     public static function getAppellant($docId){
         $data=array('records'=>null,'total'=>0);
         $record=JudgmentAdvocate::find()
             ->asArray()
@@ -112,6 +112,5 @@ class JudgmentAdvocate extends \yii\db\ActiveRecord
         return $data;
 
     }
-
     /*==========Manticore Function End=========================*/
 }

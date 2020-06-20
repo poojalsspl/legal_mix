@@ -33,14 +33,17 @@ BODY {display:none;visibility:hidden;}
                     <div class="row side-menu-content">
                         <div class="box box-v2">   
                             <div class="box-body">
-                                <?php
+
+
+        <?php
         
         if (!empty($act_count) || !empty($ref_count)  || !empty($ref_by_count) || !empty($judge_name) || !empty($advocate_name) || !empty($advocate_respond_name) || 1==1 ) {
        
         ?>
-                                <?php
 
-                                   if (!empty($act_title) && $act_count > 0){
+               
+                            <?php  
+                             if (!empty($act_title) && $act_count > 0){
                                     $acts_label = [];
                                     foreach($act_title as $values)
                                     {
@@ -55,7 +58,7 @@ BODY {display:none;visibility:hidden;}
                                         ];
                                     }
                                 }
-                               if(empty($act_title)){
+                                if(empty($act_title)){
                                      $acts_label = [];
                                   $acts_label[] = '';
                                 }
@@ -75,12 +78,12 @@ BODY {display:none;visibility:hidden;}
 
                                 }
                             }
-                           if(empty($judgment_citied)){
+                            if(empty($judgment_citied)){
                                 $cited_label = [];
                                   $cited_label[] = '';
                                   
                                 }
-                               if (!empty($judgment_citied_by) && $judgment_citied_by_count > 0 ) {
+                            if (!empty($judgment_citied_by) && $judgment_citied_by_count > 0 ) {
                                 $citedBy_label = [];
                                 foreach ($judgment_citied_by as $citiedby_value)
                                 {
@@ -97,12 +100,12 @@ BODY {display:none;visibility:hidden;}
 
 
                             }
-                             if(empty($judgment_citied_by)){
+                            if(empty($judgment_citied_by)){
                                 $citedBy_label = [];
                                   $citedBy_label[] = '';
                                  
                                 }
-                                 if (!empty($judges) && $judges_count > 0){
+                            if (!empty($judges) && $judges_count > 0){
                                 $judges_label = [];
                                 foreach ($judges as $judge){
                                     $judges_label[] = [
@@ -123,65 +126,8 @@ BODY {display:none;visibility:hidden;}
                                   $judges_label[] = '';
                                  
                                 }
-                                if (!empty($adovcate_respondnat) ||  !empty($advocate_appellant))  {
-                                           $respondant_label = [];
-                                            foreach ($adovcate_respondnat as $respondant) {
-                                               $respondant_label[] = [
-                                                            'label' => $respondant,
-                                                            'items' => [
-                                                            [
-                                                    
-                                                            ]
-                                                        ]
-                                                          ];
-                                            }
-                                        }
-                                        if(empty($adovcate_respondnat)){
-                                     $respondant_label = [];
-                                     $respondant_label[] = '';
-                                    }     
-                                  if (!empty($advocate_appellant)){      
-                                            $appellant_label = [];
-                                            foreach ($advocate_appellant as $appellant){
-                                            
-                                               $appellant_label[] = [
-                                                            'label' => $appellant,
-                                                            'items' => [
-                                                            [
-                                                    
-                                                            ]
-                                                        ]
-                                                          ];
-                                                    }
-                                                }
-                             if(empty($advocate_appellant)){
-                                  $appellant_label = [];
-                                  $appellant_label[] = '';
-                                }         
-/*
 
-                                  if (!empty($judges) && $judges_count > 0){
-                                $judges_label = [];
-                                foreach ($judges as $judge){
-                                    $judges_label[] = [
-                                            'label' => $judge,
-                                            'items' => [
-                                                [
-                                                    
-                                                   
-                                                ]
-                                            ]
-                                        ];
-
-                                }
-
-                            }
-                            if(empty($judges)){
-                                $judges_label = [];
-                                  $judges_label[] = '';
-                                 
-                                }*/
-                                /* if (!empty($adovcate_respondnat) ||  !empty($advocate_appellant))  {
+                                 if (!empty($adovcate_respondnat) ||  !empty($advocate_appellant))  {
                                            $respondant_label = [];
                                             foreach ($adovcate_respondnat as $respondant) {
                                                $respondant_label[] = [
@@ -197,8 +143,8 @@ BODY {display:none;visibility:hidden;}
                                     if(empty($adovcate_respondnat)){
                                      $respondant_label = [];
                                      $respondant_label[] = '';
-                                    }     */
-                                   /* if (!empty($advocate_appellant)){      
+                                    }     
+                                  if (!empty($advocate_appellant)){      
                                             $appellant_label = [];
                                             foreach ($advocate_appellant as $appellant){
                                             
@@ -217,41 +163,28 @@ BODY {display:none;visibility:hidden;}
                               if(empty($advocate_appellant)){
                                   $appellant_label = [];
                                   $appellant_label[] = '';
-                                }    */
-                                              $items = [
+                                }    
+
+
+
+                                    $items = [
                                         
                                         [
                                             'label' => 'Acts/Sections Referred('.$act_count.')', 
                                             'icon' => 'plus',
                                             'items' => $acts_label
                                         ],
-                                          [
+                                        [
                                             'label' => 'Judgements Cited('.$judgment_citied_count.')', 
                                             'icon' => 'plus',
                                             'items' => $cited_label
                                         ],
-                                         [
+                                        [
                                             'label' => 'Judgements Cited By('.$judgment_citied_by_count.')', 
                                             'icon' => 'plus',
                                             'items' => $citedBy_label
-
                                         ],
-                                       /* [
-                                            'label' => 'Judges('.$judges_count.')', 
-                                            'icon' => 'plus',
-                                            'items' => $judges_label
-                                        ],
-
-                                        [
-                                            'label' => 'Advocate', 
-                                            'icon' => 'plus',
-                                            'items' => $appellant_label
-                                        ],
-                                        [
-                                            'label' => 'Responded', 
-                                            'icon' => 'plus',
-                                            'items' => $respondant_label
-                                        ],*/
+                                        
                                         [
                                             'label' => 'Judges('.$judges_count.')', 
                                             'icon' => 'plus',
@@ -270,22 +203,17 @@ BODY {display:none;visibility:hidden;}
                                         ],
                                         
                                     ]; 
-                                                  
-                                       
-                                        
-                                  
 
                                 ?>
-                                 <?php //$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
-                       <?php } ?>
-
-        
+               <?php //echo $this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
+                
+                <?php } ?>
+                
                  </div>
                         </div>
                     </div>
                 </div>
                 <!--End of SideBar Menu-->
-
         
                 
       
@@ -297,9 +225,9 @@ BODY {display:none;visibility:hidden;}
                 ?>
                 <a href="/legal_mix/site/judgmentpdf?id=<?php echo $jcode;?>" class="btn btn-primary">Generate PDF</a>
                 <button class="btn btn-success" onclick="myMethod('<?php echo $jcode ?>','<?php echo $uri ?>');">Add to my account</button>
+                 <!--Content Section-->
                 <div class="col-md-9 border-green">
                     <div class="row">
-                    	
                         <div class="box box-v2">
                         <?php
                         if(!empty($data["judgment_title"])):
@@ -342,8 +270,7 @@ BODY {display:none;visibility:hidden;}
 
                             }
                             ?>
-                            <?php //print_r($data);?>
-                            <?php //echo "doc_id = ".$data["doc_id"];?>
+                            
                               <div class="box-body">                                
                                 <div class="judgement-detail">
                                     <div class=" col-md-12 judgment-detail-item">
@@ -353,16 +280,15 @@ BODY {display:none;visibility:hidden;}
                                         <div class="col-md-8"> 
                                              <span class="judgement-detail-item-description"><?php echo $dateText;?></span>
                                         </div>
-                                    </div>  
-                                     <div class=" col-md-12 judgment-detail-item">
+                                    </div>     
+                                    <div class=" col-md-12 judgment-detail-item">
                                         <div class="col-md-3">
                                              <label class="judgement-detail-item-label"><?='Court Name: '?></label>
                                         </div> 
                                         <div class="col-md-8"> 
                                              <span class="judgement-detail-item-description"><?php echo $data["court_name"];?></span>
                                         </div>
-                                    </div>  
-                                  
+                                    </div>     
                             
                             <?php
                             if(!empty($data["citation"])):
@@ -435,9 +361,8 @@ BODY {display:none;visibility:hidden;}
                                 </div>
                                 <div class="col-md-8">
                                     <span class="judgement-detail-item-description judgement-abstract"><?php echo $data["judgment_abstract"];?></span>
-                                    <?php echo "<a class='btn theme-blue-button btn-primary' target='_blank' href='judgment-abstract?jcode=$jcode&doc_id=$doc_id'>Suggestion</a>"; ?>
-                                </div> 
-
+                                    <?php echo "<a class='btn theme-blue-button btn-primary' target='_blank' href='/site/judgment-abstract?jcode=$jcode&doc_id=$doc_id'>Suggestion</a>"; ?>
+                                </div>  
                             </div>      
                             <?php endif; ?>
                             <?php

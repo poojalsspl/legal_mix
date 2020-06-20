@@ -494,7 +494,7 @@ class SiteController extends Controller
         return $result;
     }
 
-
+    //this function is created for display judgment saved in user account 
     public function actionMyAccount()
     {
          $username = \Yii::$app->user->identity->username;
@@ -1011,74 +1011,74 @@ class SiteController extends Controller
     }
 
     /* for testing purpose 19/06*/
-    public function actionSearchnew()
-    {
-        if (!Yii::$app->user->isGuest){ 
-        $username = \Yii::$app->user->identity->username;
-        $plans = UserPlanNew::find()->where([ 'username' => $username])->all();
-         $corporate_ip = $plans[0]->corporate_ip;
-         $ip = $_SERVER['REMOTE_ADDR'];
+    // public function actionSearchnew()
+    // {
+    //     if (!Yii::$app->user->isGuest){ 
+    //     $username = \Yii::$app->user->identity->username;
+    //     $plans = UserPlanNew::find()->where([ 'username' => $username])->all();
+    //      $corporate_ip = $plans[0]->corporate_ip;
+    //      $ip = $_SERVER['REMOTE_ADDR'];
 
-         if($corporate_ip!='' && $corporate_ip==$ip){
-        $params = \Yii::$app->request->get();
+    //      if($corporate_ip!='' && $corporate_ip==$ip){
+    //     $params = \Yii::$app->request->get();
         
-        $model = new JudgmentMastSphinxSearch();
-         //$suggest=$model->keyWordSuggestion("");
-        $data = $model->searchJudgements1($params);
-        //print_r($data);exit;
-        $data['term'] = isset($params['q']) ? $params['q'] : '';
-        $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
-        $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
-        $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
-        if($data['term_again']==0):
-        $data['term_previous'] =null;
-        endif;
-        if(isset($data["data"]) && count($data["data"]) < 5 && isset($data['term'])):
-           $suggest=$model->keyWordSuggestion1($data['term']);
-           if(!empty($suggest)):
-           //suggest keyword is not empty it has suggested  word
-           $data["suggest"] = $suggest;
-           endif;
-        endif;
-        //$this->layout = 'InnerPage';
-        return $this->render('searchnew',$data);
-      } if($corporate_ip!=''  && $corporate_ip!=$ip){
-        Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please login with registered Ip');
-                return $this->render('message');
+    //     $model = new JudgmentMastSphinxSearch();
+    //      //$suggest=$model->keyWordSuggestion("");
+    //     $data = $model->searchJudgements1($params);
+    //     //print_r($data);exit;
+    //     $data['term'] = isset($params['q']) ? $params['q'] : '';
+    //     $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
+    //     $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
+    //     $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
+    //     if($data['term_again']==0):
+    //     $data['term_previous'] =null;
+    //     endif;
+    //     if(isset($data["data"]) && count($data["data"]) < 5 && isset($data['term'])):
+    //        $suggest=$model->keyWordSuggestion1($data['term']);
+    //        if(!empty($suggest)):
+    //        //suggest keyword is not empty it has suggested  word
+    //        $data["suggest"] = $suggest;
+    //        endif;
+    //     endif;
+    //     //$this->layout = 'InnerPage';
+    //     return $this->render('searchnew',$data);
+    //   } if($corporate_ip!=''  && $corporate_ip!=$ip){
+    //     Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please login with registered Ip');
+    //             return $this->render('message');
 
-      }
-        $params = \Yii::$app->request->get();
+    //   }
+    //     $params = \Yii::$app->request->get();
         
-        $model = new JudgmentMastSphinxSearch();
-        //$suggest=$model->keyWordSuggestion("");
-        $data = $model->searchJudgements1($params);
-        //print_r($data);exit;
-        $data['term'] = isset($params['q']) ? $params['q'] : '';
-        $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
-        $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
-        $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
-        if($data['term_again']==0):
-        $data['term_previous'] =null;
-        endif;
-        if(isset($data["data"]) && count($data["data"]) < 5 && isset($data['term'])):
-           $suggest=$model->keyWordSuggestion1($data['term']);
-           if(!empty($suggest)):
-           //suggest keyword is not empty it has suggested  word
-           $data["suggest"] = $suggest;
-           endif;
-        endif;
-        //$this->layout = 'InnerPage';
-        return $this->render('searchnew',$data);
+    //     $model = new JudgmentMastSphinxSearch();
+    //     //$suggest=$model->keyWordSuggestion("");
+    //     $data = $model->searchJudgements1($params);
+    //     //print_r($data);exit;
+    //     $data['term'] = isset($params['q']) ? $params['q'] : '';
+    //     $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
+    //     $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
+    //     $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
+    //     if($data['term_again']==0):
+    //     $data['term_previous'] =null;
+    //     endif;
+    //     if(isset($data["data"]) && count($data["data"]) < 5 && isset($data['term'])):
+    //        $suggest=$model->keyWordSuggestion1($data['term']);
+    //        if(!empty($suggest)):
+    //        //suggest keyword is not empty it has suggested  word
+    //        $data["suggest"] = $suggest;
+    //        endif;
+    //     endif;
+    //     //$this->layout = 'InnerPage';
+    //     return $this->render('searchnew',$data);
 
 
-         }else{
-         Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please login first to view the search result!');
-                return $this->render('message');
+    //      }else{
+    //      Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please login first to view the search result!');
+    //             return $this->render('message');
 
-    }
-    }
+    // }
+    // }
 
-
+//with old layout
     public function actionSearch1()
     {   
         if (!Yii::$app->user->isGuest){ 
@@ -1160,45 +1160,9 @@ class SiteController extends Controller
         public function actionSearchForm()
     {
        
-          $params = \Yii::$app->request->get();
-        $search = new AdvSearch();
-        $courtsData = $search->getTreeForCourts();
-       /* $this->view->registerJsFile("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js",['depends' => 'yii\web\JqueryAsset']);
-       $this->view->registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js",['depends' => 'yii\web\JqueryAsset']);
-       $this->view->registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js",['depends' => 'yii\web\JqueryAsset']);
-       $this->view->registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js",['depends' => 'yii\web\JqueryAsset']);
-       
-       $this->view->registerCssFile("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css");
-       $this->view->registerCssFile("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css");
-       $this->view->registerCssFile("https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css");*/
-       $string = '';
-       foreach($courtsData as $data){
-            $string .= '{header: "'.  $data['header'] . '",';
-            if(is_array($data['items'])){
-                $string .= 'items: [';
-                foreach($data['items'] as $dt){
-                    $string .= '{header: "'.  $dt['header'] . '",';
-
-                    if(isset($dt['items']) && is_array($dt['items'])){
-                        $string .= 'items: [';
-                        foreach($dt['items'] as $et){
-                            $string .= '{header: "'.  $et['header'] . '", id: ' . $et['id'] . '},';
-                        }
-                        $string .= ']';
-                    }
-                    $string .= '},';
-                }
-                $string .= ']';
-            }
-
-            // end of header string
-            $string .= '},';
-
-        }
-
-            return $this->renderAjax('partials1/search_form',['courtsData' => $string,]);
+       return $this->renderAjax('partials1/search_form');
+       //return $this->renderAjax('partials1/search_form',['courtsData' => $string,]);
         
-       
     }
     /*
     *
@@ -1237,7 +1201,6 @@ class SiteController extends Controller
             //if code parameter not passed redirect to search page
             $this->redirect('/site/search');
         }
-
 
     }
   
@@ -1280,7 +1243,6 @@ class SiteController extends Controller
             $this->redirect('/site/search');
         }
 
-
     }
     /*
  *
@@ -1318,6 +1280,8 @@ class SiteController extends Controller
             //if code parameter not passed redirect to search page
             $this->redirect('/site/search');
         }
+
+
 
 
     }
@@ -1361,6 +1325,7 @@ class SiteController extends Controller
             //if code parameter not passed redirect to search page
             $this->redirect('/site/search');
         }
+
 
 
     }
@@ -1496,7 +1461,7 @@ class SiteController extends Controller
          $username = Yii::$app->user->identity->username;
          $query = BrowsingLog::find()->where(['username' => $username]);
           $countQuery = clone $query;
-          $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize'=>'20']);
+          $pages = new Pagination(['totalCount' => $countQuery->count()]);
           $data = $query->offset($pages->offset)
           ->limit($pages->limit)
           ->all();
@@ -1635,7 +1600,6 @@ class SiteController extends Controller
      /*===========Manticore function start============*/
     public function actionSearchAdvance()
     {
-        //$this->layout = 'InnerPage';
         $params = \Yii::$app->request->get();
         $search = new AdvSearch();
         $courtsData = $search->getTreeForCourts();
@@ -1691,6 +1655,7 @@ class SiteController extends Controller
         return $this->render('searchAdvance',['courtsData' => $string,]);
     }
 
+//with old layout
      public function actionSearchAdvance1()
     {
         $this->layout = 'InnerPage';
@@ -1749,7 +1714,8 @@ class SiteController extends Controller
         return $this->render('searchAdvance1',['courtsData' => $string,]);
     }
 
-     public function actionSearchAdvancednew()
+    
+    public function actionSearchAdvancednew()
     {
         //$this->layout = 'InnerPage';
       if (!Yii::$app->user->isGuest){ 

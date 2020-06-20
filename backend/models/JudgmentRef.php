@@ -57,29 +57,9 @@ class JudgmentRef extends \yii\db\ActiveRecord
             'court_code' => 'Court Code',
         ];
     }
-
+    
     /*==========Manticore Function Start=========================*/
-    public static function getJudgmentCitiedBY($RIdBy){
-       /* $data=array('records'=>null,'total'=>0);
-        $record=JudgmentRef::find()
-            ->asArray()
-            ->select(array("judgment_title_ref","judgment_code"))
-            ->where(['doc_id_ref' =>$RIdBy])
-            ->groupBy("judgment_title_ref")
-            ->all();
-        $totalRecords= JudgmentRef::find()
-            ->asArray()
-            ->where(['doc_id_ref' =>$RIdBy])
-            ->groupBy("judgment_title_ref")
-            ->count();
-        if(!empty($record) && isset($record["0"])) {
-            foreach ($record as $value) {
-                $result[] = $value["judgment_title_ref"];
-
-            }
-            return $data=array("records"=>$result,'total'=>$totalRecords);
-        }
-        return $data;*/
+    public static function getJudgmentCitiedBY($RIdBy) {
         $data = array('records' => null, 'total' => 0);
         $record = JudgmentMast::getCitedBy($RIdBy);
         if(!empty($record)){
@@ -93,7 +73,32 @@ class JudgmentRef extends \yii\db\ActiveRecord
             }
         }
         return $data;
-    }
+        // $data = JudgmentMast::getCitedBy($params["id"]);
+        // $data = array('records' => null, 'total' => 0);
+        // $record = JudgmentRef::find()
+        //     ->asArray()
+        //     ->select(array("judgment_title", "judgment_code"))
+        //     ->where(['doc_id_ref' => $RIdBy])
+        //     ->groupBy("judgment_title")
+        //     ->all();
 
-    /*==========Manticore Function End=========================*/
+        // $totalRecords = JudgmentMast::find()
+        //     ->asArray()
+        //     ->select("judgment_search_summary.cited_count")
+        //     ->leftJoin('judgment_search_summary', 'judgment_search_summary.doc_id=judgment_mast.doc_id')
+        //     ->where(['judgment_search_summary.doc_id' => $RIdBy])
+        //     ->groupBy("judgment_search_summary.cited_count")
+        //     ->all();
+        // //$citedByCount = ($totalRecords) ? $totalRecords[0]['cited_count'] : 0;
+        // $citedByCount = (isset($totalRecords[0]['cited_count']) && $totalRecords[0]['cited_count'] !== 0) ? $totalRecords[0]['cited_count'] : 0;
+
+        // if (!empty($record) && isset($record["0"])) {
+        //     foreach ($record as $value) {
+        //         $result[] = $value["judgment_title"];
+        //     }
+        //     return $data = array("records" => $result, 'total' => $citedByCount);
+        // }
+        // return $data;
+    }
+     /*==========Manticore Function End=========================*/
 }

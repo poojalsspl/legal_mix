@@ -37,17 +37,22 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
      */
     public function searchJudgements($params) {
 
-        $params['page']  = isset($params['page']) && intval($params['page']) > 0 ? intval($params['page']) : 1;
-        $params['advance_search']  = isset($params['advance_search']) && intval($params['advance_search']) == 1 ? 1 : 0;
+       $params['page']  = isset($params['page']) && intval($params['page']) > 0 ? intval($params['page']) : 1;
+       $params['advance_search']  = isset($params['advance_search']) && intval($params['advance_search']) == 1 ? 1 : 0;
+
         //check if page value is greater than 10 so set it's value again 10
-        if($params['page'] > 10):
-            $params['page']=10;
-        endif;
+       if($params['page'] > 10):
+       $params['page']=10;
+       endif;
+
         $params['size']  = isset($params['size']) && intval($params['size']) > 0 ? intval($params['size']) : 20;
         $params['q']     = isset($params['q']) && strlen(trim($params['q'])) > 0 ? trim($params['q']) : '';
         $params['p']     = isset($params['p']) && strlen(trim($params['p'])) > 0 ? trim($params['p']) : '';
         $params['again'] = isset($params['again']) && intval($params['again']) > 0 ? intval($params['again']) : 0;
+        $params['o']     = isset($params['o']) && strlen(trim($params['o'])) > 0 ? trim($params['o']) : '';
+
         //Check if current key word and previous key word are same
+
         if($params['again']==1):
             if($params['q']==$params['p']):
                 $params['q'] = $params['q'];
@@ -55,10 +60,11 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                 $params['q'] = $params['q'] . " " . $params['p'];
             endif;
         endif;
+
         
+
         $params['appeal_numb'] = isset($params['appeal_numb']) && strlen(trim($params['appeal_numb'])) > 0 ? trim($params['appeal_numb']) : '';
         $params['judgment_title'] = isset($params['judgment_title']) && strlen(trim($params['judgment_title'])) > 0 ? trim($params['judgment_title']) : '';
-        
         $params['disposition_id'] = isset($params['disposition_id']) && intval($params['disposition_id']) > 0 ? intval($params['disposition_id']) : '';
         $params['judgment_date'] = isset($params['judgment_date']) && strlen(trim($params['judgment_date'])) > 0 ? trim($params['judgment_date']) : '';
         $params['j_year_month'] = isset($params['j_year_month']) && strlen(trim($params['j_year_month'])) > 0 ? trim($params['j_year_month']) : '';
@@ -69,46 +75,41 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         $params['actcount'] = isset($params['actcount']) && intval($params['actcount']) > 0 ? intval($params['actcount']) : '';
         $params['citedcount'] = isset($params['citedcount']) && intval($params['citedcount']) > 0 ? intval($params['citedcount']) : '';
         $params['refcount'] = isset($params['refcount']) && intval($params['refcount']) > 0 ? intval($params['refcount']) : '';
-        
-        if(isset($params['startDate']) && $params['startDate']):
-            $datePart = explode('/', $params['startDate']);
-            if(count($datePart) == 3):
-                $params['startDate'] = mktime(0, 0, 0, $datePart[1], $datePart[0], $datePart[2]);
-            else:
-                $params['startDate'] = null;
-            endif;
-        endif;
-        
-        if(isset($params['endDate']) && $params['endDate']):
-            $datePart = explode('/', $params['endDate']);
-            if(count($datePart) == 3):
-                $params['endDate'] = mktime(0, 0, 0, $datePart[1], $datePart[0], $datePart[2]);
-            else:
-                $params['endDate'] = null;
-            endif;
-        endif;
+
 
         if(isset($params['court_code']) && $params['court_code']):
             $params['court_code'] = explode(',', $params['court_code']);
         endif;
-        
+
         if($params['advance_search'] == 1):
-           
-            $params['q'] = $this->parseAdvanceSearch($params['q']);
+           $params['q'] = $this->parseAdvanceSearch($params['q']);
         else:
             $params['q'] = \Yii::$app->sphinx->escapeMatchValue($params['q']);
         endif;
 
 //        print_r($params);die;
         $query = new \yii\sphinx\Query();
-
         $query->from(self::tableName())->showMeta(true);
 
         if ($params['q']):
-            $exp = new \yii\db\Expression(':match', ['match' => '@(appeal_numb,judgment_title,judgment_abstract,judgment_text,disposition_text) (' . $params['q'] . ')']);
+            if(!empty($params['o']) && $params['again']==1):
+            $exp = new \yii\db\Expression(':match', ['match' => '@(appeal_numb,judgment_title,judgment_abstract,judgment_text,disposition_text) (' . $params['swsQ'] . ')']);
+
             $query->match($exp);
-        // $query->andWhere($exp);
+        else:
+            $exp = new \yii\db\Expression(':match', ['match' => '@(appeal_numb,judgment_title,judgment_abstract,judgment_text,disposition_text) (' . $params['q'] . ')']);
+
+            $query->match($exp);
         endif;
+
+            // $exp = new \yii\db\Expression(':match', ['match' => '@(appeal_numb,judgment_title,judgment_abstract,judgment_text,disposition_text) (' . $params['q'] . ')']);
+
+            // $query->match($exp);
+
+        // $query->andWhere($exp);
+
+        endif;
+
         if (!empty($params["appeal_numb"])):
             $query->andWhere(['appeal_numb' => $params["appeal_numb"]]);
         endif;
@@ -120,91 +121,111 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         if (!empty($params["court_code"])):
             $query->andWhere(['court_code' => $params["court_code"]]);
         endif;
+
         if (!empty($params["disposition_id"])):
             $query->andWhere(['disposition_id' => $params["disposition_id"]]);
         endif;
+
         if (!empty($params["judgment_date"])):
             // echo strtotime($params["judgment_date"]);exit;
             $query->andWhere(['judgment_date_year_month_day' => $params["judgment_date"]]);
         endif;
+
         if (!empty($params["j_year_month"])):
             // echo strtotime($params["judgment_date"]);exit;
             $query->andWhere(['judgment_date_year_month' => $params["j_year_month"]]);
         endif;
+
         if (!empty($params["j_year"])):
             // echo strtotime($params["judgment_date"]);exit;
             $query->andWhere(['jyear' => $params["j_year"]]);
         endif;
+
         if (!empty($params["act_category"])):
             // echo strtotime($params["judgment_date"]);exit;
             $query->andWhere(['act_catg_code' => $params["act_category"]]);
         endif;
+
         if (!empty($params["act_sub_category"])):
             // echo strtotime($params["judgment_date"]);exit;
             $query->andWhere(['act_sub_catg_code' => $params["act_sub_category"]]);
         endif;
+
         if (!empty($params["actcount"])):
             $query->andWhere(['act_count' => $params["actcount"]]);
         endif;
+
         if (!empty($params["citedcount"])):
             $query->andWhere(['cited_count' => $params["citedcount"]]);
         endif;
-        
+       
         if (!empty($params["refcount"])):
             $query->andWhere(['ref_count' => $params["refcount"]]);
         endif;
-        
+       
         if (!empty($params["startDate"])):
-            $query->andWhere('judgment_date >=:date',[':date'=>$params["startDate"]]);
+            $startDate = strtotime($params['startDate']);
+            $query->andWhere("judgment_date >= ".$startDate."");
         endif;
-        
+
         if (!empty($params["endDate"])):
-             $query->andWhere('judgment_date <=:date',[':date'=>$params["endDate"]]);
+            $endDate = strtotime($params['endDate']);
+            $query->andWhere("judgment_date <= ".$endDate."");
         endif;
-        
+
+        if (!empty($params["o"])):
+             $order = ($params["o"] == 'judgment_date')? $params["o"]." DESC": $params["o"]." ASC";
+             $query->orderBy($order);
+        endif;
+      
         $facetarray = [
             'court_code' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 100,
             ],
+
             'disposition_id' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 100,
             ],
+
             'judgment_date_year_month' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 1000,
             ],
+
             'jyear' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 100,
             ],
+
             'act_catg_code' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 100,
             ],
+
             'act_sub_catg_code' => [
                 'order' => ['COUNT(*)' => SORT_DESC],
                 'limit' => 100,
             ],
         ];
+
         $query->addFacets($facetarray);
         $offset = ($params['page'] - 1) * $params['size'];
         $query->options(['max_matches' => 1000000]);
         $query->limit($params['size'])->offset($offset);
-
         $rs = $query->search();
         //print_r($rs["meta"]);exit;
         //print_r($rs["facets"]);die;
         //proceed facets
         $facetsdata = $this->processFacets($rs["facets"]);
         //print_r($facetsdata);exit;
-        $totalItemCount = $rs['meta']['total_found'];
+        // $totalItemCount = $rs['meta']['total_found'];
+        // $totalItemCount = $facetsdata['court'][1]['count'];
+        $totalItemCount = (isset($facetsdata['court'][1]['count']))?$facetsdata['court'][1]['count']:0;
         $queryTime=$rs["meta"]["time"];
-
         if (isset($rs['hits']) && count($rs['hits']) > 0):
             $rows = $rs['hits'];
-
             $ids = [];
             foreach ($rows as $key => $row) {
                 $ids[$key] = $row["id"];
@@ -219,18 +240,24 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                     ->where("judgment_mast.judgment_code IN (" . $ids . ")")
                     ->orderBy([new \yii\db\Expression('FIELD (judgment_mast.judgment_code, ' . $ids . ')')])
                     ->all();
-                    //print_r($records);
-                   // echo $records->createCommand()->sql;die;//after removing->all(); from $records query
-
 //        print_r($records[0]);
+
             if(!empty($records)):
             foreach ($records as $row):
                 $rowSnippetSources[] = strip_tags($row['judgment_title'] . ' ' . $row['judgment_text'] . ' ' . $row['judgment_abstract'] . ' ' . $row['disposition_text']);
             endforeach;
 
-            $snippets = Yii::$app->sphinx->createCommand()->callSnippets(self::tableName() . '_0', $rowSnippetSources, $params['q'], ['around' => 5, 'limit' => 300])->queryAll();
+            if(!empty($params['o']) && $params['again']==1):
+                $snippets = Yii::$app->sphinx->createCommand()->callSnippets(self::tableName() . '_0', $rowSnippetSources, $params['swsQ'], ['around' => 5, 'limit' => 300])->queryAll();    
+            else:
+                $snippets = Yii::$app->sphinx->createCommand()->callSnippets(self::tableName() . '_0', $rowSnippetSources, $params['q'], ['around' => 5, 'limit' => 300])->queryAll();
             endif;
+
+            // $snippets = Yii::$app->sphinx->createCommand()->callSnippets(self::tableName() . '_0', $rowSnippetSources, $params['q'], ['around' => 5, 'limit' => 300])->queryAll();
+            endif;
+
             // free up space
+
             $rowSnippetSources = null;
             $count = 1;
             foreach ($records as $key => &$row):
@@ -241,14 +268,17 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                 unset($row['judgment_abstract']);
                 unset($row['judgment_text']);
             endforeach;
+
         else:
             $records = [];
             $snippets = [];
         endif;
+
         $countPagination=$totalItemCount;
         if($countPagination > 200):
          $countPagination=200;
         endif;
+
         $pagination = new Pagination(['totalCount' => $countPagination]);
 //        print_r($facetsdata['yearsCount']['count']);die;
         return [
@@ -258,6 +288,7 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             'pagination' => $pagination,
             'querytime'=>$queryTime
         ];
+
 //        
 //        $query = JudgmentMast::find();
 //
@@ -293,6 +324,9 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
 //        
 //        return $dataProvider;
     }
+  
+        
+   
 
     public function searchJudgements1($params) {
 
@@ -536,14 +570,22 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             return null;
         endif;
         
-        $not = preg_split('/\snot\s/i',$q);
-        $q = '('.implode(') -(',$not).')';
-        
-        $or = preg_split('/\sor\s/i',$q);
-        $q = '('.implode(') | (',$or).')';
-        
-        $and = preg_split('/\sand\s/i',$q);
-        $q = ''.implode(' ',$and).'';
+        if (strpos($q, 'NOT') !== false) :
+            $not = preg_split('/\snot\s/i', $q);
+            $q = '('.implode(') -(',$not).')';
+        endif;
+
+
+        if (strpos($q, 'OR') !== false) :
+            $or = preg_split('/\sor\s/i', $q);
+            $q = '(' . implode(') | (', $or) . ')';
+        endif;
+
+
+        if (strpos($q, 'AND') !== false) :
+            $and = preg_split('/\sand\s/i', $q);
+            $q = '' . implode(' ', $and) . '';
+        endif;
      
         return $q;
     }
@@ -561,12 +603,10 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         else:
         $categories=[];
         endif;
+//proceed with court_code facets
 
-        //proceed with court_code facets
         if (isset($data["court_code"]) && count($data["court_code"]) > 0):
-
-            //print_r($rs["facets"]["court_code"][0]["count(*)"]);exit;
-
+           //print_r($rs["facets"]["court_code"][0]["count(*)"]);exit;
             $courtcodes = implode(",", array_column($data["court_code"], "court_code"));
             //Primary key was not defined due to that direct query written
             $sql="select court_name,court_code,country_code,court_group_mast.court_group_name
@@ -580,7 +620,9 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             $connection = Yii::$app->getDb();
             $command = $connection->createCommand($sql);
             $courtrecords = $command->queryAll();
+
             /*
+
             $courtrecords = CourtMast::find()
                     ->asArray()
                     ->select("court_name,court_code,country_code,court_group_mast.court_group_name")
@@ -588,24 +630,27 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                     ->where("court_code IN (" . $courtcodes . ")")
                     ->orderBy([new \yii\db\Expression('FIELD (court_code, ' . $courtcodes . ')')])
                     ->all();
-             */
 
+             */
             //print_r($courtrecords);exit;
 
             foreach ($courtrecords as $key => $courtrecord):
+                $courtKey = array_search($courtrecord['court_code'], array_column($data["court_code"], 'court_code'));
                 $gid = $courtrecord['country_code'];
                 if(!isset($courtfacetsdata[$gid])):
                     $courtfacetsdata[$gid] = ['name'=>$courtrecord['court_group_name'],'items'=>[],"count"=>0];
                 endif;
-                $courtfacetsdata[$gid]["items"][]= ["name"=>$courtrecord["court_name"],"code"=>$courtrecord["court_code"],"count"=>$data["court_code"][$key]["count(*)"]];
+
+                $courtfacetsdata[$gid]["items"][]= ["name"=>$courtrecord["court_name"],"code"=>$courtrecord["court_code"],"count"=>$data["court_code"][$courtKey]["count(*)"]];
                 $courtfacetsdata[$gid]['count']+= $data["court_code"][$key]["count(*)"];
             endforeach;
 
         endif;
+
         //print_r($courtfacetsdata);exit;
         //proceed with disposition_id facets
-        if (isset($data["disposition_id"]) && count($data["disposition_id"]) > 0):
 
+        if (isset($data["disposition_id"]) && count($data["disposition_id"]) > 0):
             $dispositionids = implode(",", array_column($data["disposition_id"], "disposition_id"));
             $dispositionrecords = JudgmentDisposition::find()
                     ->asArray()
@@ -618,31 +663,33 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             foreach ($dispositionrecords as $key => $dispositionrecord):
                 $dispositionfacetsdata[$key]["text"] = $dispositionrecord["disposition_text"];
                 $dispositionfacetsdata[$key]["id"] = $dispositionrecord["disposition_id"];
-                $dispositionfacetsdata[$key]["count"] = $data["disposition_id"][$key]["count(*)"];
+                $dispositionfacetsdata[$key]["count"] = isset($data["disposition_id"][$key]["count(*)"]);
             endforeach;
 
         endif;
+
         $years = array();
         //proceed with yearmonth facets
         if (isset($data["judgment_date_year_month"]) && count($data["judgment_date_year_month"]) > 0):
             $years = $this->proccesfacetsYears($data["jyear"]);
             $yearData = array();
             foreach ($data["judgment_date_year_month"] as $yearMonthValues):
-
                 $year = substr($yearMonthValues["value"], 0, 4);
                 // skip if year don't seem valid
                 if ($year < 1000):
                     continue;
                 endif;
+
                 $month = substr($yearMonthValues["value"], -2);
                 if (in_array($year, $years["year"])) {
                     $yearData["years"][$year][$month]["month"] = date("M", mktime(0, 0, 0, $month, 10));
                     $yearData["years"][$year][$month]["count"] = $yearMonthValues["count(*)"];
                 }
 
-
             endforeach;
+
         endif;
+
         return array('court' => $courtfacetsdata, 'dispostion' => $dispositionfacetsdata, "yearsdata" => $yearData, 'yearsCount'=>$years,'categories'=>$categories);
     }
 
@@ -657,6 +704,7 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         endforeach;
         return $result;
     }
+
     private  function processfacetsCategories($data){
         $ids=$this->makeCategoryArray($data);
         $counts=$this->makeCategoryArrayCount($data);
@@ -668,11 +716,13 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             ->orderBy([new \yii\db\Expression('FIELD (act_sub_catg_code, ' . $ids . ')')])
             ->all();
 //        print_r($records);exit;
+
         foreach ($records as $row):
             $countryId=$row['country_code'];
             if(!isset($tree[$countryId])):
                 $tree[$countryId] = ['name'=>$row['country_name'],'items'=>[],"count"=>0];
             endif;
+
             $gid = $row['act_group_code'];
             if(!isset($tree[$countryId]["items"][$gid])):
                 $tree[$countryId]["items"][$gid] = ['name'=>$row['act_group_desc'],'items'=>[],"count"=>0];
@@ -704,48 +754,51 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
      * @return string category name
      */
     private  function makeCategoryArray($data){
-        $result=array();
+         $result=array();
         if(!empty($data)){
            foreach ($data as $value){
                $result[]=$value["act_sub_catg_code"];
            }
-
         }
         return implode(",",$result);
     }
+
     private  function makeCategoryArrayCount($data){
         $result=array();
         if(!empty($data)){
             foreach ($data as $value){
                 $result[$value["act_sub_catg_code"]]=$value["count"];
             }
-
         }
         return $result;
     }
+
     public  function keyWordSuggestion($keyword){
-        $string=null;
+         $string=null;
         $conn = \Yii::$app->sphinx;
         $keywords=explode(" ",$keyword);
         if(!empty($keywords)):
-
         foreach ($keywords as $value):
            $response = $conn->createCommand("CALL QSUGGEST('".\Yii::$app->sphinx->escapeMatchValue($value)."','idx_court_decisions_0',1 as limit, 2 as max_edits,1 as result_stats,3 as delta_len,0 as result_line,25 as max_matches,4 as reject )")->queryAll();
            $data[]=$response;
         endforeach;
+
         //print_r($data);exit;
         if(isset($data) && !empty($data) && count($data[0]) > 0 ):
             foreach($data as $suggestedKeyWords):
-                $result[]=$suggestedKeyWords["0"]["suggest"];
+                if(isset($suggestedKeyWords["0"]["suggest"])):
+                    $result[]=$suggestedKeyWords["0"]["suggest"];
+                endif;
             endforeach;
             return implode(" ",$result);
         endif;
+
         endif;
+
         return $string;
 
-
-
     }
+
     public  function keyWordSuggestion1($keyword){
         $string=null;
         $conn = \Yii::$app->sphinx;
@@ -775,20 +828,20 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
      * @return string|null
      */
     public  function SearchSuggestion($keyword){
-        $result=array();
+         $result=array();
         $response=array();
         $conn = \Yii::$app->sphinx;
         $keywords=explode(" ",$keyword);
         if(!empty($keywords)):
-
             foreach ($keywords as $value):
                 $response = $conn->createCommand("CALL QSUGGEST('".\Yii::$app->sphinx->escapeMatchValue($value)."','idx_court_decisions_0',5 as limit, 4 as max_edits,1 as result_stats,3 as delta_len,0 as result_line,25 as max_matches,4 as reject )")->queryAll();
                 //print_r($response);exit;
                 $data[]=$response;
             endforeach;
-            //print_r($response);exit;
-            if(isset($response) && !empty($response) && count($response) > 0 ):
 
+            //print_r($response);exit;
+
+            if(isset($response) && !empty($response) && count($response) > 0 ):
                 foreach($response as $key => $suggestedKeyWords):
                     $result[]=$suggestedKeyWords["suggest"];
                 endforeach;
@@ -796,9 +849,8 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                 //print_r($result);
             endif;
         endif;
+
         return $result;
-
-
 
     }
 

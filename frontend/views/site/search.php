@@ -51,7 +51,7 @@ $this->title = 'Search';
                             <div class="col-md-2 col-sm-4 col-xs-12">
                                 <div class="row"><button type="submit" class="btn theme-blue-button btn-block">SEARCH</button></div>                                
                             </div>
-                        </form>
+                        <!-- </form> -->
 
                         
 
@@ -70,8 +70,8 @@ $this->title = 'Search';
                                             endif;
                                             ?>
                                
-                                <input type="radio" name="again" value="0" <?php echo $searchagain; ?> > &nbsp;&nbsp; Search Again<span style="padding-left: 20px"></span>
-                                <input type="radio" name="again" value="1" <?php echo $searchawith; ?>> &nbsp;&nbsp;  Search Within These Results
+                                <input type="radio" name="again" value="0" <?php echo $searchagain; ?> > &nbsp;&nbsp;Search Again<span style="padding-left: 20px"></span>
+                                <input type="radio" name="again" value="1" <?php echo $searchawith; ?>>&nbsp;&nbsp; Search Within These Results
                                 <?php
                                             //check if we got suggested key word
                                             if (isset($suggest)):
@@ -89,6 +89,11 @@ $this->title = 'Search';
                         </div>
                         
                     </div>
+                    <input type="hidden" name="court_code" value="<?php echo $court_code; ?>">
+                    <input type="hidden" name="startDate" value="<?php echo $startDate; ?>">
+                    <input type="hidden" name="endDate" value="<?php echo $endDate; ?>">
+                    <input type="hidden" name="swsQ"  value="<?php echo (!empty($term_previous))?$term." ".$term_previous:$term; ?>">
+                </form>
                 </div>
         </div>
          <div class="col-md-12">
@@ -107,7 +112,7 @@ $this->title = 'Search';
                                     if (!empty(( $court_data = $facets['court']))) {
                                         foreach ($facets['court'] as $i=> $court_type) {
                                             $items[($i.'courts')] = [
-                                            'label' => ArrayHelper::getValue($court_type, 'name', 'not-set'),
+                                            'label' => ArrayHelper::getValue($court_type, 'name', 'not-set'). ' (' . ArrayHelper::getValue($court_type, 'count', '#') . ' )',
                                             'icon' => 'plus',
                                             'items' => []
                                         ];
@@ -161,7 +166,7 @@ $this->title = 'Search';
                                         if (is_array($categories)) {
                                             foreach ($categories as $i => $category) {
                                                 $items['categories'] = [
-                                                    'label' => 'Categories',
+                                                    'label' => 'Categories'. ' (' . ArrayHelper::getValue($category, 'count', '#') . ' )',
                                                     'icon' => 'plus',
                                                     'items' => []
                                                 ];
@@ -199,9 +204,6 @@ $this->title = 'Search';
                                         }
                                     }
 
-                                      
-                                   
-
                            
                                 ?>
                                 <?=$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
@@ -216,7 +218,7 @@ $this->title = 'Search';
                          <?php
                             $linkopen = 0;
                             foreach ($data as $key => $row) :
-                                if ($linkopen == 6):
+                                if ($linkopen == 5):
                                     $linkopen = 0;
                                 endif;
                                 $linkopen++;
@@ -226,7 +228,7 @@ $this->title = 'Search';
                                 <div class="row">
                                     <div class="col-md-8 align-left">
                                         <span class=" search-result-title" onclick="openInNewTab('<?php echo Url::to(['site/judgment/' . $row["judgment_code"]], true); ?>', '<?php echo $linkopen; ?>')">
-                                           <a href="javascript:;" target="_blank"><?php echo $row["judgment_title"]; ?></a>
+                                           <a href="javascript:;" target=""><?php echo $row["judgment_title"]; ?></a>
                                         </span>
                                     </div>
                                     <?php

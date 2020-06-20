@@ -22,7 +22,7 @@ if(!empty($data) && count($data)> 0):
                         <div class="row">
                             <div class="col-md-1 align-left">
                                 <span class="actlist-item-label">
-                                	 Sr.No
+                                     Sr.No
                                 </span>
                             </div>
                             <div class="col-md-2 align-left">
@@ -56,12 +56,12 @@ if(!empty($data) && count($data)> 0):
 <div class="col-md-12 actlist-items odd-even">
                             <div class="col-md-1 align-left">
                                 <span class="actlist-item-text">
-                                	<?php echo $K;?>
+                                    <?php echo $K;?>
                                 </span>
                             </div>
                             <div class="col-md-2 align-left">
-                                <span class="actlist-item-text">	
-                                	<?php echo $record["act_group_desc"];?>
+                                <span class="actlist-item-text">    
+                                    <?php echo $record["act_group_desc"];?>
                                 </span>
                             </div>
                             <div class="col-md-2 align-left">

@@ -309,7 +309,7 @@ and jyear=:jyear', [':court_code' => $court_code,':jyear'=>$jyear])->queryScalar
     
 
     /*==========Manticore Function Start=========================*/
-     public static  function getSearchJudgment($code){
+      public static  function getSearchJudgment($code){
         $result=array("data"=>'');
         $record=parent::find()
         ->asArray()
@@ -319,14 +319,7 @@ and jyear=:jyear', [':court_code' => $court_code,':jyear'=>$jyear])->queryScalar
                           judgment_text,judges_name,judgment_code,doc_id,court_code,court_name')
        ->where(array("judgment_code" =>$code))
        ->all();
-        //echo $record->createCommand()->getRawSql();die;
-        $court_code = $record[0]['court_code'];
-       $username = \Yii::$app->user->identity->username;
-            $plans = UserPlanNew::find()->where([ 'username' => $username,'court_code' => $code ]);
-            //print_r($plans);die;
-           //echo $plans->createCommand()->getRawSql();die;
-           
-
+//print_r($record["0"]["doc_id"]);exit;
         if(!empty($record) && isset($record["0"])){
             //echo "hello".$record["0"]["doc_id"];exit;
             $actSectionRefered = JudgmentAct::getActSections($record["0"]["doc_id"]);
@@ -417,7 +410,7 @@ and jyear=:jyear', [':court_code' => $court_code,':jyear'=>$jyear])->queryScalar
         return $records;
         //return array("records"=>$records,"title"=>$judgmentTitle);
     }
-    public static  function getActList($docid){
+   public static  function getActList($docid){
         $sql="Select judgment_act.act_group_desc,judgment_act.act_catg_desc,judgment_act.act_sub_catg_desc, judgment_act.act_title,judgment_act.judgment_title,judgment_act.doc_id
         FROM judgment_act  
       where j_doc_id= $docid";

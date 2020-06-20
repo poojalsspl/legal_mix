@@ -22,7 +22,7 @@ $this->title = 'Advance Search';
                     <div class="row side-menu-content">
                         <div class="box box-v2">   
                             <div class="box-body">                               
-                                <?=$this->render('partials/side_menu_advanced_search.php', ['data' => [], 'title' => false])?>
+                                <?=$this->render('partials/side_menu_advanced_search.php', ['courtsData' => $courtsData, 'title' => false])?>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ $this->title = 'Advance Search';
                         <div class="box-body">
                             <div class="search col-md-12">
                                
-                                    <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/search">
+                                    <form role="form" id="form" name="form" novalidate="novalidate" action="/site/search">
                                     <div class="search col-md-12">
                                 <div class="row" style="margin-top: 50px">
                                     <div class="col-md-6 col-sm-12">
