@@ -21,11 +21,11 @@
                 
                 <div class="footer-block footer-column">
                     <ul class="footer-column-2">
-                        <li><?=Html::a('About Us','/site/about', ['class' =>  ''])?></li>
+                        <li><?=Html::a('About Us','/legal_mix/site/about', ['class' =>  ''])?></li>
 
-                        <li><?=Html::a('Terms of Usage', '/articles/view/4', ['class' =>  ''])?></li>
-                        <li><?=Html::a('Privacy Policy', '/articles/view/5', ['class' =>  ''])?></li>
-                        <li><?=Html::a('EULA', '/articles/view/7', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Terms of Usage', '/legal_mix/articles/view/4', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Privacy Policy', '/legal_mix/articles/view/5', ['class' =>  ''])?></li>
+                        <li><?=Html::a('EULA', '/legal_mix/articles/view/7', ['class' =>  ''])?></li>
                        
                     </ul>
                 </div>
@@ -35,10 +35,10 @@
 
                 <div class="footer-block footer-column">
                     <ul class="footer-column-2">
-                        <li><?=Html::a('Advance Search','/articles/view/9', ['class' =>  ''])?></li>
-                        <li><?=Html::a('Text base search in search', '/articles/view/10', ['class' =>  ''])?></li>
-                        <li><?=Html::a('Indian Bareacts', '/articles/view/11', ['class' =>  ''])?></li>
-                        <li><?=Html::a('Legal Document', '/articles/view/12', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Advance Search','/legal_mix/articles/view/9', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Text base search in search', '/legal_mix/articles/view/10', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Indian Bareacts', '/legal_mix/articles/view/11', ['class' =>  ''])?></li>
+                        <li><?=Html::a('Legal Document', '/legal_mix/articles/view/12', ['class' =>  ''])?></li>
                         
                     </ul>
                 </div>
