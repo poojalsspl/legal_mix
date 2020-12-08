@@ -15,7 +15,7 @@
 
 <div class="col-md-12"></div>
 
-  <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/search">
+  <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">
    <div class="box-body">
         <div class="form-group">
             <div class="col-md-10 col-md-offset-1">

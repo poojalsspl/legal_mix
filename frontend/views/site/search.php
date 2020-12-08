@@ -10,7 +10,10 @@ use yii\helpers\ArrayHelper;
 
 $this->title = 'Search';
 //$this->params['breadcrumbs'][] = $this->title;
-//print_r($facets);exit;
+
+// echo "<pre>";
+// print_r($facets['categories']);
+// echo "</pre>";die;
 
 ?>
 <script>
@@ -107,6 +110,7 @@ $this->title = 'Search';
                             <div class="box-body">
                                  <?php 
                                     $items = [];
+
                                     
                                     //Generate Court Items <li> codes/
                                     if (!empty(( $court_data = $facets['court']))) {
@@ -134,6 +138,8 @@ $this->title = 'Search';
                                     if (!empty(( $years_data = $facets['yearsdata']))) {
                                         if (is_array(($years = $years_data['years'])))
                                         {
+                                            krsort($years);
+
                                             $items['years'] = [
                                                     'label' => 'Years',
                                                     'icon' => 'plus',
@@ -147,7 +153,9 @@ $this->title = 'Search';
                                                     'items' => [],
                                                 ];
                                                 if (is_array($year)) {
+                                                    ksort($year);
                                                     foreach ($year as $code => $month) {
+
                                                         $items['years']['items'][$key]['items'][] = [
                                                             'label' => ArrayHelper::getValue($month, 'month', 'not-set') . ' (' . ArrayHelper::getValue($month, 'count', '#') . ' )',
                                                             'url' => Url::current(['j_year_month' => $key.$code]),
@@ -179,7 +187,9 @@ $this->title = 'Search';
                                                             'items' => []
                                                         ];
                                                         if (is_array(($acts = ArrayHelper::getValue($cat_item, 'items', 'not-set')))) {
+                                                            sort($acts);
                                                             foreach ($acts as $act_id => $act) {
+                                                                //sort($act);
                                                                 $items['categories']['items'][$i]['items'][$act_id] = [
                                                                     'label' => ArrayHelper::getValue($act, 'name', 'not-set') . ' (' . ArrayHelper::getValue($act, 'count', '#') . ' )',
                                                                     'icon' => 'plus',
@@ -205,6 +215,7 @@ $this->title = 'Search';
                                     }
 
                            
+
                                 ?>
                                 <?=$this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
                             </div>
@@ -239,7 +250,7 @@ $this->title = 'Search';
                                              ?>
                                     <div class="col-md-4 align-right">
                                         <span class=" search-result-date">
-                                            <?php if ($showdate == 1) { ?><a href="<?php echo Url::current(['judgment_date' => date("Ymd", strtotime($row["judgment_date"]))]); ?>"><?php echo date("Y-m-d", strtotime($row["judgment_date"]));
+                                            <?php if ($showdate == 1) { ?><a href="<?php echo Url::current(['judgment_date' => date("Ymd", strtotime($row["judgment_date"]))]); ?>"><?php echo date("d-m-Y", strtotime($row["judgment_date"]));
                                     } ?></a>
                                         </span>
                                     </div>

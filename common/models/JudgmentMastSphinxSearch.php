@@ -11,6 +11,7 @@ use backend\models\JudgmentDisposition;
 use yii\sphinx\Query;
 use yii\data\Pagination;
 use backend\models\BareactSubcatgMast;
+
 /**
  * JudgmentMastSearch represents the model behind the search form about `\backend\models\JudgmentMast`.
  */
@@ -180,7 +181,7 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
       
         $facetarray = [
             'court_code' => [
-                'order' => ['COUNT(*)' => SORT_DESC],
+                'order' => ['COUNT(*)' => SORT_ASC],
                 'limit' => 100,
             ],
 
@@ -615,7 +616,7 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
                   court_group_mast
                   ON 
                   court_group_mast.court_group_code = court_mast.court_group_code
-                  WHERE  court_code IN (" . $courtcodes . ")
+                  WHERE  court_code IN (" . $courtcodes . ") ORDER BY court_name
                   ";
             $connection = Yii::$app->getDb();
             $command = $connection->createCommand($sql);
@@ -673,8 +674,10 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         if (isset($data["judgment_date_year_month"]) && count($data["judgment_date_year_month"]) > 0):
             $years = $this->proccesfacetsYears($data["jyear"]);
             $yearData = array();
+
             foreach ($data["judgment_date_year_month"] as $yearMonthValues):
-                $year = substr($yearMonthValues["value"], 0, 4);
+                //print_r($yearMonthValues["value"]);
+               $year = substr($yearMonthValues["value"], 0, 4);
                 // skip if year don't seem valid
                 if ($year < 1000):
                     continue;
@@ -703,9 +706,11 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
             $result["count"][$year["jyear"]] = $year["count(*)"];
         endforeach;
         return $result;
+        //print_r($result);die;
     }
 
     private  function processfacetsCategories($data){
+        //print_r($data);
         $ids=$this->makeCategoryArray($data);
         $counts=$this->makeCategoryArrayCount($data);
         $tree=array();
@@ -713,7 +718,8 @@ class JudgmentMastSphinxSearch extends JudgmentMast {
         $records = BareactSubcatgMast::find()
             ->asArray()
             ->where("act_sub_catg_code IN (" . $ids . ")")
-            ->orderBy([new \yii\db\Expression('FIELD (act_sub_catg_code, ' . $ids . ')')])
+            //->orderBy([new \yii\db\Expression('FIELD (act_sub_catg_code, ' . $ids . ')')])
+            ->orderBy("act_sub_catg_desc")
             ->all();
 //        print_r($records);exit;
 

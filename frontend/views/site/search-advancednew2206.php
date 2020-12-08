@@ -3,8 +3,6 @@
     use yii\helpers\Url;
     use yii\widgets\Menu;
     use kartik\date\DatePicker;
-    use kartik\daterange\DateRangePicker;
-    use kartik\form\ActiveForm;
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -38,7 +36,7 @@
                             <div class="row">
                                 <div class="col-md-12 align-center">
                                     <span class="advanced-search-title align-center">
-                                        Advanced Search
+                                        Advanced Searchhhh
                                     </span>
                                 </div>
                             </div>
@@ -52,44 +50,29 @@
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                                 <label class="control-label">From</label>
-                                                
-                                                <?php
-                                                 
-                                                echo '<div class="input-group drp-container">';
-                                                echo DateRangePicker::widget([
+                                                <?=DatePicker::widget([
                                                     'name' => 'startDate',
                                                     'attribute' => 'startDate',
                                                     'id' => 'startDate',
-                                                    'options' => ['autocomplete' => 'off','placeholder' => 'Enter start date ...'],
-                                                    'pluginOptions'=>[
-                                                         'autoclose'=>true,
-                                                        'singleDatePicker'=>true,
-                                                        'showDropdowns'=>true,
-                                                        'locale'=>['format' => 'DD-MM-YYYY'],
-                                                        
+                                                    'options' => ['placeholder' => 'Enter start date ...'],
+                                                    'pluginOptions' => [
+                                                        'autoclose'=>true
                                                     ]
-                                                ])  ;
-                                                echo '</div>';   ?>                                              
+                                                ]);?>                                                    
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                            <label class="control-label">To</label>
-                                                
-                                                <?php
-                                                echo '<div class="input-group drp-container">';
-                                                echo  DateRangePicker::widget([
+                                                <?=DatePicker::widget([
                                                     'name' => 'endDate',
+                                                    'attribute' => 'endDate',
                                                     'id' => 'endDate',
-                                                    'options' => ['autocomplete' => 'off','placeholder' => 'Enter end date ...'],
+                                                    'options' => ['placeholder' => 'Enter end date ...'],
                                                     'pluginOptions' => [
-                                                        'autoclose'=>true,
-                                                        'singleDatePicker'=>true,
-                                                        'showDropdowns'=>true,
-                                                        'locale'=>['format' => 'DD-MM-YYYY'],
+                                                        'autoclose'=>true
                                                     ]
-                                                ]);
-                                                  echo '</div>';   ?>
+                                                ]);?>  
                                             </div>
                                         
                                         <input type="text" name="court_code" id="court_code" />
@@ -99,7 +82,7 @@
                                 </div>
                                     <div class="col-md-10 col-sm-8 col-xs-12">
                                         <div class="form-group">
-                                            <input type="search" class="form-control" id="textbox" name="q" placeholder="" autocomplete="off">
+                                            <input type="search" class="form-control" id="textbox" name="q" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-2 col-sm-4 col-xs-12">
