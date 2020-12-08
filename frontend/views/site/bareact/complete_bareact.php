@@ -8,6 +8,7 @@
 	}
 	
 </style>
+<a href="/legal_mix/site/dashboard" class="btn btn-primary"><i class= "fa fa-arrow-left">  Back to Dashboard</i></a>
 <?php
 use yii\helpers\ArrayHelper;
 use backend\models\BareactDetl;
@@ -29,7 +30,7 @@ foreach ($bareact as $value) { ?>
 		<?php 
         $level = $barBody['level'];
 		if ($level!=0) {?>
-		<div class="act_row"></div>
+		<div class="act_row" style="font-size: 16px;text-align: justify;"></div>
 		<button id="completebar-body">Complete Act</button>
 		<?php } ?>
 	</div>

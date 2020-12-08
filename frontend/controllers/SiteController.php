@@ -40,6 +40,7 @@ use app\models\JudgeCourtCountNew;
 use app\models\UserPlan;
 use app\models\UserPlanNew;
 use app\models\UserMast;
+use frontend\models\JudgmentCount;
 use yii\data\Pagination;
 use yii\helpers\Json;
 use kartik\mpdf\Pdf;
@@ -174,9 +175,12 @@ class SiteController extends Controller
         //$this->layout = 'InnerPage';
          //$this->layout = 'sidebar';
         //$userplan = new \app\models\UserPlan();
+      $this->layout = 'mainstep2';
         
         $username = \Yii::$app->user->identity->username;
+        $id = Yii::$app->user->identity->id;
         $connection = Yii::$app->getDb();
+        $user = new LoginForm();
         $command = $connection->createCommand("SELECT court_name,expiry_date from user_plan_new where username= :username and expiry_date >= NOW()", [':username' => $username ]);
 
         $sel_plan = $command->queryAll();
@@ -225,6 +229,14 @@ class SiteController extends Controller
                 $userplan->corporate_ip= $ip ; 
            }
            $userplan->validate();
+           if ($userplan->save() && $user->SetStatus($id,'3')) {
+                $msg = "User profile updated.";
+                  Yii::$app->session->setFlash('success', "Plan Seleceted ."); 
+                 return $this->redirect(['dashboard']);
+
+              } else {
+                  Yii::$app->session->setFlash('error', "Plan not Seleceted .");
+              }
          
            $exists = UserPlanNew::find()->where( [ 'username' => $username,'court_name' => $value ] )->exists();
 
@@ -721,6 +733,7 @@ class SiteController extends Controller
         $this->layout = 'landing';
          $model = new SignupForm();
         $usermodel = new UserMast();
+        $judgment_count = JudgmentCount::find()->one();
         if ($model->load(Yii::$app->request->post())) {
                 //$username      = $_POST['SignupForm']['first_name'];
                 $email         = $_POST['SignupForm']['email'];
@@ -741,6 +754,7 @@ class SiteController extends Controller
         }
         return $this->render('index', [
             'model' => $model,
+            'judgment_count' => $judgment_count,
         ]);
         //return $this->render('index');
     }
@@ -771,6 +785,9 @@ class SiteController extends Controller
                return $this->redirect(['site/step2']);
 
              } else if($userdata->status == '2'){
+              return $this->redirect(['planformnew']);
+            }
+            else if($userdata->status == '3'){
              $user_email = $userdata->email;
              $user_exp = UserPlanNew::find()->where(['username'=>$user_email])->one();
              $user_expiry = $user_exp->expiry_date; 
@@ -782,6 +799,7 @@ class SiteController extends Controller
 
                return $this->redirect(['site/dashboard']);
              }
+             return $this->redirect(['site/dashboard']);
              } else if($userdata->status == '0'){
 
                      Yii::$app->user->logout();
@@ -1115,6 +1133,9 @@ class SiteController extends Controller
     {
       
         if (!Yii::$app->user->isGuest){ 
+        $username = \Yii::$app->user->identity->username;
+        if(UserPlanNew::find()->where([ 'username' => $username])->exists()){
+
         $params = \Yii::$app->request->get();
         $model = new JudgmentMastSphinxSearch();
         //$suggest=$model->keyWordSuggestion("");
@@ -1140,6 +1161,11 @@ class SiteController extends Controller
         //$this->layout = 'InnerPage';
         return $this->render('search',$data);
          }else{
+             Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please select a plan first from <a href="/legal_mix/site/planformnew">Plan Subscription</a>');
+                return $this->render('message');
+         }
+
+         }else{
          Yii::$app->session->setFlash('error', 'You are not authorize to access this page, please login first to view the search result!');
                 return $this->render('message');
 
@@ -1156,9 +1182,43 @@ class SiteController extends Controller
         echo json_encode($data);die;
     }
 
+        /* 20/10/20 */
+        public function actionCustomSearch()
+        {
+          return $this->render('custom_search');
+        }
+
+
+
+        public function actionCustomAjaxSearch($srch,$fltr)
+        {
+          
+          if($fltr=='1'){
+            $model = JudgmentMast::find()
+            ->select('judgment_code,court_name,judgment_date,judgment_title,appellant_name,respondant_name,disposition_text,citation,judges_name,judgment_abstract,judgment_text')
+            ->where('judgment_title LIKE'.  "'%$srch%'")
+            ->all();
+            }
+
+          if ($fltr=='2') {
+          
+          $model = JudgmentMast::find()
+          ->select('judgment_code,court_name,judgment_date,judgment_title,appellant_name,respondant_name,disposition_text,citation,judges_name,judgment_abstract,judgment_text')
+          ->where('citation LIKE '. "'%$srch%'")
+        //->addParams(['citation'=>$srch])
+          ->all(); 
+          
+          }
+
+          
+         return Json::encode($model);
+
+        }
+
 
         public function actionSearchForm()
     {
+       
        
        return $this->renderAjax('partials1/search_form');
        //return $this->renderAjax('partials1/search_form',['courtsData' => $string,]);
@@ -1528,6 +1588,7 @@ class SiteController extends Controller
            $barsubCode = $barSubCatg->getbareactCode($act_code);
            return $this->render('bareact/bareact_sub', [
               'barsubCode' => $barsubCode,
+              'act_code'=>$act_code,
            ]);
            
       }
@@ -1585,19 +1646,24 @@ class SiteController extends Controller
         
          $bareact = BareactMast::find()->select(['doc_id'])->where(['bareact_code'=>$id])->one();
          $bareactmast_docid = $bareact['doc_id'];
-         $query = BareactDetl::find()->select('body')->where(['=','doc_id',$bareactmast_docid])->one();
+         $query = BareactDetl::find()->select('body,doc_id')->where(['=','doc_id',$bareactmast_docid])->one();
          $result = Json::encode($query);
         
      return $result;   
     }
 
 
+    
+
+
+
     /*======== end of Bareact Sidebar ========*/
 
-     
 
 
-     /*===========Manticore function start============*/
+
+
+    /*===========Manticore function start============*/
     public function actionSearchAdvance()
     {
         $params = \Yii::$app->request->get();
@@ -1814,7 +1880,7 @@ public function actionStep2()
               if ($model->save() && $user->SetStatus($id,'2')) {
                 $msg = "User profile updated.";
                   Yii::$app->session->setFlash('success', "User profile updated."); 
-                 return $this->redirect(['dashboard']);
+                 return $this->redirect(['planformnew']);
 
               } else {
                   Yii::$app->session->setFlash('error', "User not saved.");

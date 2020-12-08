@@ -4,6 +4,10 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 use frontend\models\JudgmentMast;
 use backend\models\BareactCatgMast;
+use backend\models\BareactMast;
+use app\models\UserPlanNew;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 
 //$this->params['breadcrumbs'][] = $this->title;
     $gender_options = [
@@ -23,7 +27,26 @@ use backend\models\BareactCatgMast;
                     <div class="row side-menu-content">
                         <div class="box box-v2">   
                             <div class="box-body">
-                                <?php  
+                                
+                                <?php 
+                                     $username = \Yii::$app->user->identity->username;
+                                     if(UserPlanNew::find()->where([ 'username' => $username])->exists()){
+                                     $dataBareact = ArrayHelper::map(BareactMast::find()->all(), 'bareact_code', 'bareact_desc');
+                                   
+                                    echo Select2::widget([
+                                    'name' => 'bareact',
+                                    'id' => 'bareact',
+                                    'data' => $dataBareact,
+                                    'size' => Select2::SMALL,
+                                    'options' => ['placeholder' => 'Select Bareact...'],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                                    ]);
+                                    }
+
+                                    echo "<br>";
+
                                     $brcatgmast = new BareactCatgMast();
                                     $catg_list = $brcatgmast->getCatglist(); 
                                     $items_catg = [];
@@ -44,10 +67,22 @@ use backend\models\BareactCatgMast;
                                             'items' => $items_catg
                                         ],
                                         
-                                    ];          
+                                    ];  
+                                    
+                                   
+                                    
+                                      
                                 ?>
 
-                               <?php echo  $this->render('partials/side_menu.php', ['items' => $items, 'title' => false])?>
+                               <?php 
+                               //$username = \Yii::$app->user->identity->username;
+                                if(UserPlanNew::find()->where([ 'username' => $username])->exists()){
+                               echo  $this->render('partials/side_menu.php', ['items' => $items, 'title' => false]); }
+                               else{
+                                echo '<strong><span style="color:red">Select Plan to view Bare act.</span></strong> ';
+                               } 
+                               ?>
+                                    
                             </div>
                         </div>
                     </div>
@@ -144,5 +179,30 @@ use backend\models\BareactCatgMast;
         
     </div>
 </div>
+
+<?php $customScript = <<< SCRIPT
+
+$('#bareact').on('change', function(){
+    var bareact_code = $(this).val();
+    if(bareact_code=='')
+     {
+        alert('Please Select Bareact');
+     }
+ else
+$.ajax({
+//type     :'GET',
+url        : '/legal_mix/site/bareact-final?id='+bareact_code,
+dataType   : 'json',
+success    :  function(data){
+    var did = data.doc_id;
+    var url = '/legal_mix/site/complete-bareact?did=' + did
+window.location.href = url;
+},
+});
+
+}); 
+
+SCRIPT;
+$this->registerJs($customScript, \yii\web\View::POS_READY);?>
                 
 
