@@ -15,6 +15,7 @@ $(function(){
 });
 
 
+
 /* document.addEventListener('contextmenup', event => event.preventDefault());
  $(document).ready(function () {       
        //Disable cut copy paste

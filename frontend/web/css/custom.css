@@ -919,6 +919,10 @@ now override the 3.3 new styles for modern browsers & apply opacity
     font-weight: 600;
     font-size: 20px;
 }
+.bareact-content {
+  margin-left: 4px;
+  text-align: justify;
+}
 .bareact-content-title {
     margin: 20px auto;
     color: #185886;
@@ -926,6 +930,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 .bareact-content-item {
     font-size: 15px;
+    text-align: justify;
 }
 
 /** Start User CP*/
