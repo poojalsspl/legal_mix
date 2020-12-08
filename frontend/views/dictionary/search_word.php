@@ -27,8 +27,13 @@ use kartik\select2\Select2;
           <div class="row">
           	<div class="col-md-3"></div>
     		<div class="col-md-6">
-     <?= $form->field($model, 'synonym')->textInput(['readonly'=> true]) ?>     
-     <?= $form->field($model, 'defination')->textarea(['rows' => 6,'readonly'=> true]) ?>
+          <div id="dictionary-synonym">
+            
+          </div>
+         <div id="dictionary-defination">
+            
+          </div>
+     
         </div>
           <div class="col-md-3"></div>
     </div>  
@@ -50,7 +55,7 @@ $('#dictionary-id').on('change', function(){
  else
 $.ajax({
 //type     :'GET',
-url        : '/dictionary/wordsearch?id='+dictionary,
+url        : '/legal_mix/dictionary/wordsearch?id='+dictionary,
 dataType   : 'json',
 success    : function(data){
 
@@ -62,8 +67,8 @@ synonym = e.synonym;
 defination = e.defination;
 });
 
-$('#dictionary-synonym').val(synonym);
-$('#dictionary-defination').val(defination);
+$('#dictionary-synonym').append('<b>Synonym : </b>'+synonym);
+$('#dictionary-defination').append('<b>Defination : </b>'+defination);
 
 },
 });
