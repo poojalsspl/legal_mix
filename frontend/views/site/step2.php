@@ -24,7 +24,7 @@ $this->title = 'Update Profile';
     array_push($country, "Select Country");
     $country = array_reverse($country,true);
     $profession = ['Academic/Educator'=>'Academic/Educator','Advocate'=>'Advocate','Chartered Accountant'=>'Chartered Accountant','Company Secretary'=>'Company Secretary','Consultant'=>'Consultant','Corporate'=>'Corporate','Customer Support'=>'Customer Support','Doctor'=>'Doctor','Engineer'=>'Engineer','General Administrator'=>'General Administrator','Government Employee'=>'Government Employee','Inhouse Lawyer'=>'Inhouse Lawyer','IT related'=>'IT related','Retired'=>'Retired','Sales & Marketing'=>'Sales & Marketing','Self Employed'=>'Self Employed','Student'=>'Student','Solicitor'=>'Solicitor','Other'=>'Other'];
-    $practise_area = ['Administrative Law'=>'Administrative Law','Banks & Books'=>'Banks & Books','Business Law'=>'Business Law','Civil Practice'=>'Civil Practice','Civil Rights'=>'Civil Rights','Commercial Law'=>'Commercial Law','Constitutional Law'=>'Constitutional Law','Consumer Law'=>'Consumer Law','Copyright'=>'Copyright','Corporate Law'=>'Corporate Law','Criminal Law'=>'Criminal Law','Cyber Law'=>'Cyber Law','Drugs & Narcotics'=>'Drugs & Narcotics','Election,Campaign,Political Law'=>'Election,Campaign,Political Law','Environmental Law'=>'Environmental Law','Family Law'=>'Family Law','Immigration and Naturalization'=>'Immigration and Naturalization','Insurance'=>'Insurance','Intellectual Property'=>'Intellectual Property','International Law'=>'International Law','Military Law'=>'Military Law','Partnership Law'=>'Partnership Law','Property Law'=>'Property Law','Religious Institution'=>'Religious Institution','Texation'=>'Texation','Torts'=>'Torts','Trade & Professional'=>'Trade & Professional','Trade Mocks'=>'Trade Mocks','Unfair Competition'=>'Unfair Competition','Finance Banking'=>'Finance Banking'];
+     $practise_area = ['Arbitration and conciliation'=>'Arbitration and conciliation','Banking & Finance Law'=>'Banking & Finance Law','Civil Law'=>'Civil Law','Constitutional Law'=>'Constitutional Law','Consumer Law'=>'Consumer Law','Corporate Law'=>'Corporate Law','Criminal Law'=>'Criminal Law','Cyber Law'=>'Cyber Law','Education Law'=>'Education Law','Election Law'=>'Election Law','Environmental Law'=>'Environmental Law','Family Law'=>'Family Law','Human Rights'=>'Human Rights','Insurance Law'=>'Insurance Law','Intellectual Property Law'=>'Intellectual Property Law','International Trade & Exim'=>'International Trade & Exim','Labour and Industrial Law'=>'Labour and Industrial Law','Media Law'=>'Media Law','Mergers and acquisitions Law'=>'Mergers and acquisitions Law','Migration/Immigration Law'=>'Migration/Immigration Law','Natural Resources'=>'Natural Resources','Property Law'=>'Property Law','Service Law'=>'Service Law','Taxation Law'=>'Taxation Law','Wildlife Law'=>'Wildlife Law'];
 ?>
 
 <div class="template">
@@ -40,16 +40,7 @@ $this->title = 'Update Profile';
                         <div class="col-md-12">
                             <div class="col-md-4 col-xs-12">
                                 <div class="profile-preview">
-                                    <?=$form->field($model, 'user_pic')->widget(FileInput::classname(), [
-                                        'options' => ['accept' => 'image/*'],
-                                        'pluginOptions' => [
-                                                'showUpload' => false,
-                                                'initialPreview' => Html::img('@web/images/uploads/profile.jpg', ['class' => 'profile-update-pic']),
-                                                'initialCaption' => 'Logo',
-                                            'mainClass' => 'input-group-sm'
-                                        ]
-                                    ])->label(false);?>
-
+                                   
                                 </div>
                             </div>
                             <div class="col-md-4 col-xs-12">
@@ -58,13 +49,23 @@ $this->title = 'Update Profile';
 
                                 <?= $form->field($model, 'email')->textInput(['readonly'=> true, 'placeholder' => 'Enter Email']) ?>
                                
-                                <?= $form->field($model, 'dob')->widget(\yii\jui\DatePicker::class, [
-                             
-                            'dateFormat' => 'dd/MM/yyyy',
-
-                           ]); ?><!--//added for dob //27/7/2019 -->
-                          
-
+                                <?= $form->field($model, 'dob')->widget(
+                                DatePicker::className(), 
+                                [
+                                'inline' => false,
+                                'clientOptions' => [
+                                'autoclose' => true,
+                                'format' => 'yyyy-m-dd',
+                                'todayHighlight' => true,
+                                ],
+                                'clientEvents' => [
+                                'changeDate' => false
+                                ],
+                                'options' => [
+                                'readonly' => 'readonly',
+                                                                ]
+                                ]
+                                ); ?>
 
 
                             </div>

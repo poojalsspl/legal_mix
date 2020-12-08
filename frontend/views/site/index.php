@@ -31,6 +31,8 @@ $this->title = 'Courts Judgments';
             document.getElementById('srchbutton2').disabled = false;
         }
     }
+
+
     </script>
 <!--Slider Section Start-->
 <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -45,7 +47,7 @@ $this->title = 'Courts Judgments';
                         <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">                 
                             <div class="col-md-10 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                   <input type="search" class="form-control" style="height:40px; border-radius: 38px;" id="textbox0" name="q" placeholder="Search...." onkeyup="successsearch0()">
+                                   <input type="search" class="form-control" style="height:40px; border-radius: 38px;" id="textbox0" autocomplete="off" name="q" placeholder="Search...." onkeyup="successsearch0()">
                                      <input type="hidden" name="court_code" id="court_code" />
                                      <input type="hidden" name="advance_search" value="1" />
                                   </div>
@@ -82,7 +84,7 @@ $this->title = 'Courts Judgments';
                        <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">                         
                             <div class="col-md-10 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input type="search" class="form-control" style="height:40px; border-radius: 38px;" id="textbox1" name="q" placeholder="Search...." onkeyup="successsearch1()">
+                                    <input type="search" class="form-control" style="height:40px; border-radius: 38px;" autocomplete="off" id="textbox1" name="q" placeholder="Search...." onkeyup="successsearch1()">
                                      <input type="hidden" name="court_code" id="court_code" />
                                      <input type="hidden" name="advance_search" value="1" />
                                   </div>
@@ -112,7 +114,7 @@ $this->title = 'Courts Judgments';
                        <form role="form" id="form" name="form" novalidate="novalidate" action="/legal_mix/site/searchnew">                          
                             <div class="col-md-10 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input type="search" class="form-control" style="height:40px; border-radius: 38px;" id="textbox2" name="q" placeholder="Search...." onkeyup="successsearch2()">
+                                    <input type="search" class="form-control" style="height:40px; border-radius: 38px;" autocomplete="off" id="textbox2" name="q" placeholder="Search...." onkeyup="successsearch2()">
                                      <input type="hidden" name="court_code" id="court_code" />
                                      <input type="hidden" name="advance_search" value="1" />
                                   </div>
@@ -141,12 +143,7 @@ $this->title = 'Courts Judgments';
     <a class="carousel-control right slider-carousel" href="#carousel" data-slide="next">›</a>
 </div>
 <!--Slider Section End -->
-<?php 
-$sql="Select * from judgment_count";
-$command = Yii::$app->getDb()->createCommand($sql);
-$records = $command->queryAll();
-$records[0]['tr_judgment'];
-?>
+
 
 
     <!-- service area start -->
@@ -158,7 +155,7 @@ $records[0]['tr_judgment'];
                         <span class="stats-item-icon">
                             <i class="fa fa-gavel stats-icon"></i>
                         </span>
-                        <h2><span class="counter"><?php echo $records[0]['sc_judgment'];?></span></h2>
+                        <h2><span class="counter"><?php echo $judgment_count->sc_judgment ;?></span></h2>
                         <p>SUPREME COURT</p>
                     </div>
                 </div>
@@ -168,7 +165,7 @@ $records[0]['tr_judgment'];
                         <span class="stats-item-icon">
                             <i class="fa fa-gavel stats-icon"></i>
                         </span>
-                        <h2><span class="counter"><?php echo $records[0]['hc_judgment'];?></span></h2>
+                        <h2><span class="counter"><?php echo $judgment_count->hc_judgment ;?></span></h2>
                         <p>HIGH COURT</p>
                     </div>
                 </div>
@@ -178,8 +175,18 @@ $records[0]['tr_judgment'];
                         <span class="stats-item-icon">
                             <i class="fa fa-gavel stats-icon"></i>
                         </span>
-                        <h2><span class="counter"><?php echo $records[0]['fc_judgment'];?></span></h2>
-                        <p>FOREIGN COURT</p>
+                        <h2><span class="counter"><?php echo $judgment_count->tr_judgment ;?></span></h2>
+                        <p>TRIBUNAL </p>
+                    </div>
+                </div>
+
+                 <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="service-single">
+                        <span class="stats-item-icon">
+                            <i class="fa fa-folder-open stats-icon"></i>
+                        </span>
+                        <h2><span class="counter"><?php echo $judgment_count->totind_judgment ;?></span></h2>
+                        <p>Total Judgment </p>
                     </div>
                 </div>
                 
@@ -188,27 +195,19 @@ $records[0]['tr_judgment'];
                         <span class="stats-item-icon">
                             <i class="fa fa-gavel stats-icon"></i>
                         </span>
-                        <h2><span class="counter"><?php echo $records[0]['tr_judgment'];?></span></h2>
-                        <p>TRIBUNAL </p>
+                        <h2><span class="counter"><?php echo $judgment_count->fc_judgment ;?></span></h2>
+                        <p>FOREIGN COURT</p>
                     </div>
                 </div>
                 
-                <div class="col-md-2 col-sm-4 col-xs-12">
-                    <div class="service-single">
-                        <span class="stats-item-icon">
-                            <i class="fa fa-folder-open stats-icon"></i>
-                        </span>
-                        <h2><span class="counter">45276</span></h2>
-                        <p>DOCUMENTS </p>
-                    </div>
-                </div>
+               
                 
                 <div class="col-md-2 col-sm-4 col-xs-12">
                     <div class="service-single">
                         <span class="stats-item-icon">
                             <i class="fa fa-file stats-icon"></i>
                         </span>
-                        <h2><span class="counter"><?php echo $records[0]['ba'];?></span></h2>
+                        <h2><span class="counter"><?php echo $judgment_count->ba ;?></span></h2>
                         <p>BAREACT</p>
                     </div>
                 </div>

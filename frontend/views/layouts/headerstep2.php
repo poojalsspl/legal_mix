@@ -81,10 +81,10 @@ use kartik\popover\PopoverX;
                                         'url' => ['site/planformnew']
                                     ],
 
-                                    [
-                                        'label' => 'Advance Search',
-                                        'url' => ['site/search-advancednew']
-                                    ],
+                                    // [
+                                    //     'label' => 'Advance Search',
+                                    //     'url' => ['site/search-advancednew']
+                                    // ],
 
                                     [
                                         'label' => 'History',

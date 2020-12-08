@@ -76,9 +76,9 @@ class JudgmentMast extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['court_code', 'appellant_adv_count', 'respondant_adv_count', 'citation_count', 'judges_count', 'jcatg_id', 'jsub_catg_id'], 'integer'],
+           [['court_code', 'appellant_adv_count', 'respondant_adv_count', 'citation_count', 'judges_count', 'jcatg_id', 'jsub_catg_id'], 'integer'],
             [['judgment_date', 'disposition_id','disposition_text','judgment_jurisdiction_id','judgmnent_jurisdiction_text','bench_type_id','bench_type_text','hearing_date','jyear','jcount'], 'safe'],
-            [['judgment_title', 'jcatg_id', 'jsub_catg_id'], 'required'],
+            [['judgment_title'], 'required'],
             [['judgment_abstract', 'judgment_text'], 'string'],
             [['court_name'], 'string', 'max' => 100],
             //[['appeal_numb'], 'string', 'max' => 250],
@@ -103,7 +103,7 @@ class JudgmentMast extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'judgment_code'            => 'Judgment Code',
+             'judgment_code'            => 'Judgment Code',
             'court_code'               => 'Court Code',
             'court_name'               => 'Court Name',
             'appeal_numb'              => 'Appeal Numb',
