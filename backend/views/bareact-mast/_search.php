@@ -15,15 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'bareact_id') ?>
+    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'old_bareact_id') ?>
+    <?= $form->field($model, 'doc_id') ?>
 
-    <?= $form->field($model, 'source_act_id') ?>
+    <?= $form->field($model, 'bareact_code') ?>
 
-    <?= $form->field($model, 'act_name') ?>
+    <?= $form->field($model, 'bareact_desc') ?>
 
-    <?= $form->field($model, 'bareact_catgid') ?>
+    <?= $form->field($model, 'act_group_code') ?>
 
     <?php // echo $form->field($model, 'bareact_catg_name') ?>
 

@@ -23,19 +23,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            //'bareact_id',
-            'old_bareact_id',
-            'source_act_id',
-            'act_name',
-            'bareact_catgid',
-             'bareact_catg_name',
-            // 'tot_section',
-            // 'tot_chap',
-            // 'Enactment_date',
-            // 'bareact_text:ntext',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+             'attribute'=>'bareact_desc',
+             'value'=>'truncatedBareact',  
+            ],
+            'act_catg_desc',
+            'act_sub_catg_desc',
+           ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

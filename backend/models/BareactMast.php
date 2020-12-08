@@ -109,4 +109,12 @@ class BareactMast extends \yii\db\ActiveRecord
     {
         return $this->hasMany(JudgmentAct::className(), ['bareact_code' => 'bareact_code']);
     }
+
+    public function getTruncatedBareact()
+    {
+        if (strlen($this->bareact_desc)<=50) 
+            return $this->bareact_desc;
+        else 
+            return substr($this->bareact_desc,0,50).'...';
+    }
 }

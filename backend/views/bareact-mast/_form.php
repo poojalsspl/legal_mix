@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use backend\models\BareactCatg;
+use backend\models\BareactCatgMast;
 use yii\helpers\ArrayHelper;
 use kartik\daterange\DateRangePicker;
 
@@ -16,41 +16,35 @@ use kartik\daterange\DateRangePicker;
 
     <?php $form = ActiveForm::begin(); ?>
     
-    <?php $bareactCatg = ArrayHelper::map(BareactCatg::find()->all(), 'bareact_catgid', 'bareact_catg_name'); ?>
+    <?php $bareactCatg = ArrayHelper::map(BareactCatgMast::find()->all(), 'act_catg_code', 'act_catg_desc'); ?>
 
 
-        <?= $form->field($model, 'bareact_catg_name')->dropDownList($bareactCatg, ['prompt' => 'Select Category',
-            'value' => (!$model->isNewRecord) ? $model->bareact_catgid : '',
-            "onchange"=>"
-                                                    var code = $(this).val();
-                                                    $('#bareactmast-bareact_catgid').val(code);
-                                                   "]) ?>
+        
+    <?= $form->field($model, 'act_catg_desc')->dropDownList($bareactCatg, ['prompt' => 'Select Category',
+        'value' => (!$model->isNewRecord) ? $model->act_catg_code : '',
+        "onchange"=>"
+                      var code = $(this).val();
+                      $('#bareactmast-act_catg_code').val(code);
+                      "]) ?>                                           
 
+    <?= $form->field($model, 'act_catg_code')->textInput(['maxlength' => true,'readonly'=>true]) ?>
 
-    <?= $form->field($model, 'bareact_catgid')->textInput(['maxlength' => true,'readonly'=>true]) ?>
-
-    <?= $form->field($model, 'bareact_id')->textInput() ?>
-
-    <?= $form->field($model, 'old_bareact_id')->textInput() ?>
-
-    <?= $form->field($model, 'source_act_id')->textInput() ?>
-
-    <?= $form->field($model, 'act_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'bareact_code')->textInput() ?>
 
     <?= $form->field($model, 'tot_section')->textInput() ?>
 
     <?= $form->field($model, 'tot_chap')->textInput() ?>
 
-  <?= $form->field($model, 'Enactment_date')->widget(DateRangePicker::classname(), [
-    'pluginOptions'=>[
+    <?= $form->field($model, 'enact_date')->widget(DateRangePicker::classname(), [
+        'pluginOptions'=>[
         'singleDatePicker'=>true,
         'showDropdowns'=>true,
         'locale'=>['format' => 'YYYY-MM-DD'],
-
-    ],
-]);
-  ?>
-    <?= $form->field($model, 'bareact_text')->textarea(['rows' => 6]) ?>
+       ],
+      ]);
+    ?>
+    
+    <?= $form->field($model, 'bareact_desc')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -61,7 +55,7 @@ use kartik\daterange\DateRangePicker;
 </div>
 
 <?php 
-    $this->registerJs("CKEDITOR.replace('bareactmast-bareact_text')");
+    $this->registerJs("CKEDITOR.replace('bareactmast-bareact_desc')");
 
    // $this->registerJs("CKEDITOR.replace('pages-page_abstract')");
 
