@@ -166,7 +166,7 @@ $this->title = 'Courts Judgments';
                             <i class="fa fa-gavel stats-icon"></i>
                         </span>
                         <h2><span class="counter"><?php echo $judgment_count->hc_judgment ;?></span></h2>
-                        <p>HIGH COURT</p>
+                        <p><a href="site/high-court">HIGH COURT</a></p>
                     </div>
                 </div>
                 

@@ -27,6 +27,8 @@ use frontend\models\PlanMast;
 use frontend\models\BrowsingLog;
 use frontend\models\JudgmentActCount;
 use frontend\models\UserLog;
+use frontend\models\JudgmentCourtCount;
+use frontend\models\HighcourtDetl;
 use backend\models\CountryMast;
 use backend\models\StateMast;
 use backend\models\CityMast;
@@ -1011,6 +1013,14 @@ class SiteController extends Controller
      * @return mixed
      */
 
+    /* created for SEO pages */
+      public function actionCourt($court)
+    {
+      $models = HighcourtDetl::find()->where(['like', 'court_name', $court])->all();
+      return $this->render('court',['models'=>$models]);
+
+    }
+
      /*====Manticore function start=======*/
          public function actionHighCourt()
     {
@@ -1018,6 +1028,7 @@ class SiteController extends Controller
        return $this->render('high_court_list',[
          'models' => $models,
        ]);
+
     }
 
     public function actionTribunalCourt()
@@ -1104,6 +1115,7 @@ class SiteController extends Controller
         $model = new JudgmentMastSphinxSearch();
         //$suggest=$model->keyWordSuggestion("");
         $data = $model->searchJudgements($params);
+        
         $data['term'] = isset($params['q']) ? $params['q'] : '';
         $data['term_previous'] = isset($params['p']) ? $params['p'] : '';
         $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
@@ -1148,6 +1160,9 @@ class SiteController extends Controller
         $data['court_code'] = isset($params['court_code']) ? $params['court_code'] : '';
         $data['term_again'] = isset($params['again']) ? $params['again'] : 0;
         $data['advance_search'] = isset($params['advance_search']) && $params['advance_search'] == 1 ? 1 : 0;
+        $data['j_year_month'] = isset($params['j_year_month']) ? $params['j_year_month'] : '';
+        $data['act_category'] = isset($params['act_category']) ? $params['act_category'] : '';
+        $data['act_sub_category'] = isset($params['act_sub_category']) ? $params['act_sub_category'] : ''; 
         if($data['term_again']==0):
         $data['term_previous'] =null;
         endif;
@@ -1172,7 +1187,12 @@ class SiteController extends Controller
     }
     }
 
-    
+    public function actionTestingq(){
+//die('he');
+      $model = new JudgmentMastSphinxSearch();
+      $data = $model->testquery();
+      return $data; 
+    }
  
     public function actionSearchsuggestion(){
         $params = \Yii::$app->request->get();
