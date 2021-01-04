@@ -1,11 +1,11 @@
 <div class="wrapper">
     <nav id="sidebar-cust"> 
-    <ul class="list-unstyled components">
      <?php
         foreach ($courtsData as $data) {
             $string2 = $data['header'];
             $stripped = str_replace(' ', '', $string2);
       ?>
+    <ul class="list-unstyled components">
         <li>
             <input type="checkbox" class="form-check-input checkbox-a-search" value="checked">
             <a href="#<?php echo $stripped; ?>" data-toggle="collapse" aria-expanded="false"> <span class="item-label">
@@ -25,7 +25,7 @@
                          foreach($dt['items'] as $et){
                         ?>
                         <li class="last-item">
-                                <input type="checkbox" class="form-check-input checkbox-a-search" id="materialUnchecked">
+                                <input type="checkbox" class="form-check-input checkbox-a-search" id="materialUnchecked" value=<?php echo $et['id']; ?>>
                                 <span class="item-label"><?php echo $et['header'];?></span><!--supreme//supreme(level 3)-->
                         </li>
                         <?php } } ?>

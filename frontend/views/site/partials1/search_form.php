@@ -47,7 +47,7 @@
                <div class="col-md-12">
                    <button class="btn theme-blue-button" type="submit" id="srchbutton" disabled><span class="search-icon"><i class="fa fa-search"></i></span> Search</button>
                    
-                   <button class="btn btn-warning"><a href="/legal_mix/site/search-advance">Advanced Search</a></button>
+                   
              
 
                </div>

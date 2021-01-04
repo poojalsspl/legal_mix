@@ -2,9 +2,9 @@
     use yii\helpers\Html;
     use yii\helpers\Url;
     use yii\widgets\Menu;
-    use kartik\date\DatePicker;
+    //use kartik\date\DatePicker;
     use kartik\daterange\DateRangePicker;
-    use kartik\form\ActiveForm;
+    //use kartik\form\ActiveForm;
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -105,8 +105,7 @@
                                     <div class="col-md-2 col-sm-4 col-xs-12">
                                         <button type="submit" class="btn theme-blue-button btn-block">SEARCH</button>                                
                                     </div>
-                                    <input type="hidden" name="court_code" id="court_code" />
-                                    <input type="hidden" name="advance_search" value="1" />
+                                 
                                 </form>
                             </div>
                             <div class="box-body align-center col-md-12 footer-block"  style="margin-top: 30px">

@@ -48,6 +48,14 @@ class ArticlesSearch extends Articles
             'query' => $query,
         ]);
 
+        //sorting of result 
+        $dataProvider->setSort([
+           
+            'defaultOrder' => [
+                'id' => SORT_DESC
+            ]
+        ]);
+
         $this->load($params);
 
         if (!$this->validate()) {

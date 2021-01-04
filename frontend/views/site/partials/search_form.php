@@ -30,7 +30,7 @@
            <div class="col-md-10 col-md-offset-1">
                <div class="col-md-12">
                    <button class="btn theme-blue-button"><span class="search-icon"><i class="fa fa-search"></i></span> Search</button>
-                   <button class="btn btn-warning">Advanced Search</button>
+                   <button class="btn btn-warning">Advancedfhgfghfd Search</button>
                </div>
            </div>
        </div>

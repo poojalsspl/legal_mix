@@ -95,6 +95,9 @@ $this->title = 'Search';
                     <input type="hidden" name="court_code" value="<?php echo $court_code; ?>">
                     <input type="hidden" name="startDate" value="<?php echo $startDate; ?>">
                     <input type="hidden" name="endDate" value="<?php echo $endDate; ?>">
+                    <input type="hidden" name="j_year_month" value="<?php echo $j_year_month; ?>">
+                    <input type="hidden" name="act_category" value="<?php echo $act_category; ?>">
+                    <input type="hidden" name="act_sub_category" value="<?php echo $act_sub_category; ?>">
                     <input type="hidden" name="swsQ"  value="<?php echo (!empty($term_previous))?$term." ".$term_previous:$term; ?>">
                 </form>
                 </div>

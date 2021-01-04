@@ -55,7 +55,7 @@ $this->title = 'High Courts';
                             </div>
                             <div class="col-md-6 align-left">
                                 <span class="citation-item-text">
-                                <a href="/legal_mix/site/court?court=<?php echo $modelSingle["court_name"];?>"><?php echo $modelSingle["court_name"];?></a>
+                                <a target="_blank" href="/legal_mix/site/court?court=<?php echo $modelSingle["court_name"];?>"><?php echo $modelSingle["court_name"];?></a>
                                 </span>
                             </div>
                             <div class="col-md-4 align-left">
